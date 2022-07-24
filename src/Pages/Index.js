@@ -1,10 +1,13 @@
 
-export default function index(){
-    return(
-        <div>
-
-            <h1>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</h1>
-            
-        </div>
-    )
-}
+const Index = () => {
+    return (
+     
+      <section className='section'>
+  
+        <h1>home</h1>
+        
+      </section>
+      
+    );
+  };
+  export default Index;
