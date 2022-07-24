@@ -1,9 +1,9 @@
-import SideNavBar from '../Components/SideNavBar'
+
 export default function index(){
     return(
         <div>
 
-            <SideNavBar/>
+            <h1>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</h1>
             
         </div>
     )
