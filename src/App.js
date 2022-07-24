@@ -1,11 +1,11 @@
-import logo from '../src/Assets/img/logo.svg';
+import Index from './Pages/Index'
 import '../src/Assets/styles/App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Index/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
