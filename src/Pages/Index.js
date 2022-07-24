@@ -4,7 +4,7 @@ export default function index(){
         <div>
 
             <SideNavBar/>
-            <h1>hello</h1>
+            
         </div>
     )
 }
