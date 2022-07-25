@@ -7,6 +7,7 @@ import MyProfile from './Pages/MyProfile'
 import OrderList from './Pages/OrderList'
 import ProducerList from './Pages/ProducerList'
 import SharedLayout from './Pages/SharedLayout'
+import NoPage from './Pages/NoPage'
 
 
 
@@ -26,7 +27,7 @@ function App() {
 <Route path="Add" element={<Add/>}/>
 <Route path="MyProfile" element={<MyProfile/>}/>
 <Route path="OrderList" element={<OrderList/>}/>
-<Route path="OrderList" element={<Index/>}/>
+<Route path="NoPage" element={<NoPage/>}/>
 <Route path="ProducerList" element={<ProducerList/>}/>
 
 <Route path="*" element={<Error/>}/>

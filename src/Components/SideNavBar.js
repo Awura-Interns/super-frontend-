@@ -1,5 +1,5 @@
+import { NavLink } from 'react-router-dom';
 import "../Assets/styles/global.css"
-
 import "../Assets/styles/SideNavBar.css"
 export default function SideNavBar() {
     return (
@@ -10,58 +10,42 @@ export default function SideNavBar() {
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="/index.html" >
-                        <i class='bx bx-grid-alt'></i>
-                        <span class="links_name">Dashboard</span>
-                    </a>
+                    <NavLink to='/' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-grid-alt'></i><span class="links_name">Dashboard</span></NavLink>
                 </li>
 
                 <li>
-                    <a href="/producerlist.html">
-                        <i class='bx bx-box'></i>
-                        <span class="links_name">Producer List</span>
-                    </a>
+                    
+                    <NavLink to='/ProducerList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Producer List</span></NavLink>
                 </li>
                 <li>
-                    <a href="/order-list.html">
-                        <i class='bx bx-list-ul'></i>
-                        <span class="links_name">Order list</span>
-                    </a>
+
+                    <NavLink to='/OrderList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Order list</span></NavLink>
                 </li>
 
                 <li>
-                    <a href="/item-list.html">
-                        <i class='bx bx-coin-stack'></i>
-                        <span class="links_name">Item List</span>
-                    </a>
+
+                    <NavLink to='/NoPage' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-coin-stack'></i><span class="links_name">Item List x</span></NavLink>
                 </li>
                 <li>
-                    <a href="/employee-list.html">
-                        <i class='bx bx-book-alt'></i>
-                        <span class="links_name">Employee list</span>
-                    </a>
+
+                    <NavLink to='/EmployeeList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-book-alt'></i><span class="links_name">Employee list</span></NavLink>
                 </li>
 
 
 
                 <li>
-                    <a href="/my-profile.html">
-                        <i class='bx bx-cog'></i>
-                        <span class="links_name">My profile</span>
-                    </a>
+
+                    <NavLink to='/MyProfile' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-cog'></i><span class="links_name">My profile</span></NavLink>
+
                 </li>
 
                 <li>
-                    <a href="add.html">
-                        <i class='bx bx-cog'></i>
-                        <span class="links_name">Add </span>
-                    </a>
+               
+                    <NavLink to='/Add' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-add-to-queue'></i><span class="links_name">Add</span></NavLink>
                 </li>
                 <li class="log_out">
-                    <a href="../super_link/super.html">
-                        <i class='bx bx-log-out'></i>
-                        <span class="links_name">Log out</span>
-                    </a>
+                    
+                    <NavLink to='/NoPage' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-log-out'></i><span class="links_name">Log out</span></NavLink>
                 </li>
             </ul>
         </div>
