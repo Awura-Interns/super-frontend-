@@ -1,9 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
+import '../Assets/js/SideBtn'
+
 export default function SideNavBar() {
     return (
+        <>
+        
         <div class="sidebar">
+        
             <div class="logo-details">
                 <i class='bx bxl-c-plus-plus'></i>
                 <span class="logo_name">super link</span>
@@ -14,7 +19,7 @@ export default function SideNavBar() {
                 </li>
 
                 <li>
-                    
+
                     <NavLink to='/ProducerList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Producer List</span></NavLink>
                 </li>
                 <li>
@@ -40,14 +45,17 @@ export default function SideNavBar() {
                 </li>
 
                 <li>
-               
+
                     <NavLink to='/Add' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-add-to-queue'></i><span class="links_name">Add</span></NavLink>
                 </li>
                 <li class="log_out">
-                    
+
                     <NavLink to='/NoPage' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-log-out'></i><span class="links_name">Log out</span></NavLink>
                 </li>
             </ul>
+           
         </div>
+       
+        </>
     )
 }

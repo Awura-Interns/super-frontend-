@@ -2,7 +2,7 @@ export default function MyProfile(){
     return(
         <div>
 
-            <h1>my profit</h1>
+            <h1>my proyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyfit</h1>
             
         </div>
     )
