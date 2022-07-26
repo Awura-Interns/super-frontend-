@@ -1,7 +1,7 @@
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/MyProfile.css"
-import "../Assets/js/MyProfile"
+// import "../Assets/js/MyProfile"
 
 export default function MyProfile(){
     return(
