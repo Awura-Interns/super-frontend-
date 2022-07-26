@@ -4,6 +4,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
+  .home-content .sales-boxes {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 5px; */
+    margin: auto;
+    /* padding-left: 12220rem; */
+}
   .wrapper{
       max-width: 500px;
       width: 100%;
