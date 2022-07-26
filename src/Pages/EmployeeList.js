@@ -73,10 +73,12 @@ export default function EmployeeList(){
          <p><i class="fas fa-envelope"></i><span>dssdsd@</span></p>
          <p><i class="fas fa-map-marker-alt"></i><span>work postion</span></p>
          
-         <NavLink to='/'  className={({ isActive }) => (isActive ? 'btn' : 'btn')}class="btn">update info</NavLink>
+         
+         <input  class="btn" type="submit" value="update info" />
          <p class="address"><i class="fas fa-map-marker-alt"></i><span>sdcsdsd</span></p>
          
-         <NavLink to='/Add' className={({ isActive }) => (isActive ? 'btn' : 'btn')}class="btn" >update address</NavLink>
+    
+         <input  class="btn" type="submit" value="update address" />
       </div>
 
       <div class="user">
@@ -85,9 +87,9 @@ export default function EmployeeList(){
         <p><i class="fas fa-phone"></i><span>023541</span></p>
         <p><i class="fas fa-envelope"></i><span>dssdsd@</span></p>
         <p><i class="fas fa-map-marker-alt"></i><span>work postion</span></p>
-        <NavLink to='/'  className={({ isActive }) => (isActive ? 'btn' : 'btn')}class="btn">update info</NavLink>
+        <input  class="btn" type="submit" value="update info" />
         <p class="address"><i class="fas fa-map-marker-alt"></i><span>sdcsdsd</span></p>
-        <NavLink to='/' className={({ isActive }) => (isActive ? 'btn' : 'btn')}class="btn">update address</NavLink>
+        <input  class="btn" type="submit" value="update address" />
      </div>
 
 
