@@ -1,5 +1,5 @@
 import React from 'react'
-import './signin.css'
+import '../Assets/styles/signin.css'
 
 export default function Signin() {
   return (

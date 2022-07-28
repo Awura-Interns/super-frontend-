@@ -1,24 +1,28 @@
-import logo from '../src/Assets/img/logo.svg';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Landingpage from "./Pages/Landingpage"
+import Profile from "./Pages/Profile"
+import Signin from "./Pages/Signin"
+import Signup from "./Pages/Signup"
+import Account from "./Pages/Account"
+import Cart from "./Pages/Cart"
+import SharedLayOut from "./Pages/SharedLayOut"
 import '../src/Assets/styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<SharedLayOut/>} >
+      <Route index element={<Landingpage/>}/>
+      <Route path="Profile" element={<Profile/>}/>
+      <Route path="Signin" element={<Signin/>}/>
+      <Route path="Signup" element={<Signup/>}/>
+      <Route path="Account" element={<Account/>}/>
+      <Route path="Cart" element={<Cart/>}/>
+    
+    </Route>
+  </Routes>
+  </BrowserRouter>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link}from'react-router-dom'
-import './landingpage.css';
+import '../Assets/styles/landingpage.css';
+
 export default function landingpage() {
   return (
     <React.Fragment>
@@ -8,7 +9,7 @@ export default function landingpage() {
         <header class="header">
 
 <div class="header-1">
-
+    
     <Link to="#" class="logo"> <i class="fas fabook"></i> super_link </Link>
 
 
