@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link}from'react-router-dom'
+import Cards from 'react'
 import '../Assets/styles/landingpage.css';
 
 export default function landingpage() {
@@ -16,8 +17,15 @@ export default function landingpage() {
 
     <div class="icons">
 
-        <Link to="super.html" class="btn">Get start</Link>
-        <Link to="signup.html" class="btn">Sign Up</Link>
+        <Link to="/Cards" class="btn">Get start</Link>
+        <Link to='/Signup' class="btn">Sign Up</Link>
+        <Link to='/'>landing</Link>
+        <Link to='/Profile'>Profile</Link>
+        <Link to='/Signin'>Signin</Link>
+
+       
+        <Link to='/Account'>Account</Link>
+         <Link to='/Cart'>Cart</Link>
     </div>
 
 </div>

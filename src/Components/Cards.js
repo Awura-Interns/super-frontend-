@@ -1,4 +1,5 @@
-import './cards.css'
+import '../Assets/styles/cards.css'
+
 export default function ItemList() {
     return(
 
