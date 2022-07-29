@@ -1,19 +1,20 @@
 import React from 'react'
-import './Navbar.css';
+import '../Assets/styles/Navbar.css';
+import {Link}from'react-router-dom'
 
 function Navbar() {
     return (
       <header className="header">
       <div className="header-1">
-          <a href="#" className="logo"> <i className="fas fabook"></i> super_link </a>
+          <Link to="#" className="logo"> <i className="fas fabook"></i> super_link </Link>
           <div action="" className="search">
               <input type="search" name="" placeholder="search here..." id="search-box"/>
               <label for="search-box" className="fas fa-search"></label>
           </div>
           <div className="icons">
               <div id="search-btn" className="fas fa-search"></div>
-              <a href="#" className="fas fa-heart"></a>
-              <a href="#" className="fas fa-shopping-cart"></a>
+              <Link to="#" className="fas fa-heart"></Link>
+              <Link to="#" className="fas fa-shopping-cart"></Link>
               <div id="login-btn" onclick="div_show()" className="fas fa-user"></div>
           </div>
       </div>

@@ -1,52 +1,52 @@
 import React from 'react'
-
+import {Link}from'react-router-dom'
 export default function Footer() {
   return (
     <>
     
-    <section class="featured" id="featured">
-        <h1 class="heading"> <span>we're here to help, and get you the best product!!!</span> </h1>
+    <section className="featured" id="featured">
+        <h1 className="heading"> <span>we're here to help, and get you the best product!!!</span> </h1>
     </section>
     
     
     
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
+    <footer className="footer">
+        <div className="container">
+            <div className="row">
+                <div className="footer-col">
                     <h4>company</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
+                        <li><Link to="#">about us</Link></li>
+                        <li><Link to="#">our services</Link></li>
+                        <li><Link to="#">privacy policy</Link></li>
     
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div className="footer-col">
                     <h4>get help</h4>
                     <ul>
     
-                        <li><a href="#">shipping</a></li>
-                        <li><a href="#">returns</a></li>
-                        <li><a href="#">order status</a></li>
-                        <li><a href="#">payment options</a></li>
+                        <li><Link to="#">shipping</Link></li>
+                        <li><Link to="#">returns</Link></li>
+                        <li><Link to="#">order status</Link></li>
+                        <li><Link to="#">payment options</Link></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div className="footer-col">
                     <h4>online shop</h4>
                     <ul>
-                        <li><a href="#">food</a></li>
-                        <li><a href="#">food</a></li>
+                        <li><Link to="#">food</Link></li>
+                        <li><Link to="#">food</Link></li>
     
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div className="footer-col">
                     <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <div className="social-links">
+                        <Link to="#"><i className="fab fa-facebook-f"></i></Link>
+                        <Link to="#"><i className="fab fa-twitter"></i></Link>
+                        <Link to="#"><i className="fab fa-instagram"></i></Link>
+                        <Link to="#"><i className="fab fa-linkedin-in"></i></Link>
                     </div>
                 </div>
             </div>
@@ -54,9 +54,9 @@ export default function Footer() {
     </footer>
     
     
-    <a class="scrollup show">
+    <Link className="scrollup show">
         <img src="spuer_image/question.png" alt="arrow up" />
-    </a>
+    </Link>
     
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     

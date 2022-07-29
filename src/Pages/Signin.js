@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Assets/styles/signin.css'
-
+import {Link}from'react-router-dom'
 export default function Signin() {
   return (
     <div class="wrapper">
@@ -20,7 +20,7 @@ export default function Signin() {
             <div class="inputfield">
                 <input type="submit" value="Register" class="btn"/>
             </div>
-            <p>don't have an account? <a href="">register now</a></p>
+            <p>don't have an account? <Link to="">register now</Link></p>
         </div>
       
     </div>

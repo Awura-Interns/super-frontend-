@@ -3,9 +3,11 @@ import Landingpage from "./Pages/Landingpage"
 import Profile from "./Pages/Profile"
 import Signin from "./Pages/Signin"
 import Signup from "./Pages/Signup"
-import Account from "./Pages/Account"
+// import Account from "./Pages/Account"
 import Cart from "./Pages/Cart"
 import Cards from "./Components/Cards"
+// import Navbar from "./Components/Navbar"
+// import Footer from "./Components/Footer"
 import SharedLayOut from "./Pages/SharedLayOut"
 import '../src/Assets/styles/App.css';
 
@@ -18,7 +20,7 @@ function App() {
       <Route path="Profile" element={<Profile/>}/>
       <Route path="Signin" element={<Signin/>}/>
       <Route path="Signup" element={<Signup/>}/>
-      <Route path="Account" element={<Account/>}/>
+      {/* <Route path="Account" element={<Account/>}/> */}
       <Route path="Cart" element={<Cart/>}/>
       <Route path="Cards" element={<Cards/>}/>
 

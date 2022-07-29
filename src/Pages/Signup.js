@@ -2,7 +2,7 @@
 import './Button.css';
 
 export default function SignUp() {
-  return <h1 className='sign-up'>Sing Up</h1>;
+  return <h1 classNameName='sign-up'>Sing Up</h1>;
 }
 // import React from 'react';
 // import './Button.css';
@@ -17,54 +17,54 @@ export default function SignUp() {
 // }*/
 import React from 'react'
 import '../Assets/styles/signup.css'
-
+import {Link}from'react-router-dom'
 export default function Signup() {
   return (
-    <div class="wrapper">
-    <div class="title">
+    <div className="wrapper">
+    <div className="title">
       Registration Form
     </div>
-    <div class="form">
-       <div class="inputfield">
+    <div className="form">
+       <div className="inputfield">
           <label>First Name</label>
-          <input type="text" class="input"/>
+          <input type="text" className="input"/>
        </div>  
-        <div class="inputfield">
+        <div className="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input"/>
+          <input type="text" className="input"/>
        </div>  
-       <div class="inputfield">
+       <div className="inputfield">
           <label>Password</label>
-          <input type="password" class="input"/>
+          <input type="password" className="input"/>
        </div>  
-      <div class="inputfield">
+      <div className="inputfield">
           <label>Confirm Password</label>
-          <input type="password" class="input"/>
+          <input type="password" className="input"/>
        </div> 
-        <div class="inputfield">
+        <div className="inputfield">
           <label>Email Address</label>
-          <input type="text" class="input"/>
+          <input type="text" className="input"/>
        </div> 
-      <div class="inputfield">
+      <div className="inputfield">
           <label>Phone Number</label>
-          <input type="text" class="input"/>
+          <input type="text" className="input"/>
        </div> 
-      <div class="inputfield">
+      <div className="inputfield">
           <label>Address</label>
-          <textarea class="textarea"></textarea>
+          <textarea className="textarea"></textarea>
        </div> 
     
-      <div class="inputfield terms">
-          <label class="check">
+      <div className="inputfield terms">
+          <label className="check">
             <input type="checkbox"/>
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
           <p>Agreed to terms and conditions</p>
        </div> 
-      <div class="inputfield">
-        <input type="submit" value="Register" class="btn"/>
+      <div className="inputfield">
+        <input type="submit" value="Register" className="btn"/>
       </div>
-      <p> have an account? <a href="">log in</a></p>
+      <p> have an account? <Link to="">log in</Link></p>
     </div>
 </div>
   )

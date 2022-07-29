@@ -1,24 +1,24 @@
 import React from 'react'
 import {Link}from'react-router-dom'
-import Cards from 'react'
+
 import '../Assets/styles/landingpage.css';
 
 export default function landingpage() {
   return (
     <React.Fragment>
       
-        <header class="header">
+        <header className="header">
 
-<div class="header-1">
+<div className="header-1">
     
-    <Link to="#" class="logo"> <i class="fas fabook"></i> super_link </Link>
+    <Link to="#" className="logo"> <i className="fas fabook"></i> super_link </Link>
 
 
 
-    <div class="icons">
+    <div className="icons">
 
-        <Link to="/Cards" class="btn">Get start</Link>
-        <Link to='/Signup' class="btn">Sign Up</Link>
+        <Link to="/Cards" className="btn">Get start</Link>
+        <Link to='/Signup' className="btn">Sign Up</Link>
         <Link to='/'>landing</Link>
         <Link to='/Profile'>Profile</Link>
         <Link to='/Signin'>Signin</Link>
@@ -30,32 +30,32 @@ export default function landingpage() {
 
 </div>
 </header>
-<div class="heading">
+<div className="heading">
 <h3>Welcome To</h3>
 <p><Link to="">Super link</Link> <span></span></p>
 </div>
 
 
 
-<section class="about">
+<section className="about">
 
-<div class="row">
+<div className="row">
 
-<div class="image">
+<div className="image">
  <img src="/assets/spuer_image/shop.png" alt=""/>
 </div>
 
-<div class="content">
+<div className="content">
  <h3>why choose us?</h3>
  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, neque debitis incidunt qui ipsum sed doloremque a molestiae in veritatis ullam similique sunt aliquam dolores dolore? Quasi atque debitis nobis!</p>
- <Link to="menu.html" class="btn">Get start</Link>
+ <Link to="menu.html" className="btn">Get start</Link>
 </div>
 
 </div>
 
 </section>
 
-<div class="heading">
+<div className="heading">
 
 </div>
 
