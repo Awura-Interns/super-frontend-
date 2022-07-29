@@ -48,6 +48,12 @@ export default function SideNavBar() {
 
                     <NavLink to='/Add' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-add-to-queue'></i><span class="links_name">Add</span></NavLink>
                 </li>
+
+
+                <li>
+
+                    <NavLink to='/Cart' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-cart-shopping"></i><span class="links_name">Cart</span></NavLink>
+                </li>
                 <li class="log_out">
 
                     <NavLink to='/NoPage' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-log-out'></i><span class="links_name">Log out</span></NavLink>
