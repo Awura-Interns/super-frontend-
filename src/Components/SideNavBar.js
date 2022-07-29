@@ -52,7 +52,7 @@ export default function SideNavBar() {
 
                 <li>
 
-                    <NavLink to='/Cart' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-cart-shopping"></i><span class="links_name">Cart</span></NavLink>
+                    <NavLink to='/Carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-cart-shopping"></i><span class="links_name">Cart</span></NavLink>
                 </li>
                 <li class="log_out">
 
