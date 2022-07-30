@@ -8,7 +8,7 @@ export default AuthContext;
 export const AuthProvider =({children}) =>{
     return(
         <AuthContext.Provider>
-            
+
         </AuthContext.Provider>
     )
 }
