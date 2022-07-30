@@ -1,5 +1,14 @@
-.carts{
+.carts,h1{
     /* margin-top: 100px; */
     margin-left: 400px;
     padding-top: 100px;
+    /* #003 */
 }
+.lemon {
+    width: 100px; height: 100px; 
+  
+    background: #F5F240;
+    border: 1px solid #F0D900;      
+    border-radius: 10px 150px 30px 150px;
+    align-items: center;
+ }
