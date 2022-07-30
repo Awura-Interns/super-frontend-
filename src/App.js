@@ -35,10 +35,10 @@ function App() {
 
 
 
-<Route path="Carts" element={<SharedCartLayout/>} >
+<Route path="carts" element={<SharedCartLayout/>} >
 
         <Route index  element={<Cart />} />
-        <Route path=':CartsId' element={<SingleCart />} />
+        <Route path=':cartsId' element={<SingleCart />} />
         </Route>
 
 
