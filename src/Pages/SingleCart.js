@@ -5,7 +5,8 @@ import carts from '../Helpers/CartData';
 const SingleCart = () => {
   
   const {cartId} = useParams();
-  const cart =carts.find((cart)=>cart.id ===cartId);
+  console.log(cartId)
+  const cart =carts.find((cart)=>cart.id == cartId);
   const {user, order_date}=cart
   return (
     <section className='section cart'>

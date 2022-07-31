@@ -4,65 +4,84 @@ import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/EmployeeList.css"
 export default function EmployeeList(){
     return(
-        <body>
+        <body className="Body">
 
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
-      </div>
-      <div class="search-box">
-        <input type="text" placeholder="Search..."/>
-        <i class='bx bx-search'></i>
-      </div>
-      <div class="profile-details">
-        <img src="images/image.jpg" alt=""/>
-        <span class="admin_name">ayssikiyas</span>
-      </div>
-    </nav>
-    <div class="home-content">
+<section class="listing">
 
-      <div class="sales-boxes">
+<article class="leaderboard">
+    <header>
 
-    
+        
 
-      <div class="user">
-         <img src="images/user-icon.png" alt=""/>
-         <p><i class="fas fa-user"></i><span>d<span>sdas</span></span></p>
-         <p><i class="fas fa-phone"></i><span>023541</span></p>
-         <p><i class="fas fa-envelope"></i><span>dssdsd@</span></p>
-         <p><i class="fas fa-map-marker-alt"></i><span>work postion</span></p>
-         
-         
-         <input  class="btn" type="submit" value="update info" />
-         <p class="address"><i class="fas fa-map-marker-alt"></i><span>sdcsdsd</span></p>
-         
-    
-         <input  class="btn" type="submit" value="update address" />
-      </div>
+        <h1 class="leaderboard__title"><span class="leaderboard__title--top">Employee</span><span
+                class="leaderboard__title--bottom">Listing</span></h1>
+    </header>
 
-      <div class="user">
-        <img src="images/user-icon.png" alt=""/>
-        <p><i class="fas fa-user"></i><span>d<span>sdas</span></span></p>
-        <p><i class="fas fa-phone"></i><span>023541</span></p>
-        <p><i class="fas fa-envelope"></i><span>dssdsd@</span></p>
-        <p><i class="fas fa-map-marker-alt"></i><span>work postion</span></p>
-        <input  class="btn" type="submit" value="update info" />
-        <p class="address"><i class="fas fa-map-marker-alt"></i><span>sdcsdsd</span></p>
-        <input  class="btn" type="submit" value="update address" />
-     </div>
+    <main class="leaderboard__profiles">
+        <article class="leaderboard__profile">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg"
+                class="leaderboard__picture"/>
+            <span class="leaderboard__name">Mark Zuckerberg</span>
+            <span class="leaderboard__value">35.7<span>B</span></span>
+        </article>
 
 
-     
 
-   
-   
-</div>
-</div>
+
+
+    </main>
+    </article>
 </section>
-  
+<section>
 
+<div class="Employewrapper">
+    <div class="title">
+        employee registration
+    </div>
+    <form class="form">
+        <div class="inputfield">
+            <label>First Name</label>
+            <input type="text" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Last Name</label>
+            <input type="text" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Email</label>
+            <input type="email" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Password</label>
+            <input type="password" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Confirm password</label>
+            <input type="password" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Phone</label>
+            <input type="tel" class="input" />
+        </div>
+        
+        <div class="inputfield">
+            <label for="file">Profile Picture</label>
+            <input type="file" id="file" accept="image/*" class="input" />
+        </div>
+        <div class="inputfield">
+            <label>Birthdate</label>
+            <input type="date" class="input" />
+        </div>
+        <div class="inputfield">
+            <label for="file">Id Card</label>
+            <input type="file" id="file" accept="image/*" class="input" />
+        </div>
+        <div class="inputfield">
+            <input type="submit" class="btn"/>
+        </div>
+    </form>
+    </div>
+</section>
 </body>
     )
 }

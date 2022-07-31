@@ -38,7 +38,7 @@ function App() {
           <Route path="carts" element={<SharedCartLayout />} >
 
             <Route index element={<Cart />} />
-            <Route path=':cartsId' element={<SingleCart />} />
+            <Route path=':cartId' element={<SingleCart />} />
           </Route>
 
 
