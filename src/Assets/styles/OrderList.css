@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root{
+   --yellow:#fed330;
+   --red:#e74c3c;
+   --white:#fff;
+   --black:#222;
+   --light-color:#777;
+   --border:.2rem solid var(--black);
+}
+
+*{
+   font-family: 'Rubik', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border: none;
+   text-decoration: none;
+}
+.home-content .title {
+  margin-top:0; 
+  text-align: left;
+  margin-bottom: 1rem;
+  margin-left:2rem;
+  font-size: 2rem;
+  color: var(--black);
+  /* text-transform: uppercase; */
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+padding-top: 10rem;
+padding-left: 15rem;
+}
+.box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1.5rem;
+  align-items: flex-start;
+  margin-left:2rem;
+}
+
+.box-container .box{
+  padding:1rem 2rem;
+  border:var(--border);
+  flex:1 1 40rem;
+}
+
+.box-container .box p{
+  line-height: 1.5;
+  margin:0.5rem 0;
+  font-size: 1rem;
+  color:var(--light-color);
+}
+
+.box-container .box p span{
+  color:var(--black);
+}
+.home-content .sales-boxes {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 5px; */
+  margin: auto;
+  padding-left: 15rem;
+}

@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Add from './Pages/Add';
+import EmployeeList from './Pages/EmployeeList'
+import Index from './Pages/Index'
+import Error from './Pages/Error'
+import MyProfile from './Pages/MyProfile'
+import OrderList from './Pages/OrderList'
+import Cart from './Pages/Carts'
+import SingleCart from './Pages/SingleCart'
+import SharedCartLayout from './Pages/SharedCartLayout'
+import ProducerList from './Pages/ProducerList'
+import SharedLayout from './Pages/SharedLayout'
+import NoPage from './Pages/NoPage'
+
+
+
+
+import '../src/Assets/styles/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <BrowserRouter>
+    <Routes>
+<Route path="/" element={<SharedLayout/>}>
+
+<Route index element={<Index/>}/>
+
+<Route path="EmployeeList" element={<EmployeeList/>}/>
+<Route path="Add" element={<Add/>}/>
+<Route path="MyProfile" element={<MyProfile/>}/>
+<Route path="OrderList" element={<OrderList/>}/>
+<Route path="NoPage" element={<NoPage/>}/>
+<Route path="ProducerList" element={<ProducerList/>}/>
+
+
+
+<Route path="Carts" element={<SharedCartLayout/>} >
+
+        <Route index  element={<Cart />} />
+        <Route path=':CartsId' element={<SingleCart />} />
+        </Route>
+
+
+<Route path="*" element={<Error/>}/>
+</Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
