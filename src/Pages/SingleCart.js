@@ -6,7 +6,7 @@ const SingleCart = () => {
   
   const {cartId} = useParams();
   console.log(cartId)
-  const cart =carts.find((cart)=>cart.id == cartId);
+  const cart =carts.find((cart)=>cart.id === cartId);
   const {user, order_date}=cart
   return (
     <section className='section cart'>
