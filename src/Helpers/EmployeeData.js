@@ -1,6 +1,6 @@
 const employees = [
     {
-        "id": "http://127.0.0.1:8000/staff/employee/1/",
+        "id": "1",
         "user": {
             "first_name": "abigiya",
             "last_name": "terefe",
@@ -13,7 +13,7 @@ const employees = [
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },
     {
-        "id": "http://127.0.0.1:8000/staff/employee/1/",
+        "id": "2",
         "user": {
             "first_name": "abi",
             "last_name": "terefe",
@@ -25,7 +25,7 @@ const employees = [
         "birthdate": "2001-04-04",
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },{
-        "id": "http://127.0.0.1:8000/staff/employee/2/",
+        "id": "3",
         "user": {
             "first_name": "lily",
             "last_name": "terefe",
@@ -37,7 +37,7 @@ const employees = [
         "birthdate": "2001-04-04",
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },{
-        "id": "http://127.0.0.1:8000/staff/employee/3/",
+        "id": "4",
         "user": {
             "first_name": "uuuu",
             "last_name": "terefe",
@@ -49,7 +49,7 @@ const employees = [
         "birthdate": "2001-04-04",
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },{
-        "id": "http://127.0.0.1:8000/staff/employee/4/",
+        "id": "5",
         "user": {
             "first_name": "dif",
             "last_name": "terefe",
@@ -62,7 +62,7 @@ const employees = [
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },
     {
-        "id": "http://127.0.0.1:8000/staff/employee/5/",
+        "id": "6",
         "user": {
             "first_name": "is",
             "last_name": "terefe",
@@ -75,7 +75,7 @@ const employees = [
         "identification_card": "http://127.0.0.1:8000/media/accounts/employee/id/pngwing.com_4.png"
     },
     {
-        "id": "http://127.0.0.1:8000/staff/employee/6/",
+        "id": "7/",
         "user": {
             "first_name": "not",
             "last_name": "terefe",

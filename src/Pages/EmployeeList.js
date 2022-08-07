@@ -26,8 +26,8 @@ const EmployeeList = () => {
                                     <article class="leaderboard__profile">
                                         <img src={employee.profile_picture} alt="Mark Zuckerberg"
                                             class="leaderboard__picture" />
-                                        <span class="leaderboard__name">{employee.user.first_name}</span>
-                                        <span class="leaderboard__name">{employee.user.last_name}</span>
+                                        <span class="leaderboard__name">{employee.user.first_name} {employee.user.last_name}</span>
+                                       
                                         <span class="leaderboard__value"> 
                                         <Link to={`/EmployeeList/${employee.id}`}>more</Link>
                                         </span>
