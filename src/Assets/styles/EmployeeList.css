@@ -3,6 +3,9 @@
    --background:#f5f5f5;
    --theme:#081D45;
 }
+section{
+  background-color: var(--theme);
+}
 
 *{
    font-family: 'Rubik', sans-serif;

@@ -2,7 +2,8 @@
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/EmployeeList.css"
-export default function EmployeeList(){
+import "../Helpers/EmployeeData"
+const EmployeeList = () => {
     return(
         <body className="Body">
 
@@ -22,7 +23,7 @@ export default function EmployeeList(){
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Zuckerberg"
                 class="leaderboard__picture"/>
             <span class="leaderboard__name">Mark Zuckerberg</span>
-            <span class="leaderboard__value">35.7<span>B</span></span>
+            <span class="leaderboard__value">more </span>
         </article>
 
 
@@ -85,3 +86,4 @@ export default function EmployeeList(){
 </body>
     )
 }
+export default EmployeeList;

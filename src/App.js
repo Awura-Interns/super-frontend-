@@ -1,6 +1,8 @@
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Add from './Pages/Add';
 import EmployeeList from './Pages/EmployeeList'
+import SingleEmployeeList from "./Pages/SingleEmployeeList"
+import SharedEmployeeLayout from "./Pages/SharedEmployeeLayout"
 import Index from './Pages/Index'
 import Error from './Pages/Error'
 import MyProfile from './Pages/MyProfile'
@@ -26,7 +28,22 @@ function App() {
 
           <Route index element={<Index />} />
 
-          <Route path="EmployeeList" element={<EmployeeList />} />
+          
+          <Route path="EmployeeList" element={<SharedEmployeeLayout />}>
+          <Route index element={<EmployeeList />} />
+          <Route path=':EmployeeId' element={<SingleEmployeeList />} />
+          </Route>
+
+
+          <Route path="carts" element={<SharedCartLayout />} >
+
+            <Route index element={<Cart />} />
+            <Route path=':cartId' element={<SingleCart />} />
+          </Route>
+
+
+
+
           <Route path="Add" element={<Add />} />
           <Route path="MyProfile" element={<MyProfile />} />
           <Route path="OrderList" element={<OrderList />} />
@@ -35,11 +52,6 @@ function App() {
 
 
 
-          <Route path="carts" element={<SharedCartLayout />} >
-
-            <Route index element={<Cart />} />
-            <Route path=':cartId' element={<SingleCart />} />
-          </Route>
 
 
           <Route path="*" element={<Error />} />
