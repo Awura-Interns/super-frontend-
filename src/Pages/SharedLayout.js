@@ -6,8 +6,8 @@ import  Top from "../Components/Top"
 const Home = () => {
     return (
         <>
-            <SideNavBar />
-            <Top/>
+            {/* <SideNavBar />
+            <Top/> */}
          
 
 

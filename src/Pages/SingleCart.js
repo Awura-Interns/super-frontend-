@@ -10,7 +10,7 @@ const SingleCart = () => {
   const {user, order_date}=cart
   return (
     <section className='section cart'>
-      
+     
       <h2> {user}</h2>
       <h2> {order_date}</h2>
       <Link to='/carts' className='btn'>Back carts</Link>
