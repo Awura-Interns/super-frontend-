@@ -14,9 +14,9 @@ import ProducerList from './Pages/ProducerList'
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
 
-
-
-
+import Supplier from "./Pages/Supplier"
+import SingleSupplier from "./Pages/SingleSupplier"
+import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
 import '../src/Assets/styles/App.css';
 
 function App() {
@@ -29,6 +29,14 @@ function App() {
           <Route index element={<Index />} />
 
           
+          <Route path="Supplier" element={<SharedSupplierLayout />}>
+          <Route index element={<Supplier />} />
+          <Route path=':SupplierId' element={<SingleSupplier />} />
+          </Route>
+
+
+
+
           <Route path="EmployeeList" element={<SharedEmployeeLayout />}>
           <Route index element={<EmployeeList />} />
           <Route path=':EmployeeId' element={<SingleEmployeeList />} />
