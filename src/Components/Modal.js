@@ -11,14 +11,3 @@ export default function Modal({open,children,onclose}) {
         </div>
   )
 }
-
-// my vertion
-// export default function Modal({open,children}) {
-//     if(!open) return null
-    
-//   return (
-//     <div>
-//         {children}
-//         </div>
-//   )
-// }
