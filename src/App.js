@@ -17,6 +17,7 @@ import NoPage from './Pages/NoPage'
 import Supplier from "./Pages/Supplier"
 import SingleSupplier from "./Pages/SingleSupplier"
 import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
+import Delivery from "./Pages/Delivery"
 import '../src/Assets/styles/App.css';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
           <Route index element={<Index />} />
 
-          
+          <Route path="Delivery" element={<Delivery/>}/>
           <Route path="Supplier" element={<SharedSupplierLayout />}>
           <Route index element={<Supplier />} />
           <Route path=':SupplierId' element={<SingleSupplier />} />
