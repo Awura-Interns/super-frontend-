@@ -1,49 +1,56 @@
-import { Link } from 'react-router-dom';
+
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/EmployeeList.css"
+import "../Assets/styles/delivery.css"
 import deliveries from "../Helpers/DeliveryData"
+import * as ReactBootStrap from 'react-bootstrap'
 const Delivery = () => {
     return (
         <>
             <body className="Body">
-
-                <section class="listing">
-
-                    <article class="leaderboard">
-                        <header>
+                <section>
+                    <h1>delivery listing</h1>
 
 
+                <div class="delivery_listing">
 
-                            <h1 class="leaderboard__title"><span class="leaderboard__title--top">Delivery</span><span
-                                class="leaderboard__title--bottom">Listing</span></h1>
-                        </header>
+                    <ReactBootStrap.Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>photo</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>phone number</th>
+                        <th>birthdate</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {deliveries.map((delivery) =>{
+                      return(
+                        
+                      <tr key={delivery.id}>
+                        <td>{delivery.id}</td>
+                        <td>{delivery.profile_picture}</td>
+                        <td>{delivery.user.first_name} {delivery.user.  last_name}</td>
+                        <td>{delivery.user.email}</td>
+                        <td>{delivery.user.phone}</td>
+                        <td>{delivery.birthdate}</td>
+                        
+                      </tr>
+                      )
+                    })}
 
 
-                        {deliveries.map((delivery) => {
-                            return (
-                                <main class="leaderboard__profiles" key={delivery.id}>
-                                    <article class="leaderboard__profile">
-                                        <img src={delivery.profile_picture} alt="Mark Zuckerberg"
-                                            class="leaderboard__picture" />
-                                        <span class="leaderboard__name">{delivery.user.first_name} {delivery.user.last_name}</span>
-                                       
-                                        <span class="leaderboard__value"> 
-                                        <Link to={`/EmployeeList/${delivery.id}`}>more</Link>
-                                        </span>
-                                    </article>
-                                </main>
-                            )
-                        })}
+                    </tbody>
+                    </ReactBootStrap.Table>
+                </div>
 
-
-
-
-
-
-
-                    </article>
                 </section>
+
+                
                 <section>
 
                     <div class="Employewrapper">

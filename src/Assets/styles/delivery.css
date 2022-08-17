@@ -1,0 +1,8 @@
+.delivery_listing{
+    width: 100vh;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-left: 25rem;
+    margin-top: 1rem;
+
+}
