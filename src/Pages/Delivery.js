@@ -9,53 +9,57 @@ const Delivery = () => {
     return (
         <>
             <body className="Body">
-                <section>
+                <section className="delivery_listing_whole">
                     <h1>delivery listing</h1>
 
 
-                <div class="delivery_listing">
+                    <div class="delivery_listing">
 
-                    <ReactBootStrap.Table striped bordered hover>
-                    <thead>
-                      <tr>
-                        <th>id</th>
-                        <th>photo</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>phone number</th>
-                        <th>birthdate</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {deliveries.map((delivery) =>{
-                      return(
-                        
-                      <tr key={delivery.id}>
-                        <td>{delivery.id}</td>
-                        <td>{delivery.profile_picture}</td>
-                        <td>{delivery.user.first_name} {delivery.user.  last_name}</td>
-                        <td>{delivery.user.email}</td>
-                        <td>{delivery.user.phone}</td>
-                        <td>{delivery.birthdate}</td>
-                        
-                      </tr>
-                      )
-                    })}
+                        <ReactBootStrap.Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>photo</th>
+                                    <th>name</th>
+                                    <th>email</th>
+                                    <th>phone number</th>
+                                    <th>birthdate</th>
+                                    <th>identification card</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {deliveries.map((delivery) => {
+                                    return (
+
+                                        <tr key={delivery.id}>
+                                            <td>{delivery.id}</td>
+                                            <td> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
+                                                class="picture" /> </td>
+                                            <td>{delivery.user.first_name} {delivery.user.last_name}</td>
+                                            <td>{delivery.user.email}</td>
+                                            <td>{delivery.user.phone}</td>
+                                            <td>{delivery.birthdate}</td>
+                                            <td><img src={delivery.identification_card} alt="Mark Zuckerberg"
+                                                class="picture" /></td>
+
+                                        </tr>
+                                    )
+                                })}
 
 
-                    </tbody>
-                    </ReactBootStrap.Table>
-                </div>
+                            </tbody>
+                        </ReactBootStrap.Table>
+                    </div>
 
                 </section>
 
-                
+
                 <section>
 
                     <div class="Employewrapper">
                         <div class="title">
-                        Delivery registration
+                            Delivery registration
                         </div>
                         <form class="form">
                             <div class="inputfield">

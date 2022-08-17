@@ -9,7 +9,7 @@ const deliveries=[{
     },
     "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2001-10-20",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/12959468898.png"
+    "identification_card": "https://randomuser.me/api/portraits/men/32.jpg",
 },
 
 {
@@ -23,7 +23,7 @@ const deliveries=[{
     },
     "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2022-08-07",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/pngwing.com_5.png"
+    "identification_card": "https://randomuser.me/api/portraits/men/32.jpg",
 },
 {
     "id": "3",
@@ -36,7 +36,7 @@ const deliveries=[{
     },
     "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2001-10-20",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/12959468898.png"
+    "identification_card": "https://randomuser.me/api/portraits/men/32.jpg",
 },
 {
     "id": "4",
@@ -47,9 +47,9 @@ const deliveries=[{
         "phone": "+251911628023",
         "user_type": "delivery"
     },
-    "profile_picture": "http://127.0.0.1:8000/media/accounts/delivery/profile_pictures/pngwing.com_4_FEjQDTD.png",
+    "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2022-08-07",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/pngwing.com_5.png"
+    "identification_card": "https://randomuser.me/api/portraits/men/32.jpg",
 },
 {
     "id": "5",
@@ -60,9 +60,9 @@ const deliveries=[{
         "phone": "+251931213963",
         "user_type": "delivery"
     },
-    "profile_picture": "http://127.0.0.1:8000/media/accounts/delivery/profile_pictures/pngwing.com_4.png",
+    "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2001-10-20",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/12959468898.png"
+    "identification_card":"https://randomuser.me/api/portraits/men/32.jpg",
 },
 {
     "id": "6",
@@ -73,9 +73,9 @@ const deliveries=[{
         "phone": "+251911628023",
         "user_type": "delivery"
     },
-    "profile_picture": "http://127.0.0.1:8000/media/accounts/delivery/profile_pictures/pngwing.com_4_FEjQDTD.png",
+    "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
     "birthdate": "2022-08-07",
-    "identification_card": "http://127.0.0.1:8000/media/accounts/delivery/id/pngwing.com_5.png"
+    "identification_card": "https://randomuser.me/api/portraits/men/32.jpg",
 }
 ] 
 export default deliveries;

@@ -1,8 +1,13 @@
+.delivery_listing_whole{
+    margin-top:-3rem;
+}
 .delivery_listing{
-    width: 100vh;
+    width: 150vh;
+    height: 80vh;
     overflow: hidden;
     overflow-x: scroll;
-    margin-left: 25rem;
+    margin-left: 15rem;
     margin-top: 1rem;
+    overflow-y: scroll;
 
 }
