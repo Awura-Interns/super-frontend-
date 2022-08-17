@@ -2,8 +2,28 @@ import { Link } from 'react-router-dom';
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/EmployeeList.css"
-import employees from "../Helpers/EmployeeData"
+import axios from "axios";
+// import employees from "../Helpers/EmployeeData"
+import { useEffect, useState } from 'react'
 const EmployeeList = () => {
+    const [employees, setEmployees] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
+
+  // fetch data from the localhost and save it to the state
+    useEffect(() => {
+        setLoading(true)
+        axios.get('http://127.0.0.1:8000/staff/employee/')
+        .then(res => {
+            console.log(res.data)
+            setEmployees(res.data)
+            setLoading(false)
+        })
+        .catch(err => {
+            console.log(err)
+            setError(true)
+        })
+    }, [])
     return (
         <>
             <body className="Body">
@@ -27,9 +47,9 @@ const EmployeeList = () => {
                                         <img src={employee.profile_picture} alt="Mark Zuckerberg"
                                             class="leaderboard__picture" />
                                         <span class="leaderboard__name">{employee.user.first_name} {employee.user.last_name}</span>
-                                       
-                                        <span class="leaderboard__value"> 
-                                        <Link to={`/EmployeeList/${employee.id}`}>more</Link>
+
+                                        <span class="leaderboard__value">
+                                            <Link to={`/EmployeeList/${employee.id}`}>more</Link>
                                         </span>
                                     </article>
                                 </main>
