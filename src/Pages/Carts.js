@@ -4,9 +4,9 @@ import carts from '../Helpers/CartData';
 import * as ReactBootStrap from 'react-bootstrap'
 const Carts = () => {
   return (
-    <>
+    <div className="whole">
       <h1>Carts list</h1>
-      <section className='section carts'>
+     
 
 
 
@@ -51,8 +51,8 @@ const Carts = () => {
         </div>
 
 
-      </section>
-    </>
+     
+    </div>
   );
 };
 
