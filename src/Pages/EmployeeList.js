@@ -1,7 +1,6 @@
 // import { Link } from 'react-router-dom';
 import "../Assets/styles/employee.css"
-import "../Assets/styles/global.css"
-import "../Assets/styles/SideNavBar.css"
+
 import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap'
 // import employees from "../Helpers/EmployeeData"

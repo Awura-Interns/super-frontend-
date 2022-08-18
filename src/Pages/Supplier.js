@@ -2,14 +2,34 @@ import React from 'react'
 
 import * as ReactBootStrap from 'react-bootstrap'
 import "../Assets/styles/Supplier.css"
-import suppliers from "../Helpers/SupplierData"
+
+import axios from "axios";
+import { useEffect, useState } from 'react'
 const Supplier = () => {
+    const [supplier, setSupplier] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
+
+    // fetch data from the localhost and save it to the state
+    useEffect(() => {
+        setLoading(true)
+        axios.get('http://127.0.0.1:8000/staff/supplier/')
+            .then(res => {
+                console.log(res.data)
+                setSupplier(res.data)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err)
+                setError(true)
+            })
+    }, [])
     return (
         <>
             <body className="Body">
 
                 <section class="supplier_listing_whole">
-                    <h1>delivery listing</h1>
+                    <h1>Supplier listing</h1>
 
 
                     <div class="supplier_listing">
@@ -29,7 +49,7 @@ const Supplier = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {suppliers.map((supplier) => {
+                                {supplier.map((supplier) => {
                                     return (
 
                                         <tr key={supplier.id}>
@@ -38,10 +58,9 @@ const Supplier = () => {
                                                 class="picture" /> </td>
                                             <td>{supplier.user.first_name} {supplier.user.last_name}</td>
                                             <td>{supplier.user.email}</td>
-                                            
                                             <td>{supplier.user.phone}</td>
                                             <td>{supplier.birthdate}</td>
-                                            <td><img src={supplier.identification_card} alt="Mark Zuckerberg"
+                                            <td><img src={supplier.identification_card} alt={supplier.user.first_name}
                                                 class="picture" /></td>
 
                                         </tr>
