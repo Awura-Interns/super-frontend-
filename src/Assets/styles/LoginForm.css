@@ -1,7 +1,7 @@
 :root {
     /* Light theme */
     --c-light-text: #333;
-    --c-light-background: #dedede;
+    --c-light-background: #f5f5f5;
     --c-light-interactive: mediumvioletred;
     /* Dark Theme */
     --c-dark-text: #fff;
@@ -44,6 +44,7 @@ body {
     color: var(--c-text);
     background-color: var(--c-background);
 }
+
 
 
 .theme-container .cat {

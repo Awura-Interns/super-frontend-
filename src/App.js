@@ -1,4 +1,4 @@
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Add from './Pages/Add';
 import EmployeeList from './Pages/EmployeeList'
 import SingleEmployeeList from "./Pages/SingleEmployeeList"
@@ -13,7 +13,8 @@ import SharedCartLayout from './Pages/SharedCartLayout'
 import ProducerList from './Pages/ProducerList'
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
-
+import PrivateRoute from './Helpers/PrivateRoute'
+import {AuthProvider} from './Auth/AuthContect'
 import Supplier from "./Pages/Supplier"
 import SingleSupplier from "./Pages/SingleSupplier"
 import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
@@ -25,22 +26,27 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        {/* <AuthProvider> */}
+
+        <Route path="/" element={
+          <SharedLayout />
+       
+        }>
 
           <Route index element={<Index />} />
 
-          <Route path="Delivery" element={<Delivery/>}/>
+          <Route path="Delivery" element={<Delivery />} />
           <Route path="Supplier" element={<SharedSupplierLayout />}>
-          <Route index element={<Supplier />} />
-          <Route path=':SupplierId' element={<SingleSupplier />} />
+            <Route index element={<Supplier />} />
+            <Route path=':SupplierId' element={<SingleSupplier />} />
           </Route>
 
 
 
 
           <Route path="EmployeeList" element={<SharedEmployeeLayout />}>
-          <Route index element={<EmployeeList />} />
-          <Route path=':EmployeeId' element={<SingleEmployeeList />} />
+            <Route index element={<EmployeeList />} />
+            <Route path=':EmployeeId' element={<SingleEmployeeList />} />
           </Route>
 
 
@@ -65,6 +71,7 @@ function App() {
 
           <Route path="*" element={<Error />} />
         </Route>
+        {/* </AuthProvider> */}
       </Routes>
     </BrowserRouter>
   );

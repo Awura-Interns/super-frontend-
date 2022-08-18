@@ -1,36 +1,60 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Modal from "../Components/Modal";
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/IndexPage.css"
 import Login from "../Components/Login"
-
+// import AuthContext from "../Auth/AuthContect"
+import "../Assets/styles/LoginForm.css"
 const Index = () => {
-  const [isOpen, setisOpen] = useState(false);
+  
+  // let {loginUser} =useContext(AuthContext)
   return (
 
     <body>
-     <div className="container" id="container">
+     
+      <h1></h1>
+      <div className="form">
+     
 
-      <div class="hero2">
+<div class="theme-container grow">
+    <div class="contact-con">
+        <div class="contact">
+            <p>Log in </p>
 
-        <fieldset class="hero2-text">
-          {/* <legend class="border-text">&nbsp; be impressed</legend> */}
-          <h1 className="headerTitle">login first</h1>
-          <p>This is a classy site so it has a serious photo, classic font, and a gold and black colour palette.<br/>
-          <br/>
-          <button onClick={() => setisOpen(true)} className="btn">open modal</button>
-          </p>
-          <h1> </h1>
-        </fieldset>
+            {/* <form onSubmit={loginUser} action="" class="contact-form" autocomplete="off" method=""> */}
+            <form action="" class="contact-form" autocomplete="off" method="">
+                <div class="input-group first">
+                    <input id="user" required="" type="text" name="text" class="input" />
+                    <label class="user-label">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required class="input" />
+                    <label for="password" class="user-label">Password</label>
+
+
+
+                </div>
+
+
+                <div class="btnn">
+                    <button class="cta" id="btnn">
+                        <span class="hover-underline-animation"> Login </span>
+                        <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10"
+                            viewBox="0 0 46 16">
+                            <path id="Path_10" data-name="Path 10"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                transform="translate(30)"></path>
+                        </svg>
+                    </button>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
       </div>
-     </div>
-
-
-      <h1>
-        <Modal open={isOpen} onclose={() => setisOpen(false)}><Login/></Modal>
-
-      </h1>
 
     </body>
 
