@@ -1,0 +1,13 @@
+.employee_listing_whole{
+    margin-top:-3rem;
+  }
+  .employee_listing{
+    width: 150vh;
+    height: 70vh;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-left: 15rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
+  
+  }

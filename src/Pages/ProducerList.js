@@ -1,7 +1,7 @@
 
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
-import "../Assets/styles/EmployeeList.css"
+import "../Assets/styles/ListForm.css"
 export default function ProducerList(){
     return(
         <body>

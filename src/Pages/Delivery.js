@@ -1,10 +1,11 @@
 
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
-import "../Assets/styles/EmployeeList.css"
+import "../Assets/styles/ListForm.css"
 import "../Assets/styles/delivery.css"
 import deliveries from "../Helpers/DeliveryData"
 import * as ReactBootStrap from 'react-bootstrap'
+import "../Assets/styles/ListForm.css"
 const Delivery = () => {
     return (
         <>

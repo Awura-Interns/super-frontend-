@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import "../Assets/styles/employee.css"
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
-import "../Assets/styles/EmployeeList.css"
 import axios from "axios";
+import * as ReactBootStrap from 'react-bootstrap'
 // import employees from "../Helpers/EmployeeData"
 import { useEffect, useState } from 'react'
 const EmployeeList = () => {
@@ -10,59 +11,69 @@ const EmployeeList = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
-  // fetch data from the localhost and save it to the state
+    // fetch data from the localhost and save it to the state
     useEffect(() => {
         setLoading(true)
         axios.get('http://127.0.0.1:8000/staff/employee/')
-        .then(res => {
-            console.log(res.data)
-            setEmployees(res.data)
-            setLoading(false)
-        })
-        .catch(err => {
-            console.log(err)
-            setError(true)
-        })
+            .then(res => {
+                console.log(res.data)
+                setEmployees(res.data)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err)
+                setError(true)
+            })
     }, [])
     return (
         <>
             <body className="Body">
 
-                <section class="listing">
-
-                    <article class="leaderboard">
-                        <header>
+                <section class="employee_listing_whole">
+                    <h1>Employee listing</h1>
 
 
+                    <div class="employee_listing">
 
-                            <h1 class="leaderboard__title"><span class="leaderboard__title--top">Employee</span><span
-                                class="leaderboard__title--bottom">Listing</span></h1>
-                        </header>
+                        <ReactBootStrap.Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>photo</th>
+                                    <th>name</th>
+                                    <th>email</th>
+                                    <th>phone number</th>
+                                    <th>birthdate</th>
+                                    <th>identification card</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {employees.map((employee) => {
+                                    return (
+
+                                        <tr key={employee.id}>
+                                            <td>{employee.id}</td>
+                                            <td> <img src={employee.profile_picture} alt="Mark Zuckerberg"
+                                                class="picture" /> </td>
+                                            <td>{employee.user.first_name} {employee.user.last_name}</td>
+                                            <td>{employee.user.email}</td>
+                                            <td>{employee.user.phone}</td>
+                                            <td>{employee.birthdate}</td>
+                                            <td><img src={employee.identification_card} alt={employee.user.first_name}
+                                                class="picture" /></td>
+
+                                        </tr>
+                                    )
+                                })}
 
 
-                        {employees.map((employee) => {
-                            return (
-                                <main class="leaderboard__profiles" key={employee.id}>
-                                    <article class="leaderboard__profile">
-                                        <img src={employee.profile_picture} alt="Mark Zuckerberg"
-                                            class="leaderboard__picture" />
-                                        <span class="leaderboard__name">{employee.user.first_name} {employee.user.last_name}</span>
+                            </tbody>
+                        </ReactBootStrap.Table>
+                    </div>
 
-                                        <span class="leaderboard__value">
-                                            <Link to={`/EmployeeList/${employee.id}`}>more</Link>
-                                        </span>
-                                    </article>
-                                </main>
-                            )
-                        })}
+                    {/* <Link to={`/EmployeeList/${employee.id}`}>more</Link> */}
 
-
-
-
-
-
-
-                    </article>
                 </section>
                 <section>
 
