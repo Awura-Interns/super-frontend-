@@ -3,10 +3,33 @@ import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/ListForm.css"
 import "../Assets/styles/delivery.css"
-import deliveries from "../Helpers/DeliveryData"
+// import deliveries from "../Helpers/DeliveryData"
 import * as ReactBootStrap from 'react-bootstrap'
 import "../Assets/styles/ListForm.css"
+import axios from "axios";
+import { useEffect, useState } from 'react'
 const Delivery = () => {
+    const [delivery, setDelivery] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
+
+    // fetch data from the localhost and save it to the state
+    useEffect(() => {
+        setLoading(true)
+        axios.get('http://127.0.0.1:8000/staff/delivery/')
+            .then(res => {
+                console.log(res.data)
+                setDelivery(res.data)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err)
+                setError(true)
+            })
+    }, [])
+
+
+
     return (
         <>
             <body className="Body">
@@ -30,7 +53,7 @@ const Delivery = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {deliveries.map((delivery) => {
+                                {delivery.map((delivery) => {
                                     return (
 
                                         <tr key={delivery.id}>
