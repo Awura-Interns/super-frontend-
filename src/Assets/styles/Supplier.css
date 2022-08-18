@@ -1,4 +1,13 @@
-.supplier{
-    color: red;
-    font-size: 1000px;
+.supplier_listing_whole{
+    margin-top:-5rem;
+}
+.supplier_listing{
+    width: 145vh;
+    height: 80vh;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
+
 }

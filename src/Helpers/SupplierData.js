@@ -10,7 +10,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "2",
@@ -23,7 +23,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "3",
@@ -36,7 +36,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "4",
@@ -49,7 +49,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "5",
@@ -62,7 +62,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "6",
@@ -75,7 +75,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
         "id": "7",
@@ -88,7 +88,7 @@ const suppliers=[
         },
         "profile_picture": "https://randomuser.me/api/portraits/men/32.jpg",
         "birthdate": "2001-03-31",
-        "identification_card": "http://127.0.0.1:8000/media/accounts/supplier/id/pngwing.com_2.png"
+        "identification_card": "https://randomuser.me/api/portraits/men/32.jpg"
     }
 ]
 export default suppliers;

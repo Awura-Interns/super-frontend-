@@ -1,56 +1,63 @@
 import React from 'react'
+
+import * as ReactBootStrap from 'react-bootstrap'
 import "../Assets/styles/Supplier.css"
-import { Link } from 'react-router-dom';
-import "../Assets/styles/global.css"
-import "../Assets/styles/SideNavBar.css"
-import "../Assets/styles/EmployeeList.css"
 import suppliers from "../Helpers/SupplierData"
 const Supplier = () => {
     return (
         <>
             <body className="Body">
 
-                <section class="listing">
-
-                    <article class="leaderboard">
-                        <header>
+                <section class="supplier_listing_whole">
+                    <h1>delivery listing</h1>
 
 
+                    <div class="supplier_listing">
 
-                            <h1 class="leaderboard__title"><span class="leaderboard__title--top">Supplier</span><span
-                                class="leaderboard__title--bottom">Listing</span></h1>
-                        </header>
+                        <ReactBootStrap.Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>photo</th>
+                                    <th>name</th>
+                                    <th>email</th>
+                                 
+                                    <th>phone number</th>
+                                    <th>birthdate</th>
+                                    <th>identification card</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {suppliers.map((supplier) => {
+                                    return (
+
+                                        <tr key={supplier.id}>
+                                            <td>{supplier.id}</td>
+                                            <td> <img src={supplier.profile_picture} alt="Mark Zuckerberg"
+                                                class="picture" /> </td>
+                                            <td>{supplier.user.first_name} {supplier.user.last_name}</td>
+                                            <td>{supplier.user.email}</td>
+                                            
+                                            <td>{supplier.user.phone}</td>
+                                            <td>{supplier.birthdate}</td>
+                                            <td><img src={supplier.identification_card} alt="Mark Zuckerberg"
+                                                class="picture" /></td>
+
+                                        </tr>
+                                    )
+                                })}
 
 
-                        {suppliers.map((supplier) => {
-                            return (
-                                <main class="leaderboard__profiles" key={supplier.id}>
-                                    <article class="leaderboard__profile">
-                                        <img src={supplier.profile_picture} alt="Mark Zuckerberg"
-                                            class="leaderboard__picture" />
-                                        <span class="leaderboard__name">{supplier.user.first_name} {supplier.user.last_name}</span>
-                                        
-                                        <span class="leaderboard__value"> 
-                                        <Link to={`/Supplier/${supplier.id}`}>more</Link>
-                                        </span>
-                                    </article>
-                                </main>
-                            )
-                        })}
-
-
-
-
-
-
-
-                    </article>
+                            </tbody>
+                        </ReactBootStrap.Table>
+                    </div>
                 </section>
                 <section>
 
                     <div class="Employewrapper">
                         <div class="title">
-                        Supplier registration
+                            Supplier registration
                         </div>
                         <form class="form">
                             <div class="inputfield">
