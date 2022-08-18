@@ -15,7 +15,7 @@ export default function SideNavBar() {
                 </div>
                 <ul class="nav-links">
                     <li>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-grid-alt'></i><span class="links_name">Dashboard</span></NavLink>
+                        <NavLink to='/' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-grid-alt'></i><span class="links_name">sign up</span></NavLink>
                     </li>
 
                     <li>

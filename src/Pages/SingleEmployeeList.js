@@ -1,20 +1,24 @@
 
 import { Link, useParams } from 'react-router-dom';
-import employees from "../Helpers/EmployeeData"
+// import employees from "../Helpers/EmployeeData"
 
 const Singleemployee = () => {
   
-  const {EmployeeId} = useParams();
-  console.log(EmployeeId)
-  const employee = employees.find((employee)=> employee.id === EmployeeId);
-  const { birthdate} = employee
+  // const {EmployeeId} = useParams();
+  // console.log(EmployeeId)
+  // const employee = employees.find((employee)=> employee.id === EmployeeId);
+  // const { birthdate} = employee
   return (
-    <section className='section employee'>
+    // <section className='section employee'>
      
       
-      <h2> {birthdate}</h2>
-      <Link to='/EmployeeList' className='btn'>Back employees</Link>
-    </section>
+    //   <h2> {birthdate}</h2>
+    //   <Link to='/EmployeeList' className='btn'>Back employees</Link>
+    // </section>
+    <h1>its there
+      
+    </h1>
+
   );
 };
 
