@@ -14,9 +14,9 @@ import ProducerList from './Pages/ProducerList'
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
 import PrivateRoute from './Helpers/PrivateRoute'
-import {AuthProvider} from './Auth/AuthContect'
+// import {AuthProvider} from './Auth/AuthContect'
 import Supplier from "./Pages/Supplier"
-import SingleSupplier from "./Pages/SingleSupplier"
+import SupplierForm from "./Pages/SupplierForm"
 import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
 import Delivery from "./Pages/Delivery"
 import '../src/Assets/styles/App.css';
@@ -38,7 +38,7 @@ function App() {
           <Route path="Delivery" element={<Delivery />} />
           <Route path="Supplier" element={<SharedSupplierLayout />}>
             <Route index element={<Supplier />} />
-            <Route path=':SupplierId' element={<SingleSupplier />} />
+            <Route path='SupplierForm' element={<SupplierForm />} />
           </Route>
 
 
