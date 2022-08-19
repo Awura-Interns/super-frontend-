@@ -5,6 +5,7 @@ import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap'
 // import employees from "../Helpers/EmployeeData"
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([])
     const [loading, setLoading] = useState(true)
@@ -31,8 +32,11 @@ const EmployeeList = () => {
                 <section class="employee_listing_whole">
                     <h1>Employee listing</h1>
 
-
                     <div class="employee_listing">
+                    <div className='button'>
+                    <NavLink to='/EmployeeList/EmployeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                   
+                    </div>
 
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -74,56 +78,7 @@ const EmployeeList = () => {
                     {/* <Link to={`/EmployeeList/${employee.id}`}>more</Link> */}
 
                 </section>
-                <section>
-
-                    <div class="Employewrapper">
-                        <div class="title">
-                            employee registration
-                        </div>
-                        <form class="form">
-                            <div class="inputfield">
-                                <label>First Name</label>
-                                <input type="text" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Last Name</label>
-                                <input type="text" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Email</label>
-                                <input type="email" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Password</label>
-                                <input type="password" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Confirm password</label>
-                                <input type="password" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Phone</label>
-                                <input type="tel" class="input" />
-                            </div>
-
-                            <div class="inputfield">
-                                <label for="file">Profile Picture</label>
-                                <input type="file" id="file" accept="image/*" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Birthdate</label>
-                                <input type="date" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label for="file">Id Card</label>
-                                <input type="file" id="file" accept="image/*" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <input type="submit" class="btn" />
-                            </div>
-                        </form>
-                    </div>
-                </section>
+                
             </body>
         </>
     )

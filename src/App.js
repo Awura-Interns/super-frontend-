@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Add from './Pages/Add';
 import EmployeeList from './Pages/EmployeeList'
-import SingleEmployeeList from "./Pages/SingleEmployeeList"
+import EmployeeForm from "./Pages/EmployeeForm"
 import SharedEmployeeLayout from "./Pages/SharedEmployeeLayout"
 import Index from './Pages/Index'
 import Error from './Pages/Error'
@@ -46,7 +46,7 @@ function App() {
 
           <Route path="EmployeeList" element={<SharedEmployeeLayout />}>
             <Route index element={<EmployeeList />} />
-            <Route path=':EmployeeId' element={<SingleEmployeeList />} />
+            <Route path='EmployeeForm' element={<EmployeeForm />} />
           </Route>
 
 

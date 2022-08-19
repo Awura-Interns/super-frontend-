@@ -7,7 +7,7 @@ export default function SideNavBar() {
 
 <nav>
     <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
+        {/* <i class='bx bx-menu sidebarBtn'></i> */}
         <span class="dashboard">Dashboard</span>
     </div>
     <div class="search-box">

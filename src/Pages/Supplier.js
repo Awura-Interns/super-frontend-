@@ -24,6 +24,7 @@ const Supplier = () => {
                 setError(true)
             })
     }, [])
+    
     return (
         <>
             <body className="Body">
@@ -54,7 +55,7 @@ const Supplier = () => {
                             <tbody>
                                 {supplier.map((supplier) => {
                                     return (
-
+                                            
                                         <tr key={supplier.id}>
                                             <td>{supplier.id}</td>
                                             <td> <img src={supplier.profile_picture} alt="Mark Zuckerberg"
