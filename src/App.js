@@ -19,6 +19,8 @@ import Supplier from "./Pages/Supplier"
 import SupplierForm from "./Pages/SupplierForm"
 import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
 import Delivery from "./Pages/Delivery"
+import DeliveryForm from "./Pages/DeliveryForm"
+import SharedDeliveryLayout from "./Pages/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
 
 function App() {
@@ -35,7 +37,14 @@ function App() {
 
           <Route index element={<Index />} />
 
-          <Route path="Delivery" element={<Delivery />} />
+          <Route path="Delivery" element={<SharedDeliveryLayout />} >
+              <Route index element={<Delivery />} />
+               <Route path='DeliveryForm' element={<DeliveryForm />} />
+          </Route>
+
+
+
+
           <Route path="Supplier" element={<SharedSupplierLayout />}>
             <Route index element={<Supplier />} />
             <Route path='SupplierForm' element={<SupplierForm />} />

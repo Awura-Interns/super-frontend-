@@ -7,6 +7,7 @@ import * as ReactBootStrap from 'react-bootstrap'
 import "../Assets/styles/ListForm.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 const Delivery = () => {
     const [delivery, setDelivery] = useState([])
     const [loading, setLoading] = useState(true)
@@ -37,7 +38,10 @@ const Delivery = () => {
 
 
                     <div class="delivery_listing">
-
+                    <div className='button'>
+                    <NavLink to='/Delivery/DeliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                   
+                    </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
@@ -78,56 +82,7 @@ const Delivery = () => {
                 </section>
 
 
-                <section>
-
-                    <div class="Employewrapper">
-                        <div class="title">
-                            Delivery registration
-                        </div>
-                        <form class="form">
-                            <div class="inputfield">
-                                <label>First Name</label>
-                                <input type="text" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Last Name</label>
-                                <input type="text" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Email</label>
-                                <input type="email" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Password</label>
-                                <input type="password" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Confirm password</label>
-                                <input type="password" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Phone</label>
-                                <input type="tel" class="input" />
-                            </div>
-
-                            <div class="inputfield">
-                                <label for="file">Profile Picture</label>
-                                <input type="file" id="file" accept="image/*" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label>Birthdate</label>
-                                <input type="date" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <label for="file">Id Card</label>
-                                <input type="file" id="file" accept="image/*" class="input" />
-                            </div>
-                            <div class="inputfield">
-                                <input type="submit" class="btn" />
-                            </div>
-                        </form>
-                    </div>
-                </section>
+                
             </body>
         </>
     )

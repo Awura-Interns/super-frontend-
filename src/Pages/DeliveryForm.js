@@ -1,28 +1,14 @@
-
-import { Link, useParams } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 import "../Assets/styles/button.css"
-const Singleemployee = () => {
-  
-  // const {EmployeeId} = useParams();
-  // console.log(EmployeeId)
-  // const employee = employees.find((employee)=> employee.id === EmployeeId);
-  // const { birthdate} = employee
+ const DeliveryForm = () => {
   return (
-    // <section className='section employee'>
-     
-      
-    //   <h2> {birthdate}</h2>
-    //   <Link to='/EmployeeList' className='btn'>Back employees</Link>
-    // </section>
-    // <h1>its there
-      
-    // </h1>
     <section>
 
                     <div class="Employewrapper">
                         <div class="title">
-                            employee registration
+                            Delivery registration
                         </div>
                         <form class="form">
                             <div class="inputfield">
@@ -65,12 +51,10 @@ const Singleemployee = () => {
                             <div class="inputfield">
                                 <input type="submit" class="btn" />
                             </div>
-                            <Link to='/EmployeeList' className='btn'>Back EmployeeList</Link> 
+                            <Link to='/Delivery' className='btn'>Back Delivery</Link> 
                         </form>
                     </div>
                 </section>
-
-  );
-};
-
-export default Singleemployee;
+  )
+}
+export default DeliveryForm

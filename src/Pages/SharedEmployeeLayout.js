@@ -9,19 +9,13 @@ import "../Assets/styles/ListForm.css"
 //     </>
 //   )
 // }
-const Employee = () => {
+const EM = () => {
   return (
       <><section>
-          
-
-        
-       
-
-
-          <Outlet />
+       <Outlet />
       </section>
 
       </>
   );
 };
-export default Employee;
+export default EM;
