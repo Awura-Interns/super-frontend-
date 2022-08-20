@@ -57,7 +57,7 @@ const EmployeeList = () => {
 
                                         <tr key={employee.id}>
                                             <td>{employee.id}</td>
-                                            <td> <img src={employee.profile_picture} alt="Mark Zuckerberg"
+                                            <td> <img className="image_profile" src={employee.profile_picture} alt="Mark Zuckerberg"
                                                 class="picture" /> </td>
                                             <td>{employee.user.first_name} {employee.user.last_name}</td>
                                             <td>{employee.user.email}</td>

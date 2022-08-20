@@ -11,3 +11,7 @@
     overflow-y: scroll;
   
   }
+  .image_profile{
+    max-width: 100%;
+    height: auto
+  }
