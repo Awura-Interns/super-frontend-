@@ -15,9 +15,9 @@ import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
 import PrivateRoute from './Helpers/PrivateRoute'
 // import {AuthProvider} from './Auth/AuthContect'
-import Supplier from "./Pages/Supplier"
-import SupplierForm from "./Pages/SupplierForm"
-import SharedSupplierLayout from "./Pages/SharedSupplierLayout"
+import Supplier from "./Pages/SupplierAdmin/Supplier"
+import SupplierForm from "./Pages/SupplierAdmin/SupplierForm"
+import SharedSupplierLayout from "./Pages/SupplierAdmin/SharedSupplierLayout"
 import Delivery from "./Pages/Delivery"
 import DeliveryForm from "./Pages/DeliveryForm"
 import SharedDeliveryLayout from "./Pages/SharedDeliveryLayout"

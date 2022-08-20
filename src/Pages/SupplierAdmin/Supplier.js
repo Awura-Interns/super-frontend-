@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import * as ReactBootStrap from 'react-bootstrap'
-import "../Assets/styles/Supplier.css"
-import "../Assets/styles/button.css"
+import "../../Assets/styles/Supplier.css"
+import "../../Assets/styles/button.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 const Supplier = () => {
