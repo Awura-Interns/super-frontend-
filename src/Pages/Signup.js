@@ -62,7 +62,7 @@ export default function Signup() {
           <p>Agreed to terms and conditions</p>
        </div> 
       <div className="inputfield">
-        <input type="submit" value="Register" className="btn"/>
+        <input type="submit" defaultValue="Register" className="btn"/>
       </div>
       <p> have an account? <Link to="">log in</Link></p>
     </div>

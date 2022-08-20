@@ -1,116 +1,57 @@
-import React from 'react'
-import '../Assets/styles/Navbar.css';
-import {Link}from'react-router-dom'
-
-function Navbar() {
-    return (
-      <header className="header">
-      <div className="header-1">
-          <Link to="#" className="logo"> <i className="fas fabook"></i> super_link </Link>
-          <div action="" className="search">
-              <input type="search" name="" placeholder="search here..." id="search-box"/>
-              <label for="search-box" className="fas fa-search"></label>
-          </div>
-          <div className="icons">
-              <div id="search-btn" className="fas fa-search"></div>
-              <Link to="#" className="fas fa-heart"></Link>
-              <Link to="#" className="fas fa-shopping-cart"></Link>
-              <div id="login-btn" onclick="div_show()" className="fas fa-user"></div>
-          </div>
-      </div>
-      <div className="header-2">
-          <nav className="navbar">
-              <h1>eheloch</h1>
-          </nav>
-      </div>
-  </header>
-    );
-  }
-  
-  export default Navbar;
-  
-/*import React, { useState, useEffect } from 'react';
-// eslint-disable-next-line
-import { Button } from '../Button';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-
-
-function Navbar() {
-  const [click, setClick] = useState(false);
-  const [Button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener('resize', showButton);
-
+import React from "react";
+import "../Assets/styles/Navbar.css";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
+export default function Navbar() {
   return (
-    <>
-      <nav classNameNameName='navbar'>
-        <div classNameNameName='navbar-container'>
-          <Link to='/' classNameNameName='navbar-logo' onClick={closeMobileMenu}>
-            super_link
-            <i classNameName='fab fa-typo3' />
-          </Link>
-          <div classNameNameName='menu-icon' onClick={handleClick}>
-            <i classNameNameName={click ? 'fas fa-times' : 'fas fa-bars'} />
+    <header className="header">
+      <div className="header-1">
+        <Link to="/" className="logo">
+          {" "}
+          <i className="fas fabook"></i> super_link{" "}
+        </Link>
+        {/* <div className="flex items-center bg-red-900">
+          <input
+            type="text"
+            placeholder="search here..."
+            id="search-box"
+          />
+          <Icon icon="akar-icons:search" />
+        </div> */}
+        {/* <div className="flex bg-red-900">
+          <div className="bg-red-900">
+            <input type="text" placeholder="wth" />
           </div>
-          <ul classNameNameName={click ? 'nav-menu active' : 'nav-menu'}>
-            <li classNameNameName='nav-item'>
-              <Link to='/' classNameNameName='nav-links' onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
-            <li classNameNameName='nav-item'>
-              <Link
-                to='/services'
-                classNameNameName='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Services
-              </Link>
-            </li>
-            <li classNameNameName='nav-item'>
-              <Link
-                to='/products'
-                classNameNameName='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Products
-              </Link>
-            </li>
+          <Icon icon="akar-icons:search" />
+        </div> */}
 
-            <li>
-              <Link
-                to='/sign-up'
-                classNameNameName='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-          
-          
-           <button buttonStyle='btn--outline'>SIGN UP</button>
-           <Button/> 
+<form class="flex items-center">   
+    <label for="simple-search" class="sr-only">Search</label>
+    <div class="relative w-full">
+        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
         </div>
-      </nav>
-    </>
+        <input type="text" id="simple-search" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required=""/>
+    </div>
+    <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <span class="sr-only">Search</span>
+    </button>
+</form>
+
+        <div className="icons flex items-center gap-10">
+          <Link to="#">
+            <Icon icon="bx:home-alt-2" className="headerActionIcon" />
+          </Link>
+          <Icon icon="eva:shopping-cart-outline" className="headerActionIcon" />
+          <Icon
+            id="login-btnn"
+            // onClick={div_show}
+            icon="ant-design:user-outlined"
+            className="headerActionIcon"
+          />
+        </div>
+      </div>
+    </header>
   );
 }
-
-export default Navbar;*/

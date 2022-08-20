@@ -3,22 +3,22 @@ import '../Assets/styles/signin.css'
 import {Link}from'react-router-dom'
 export default function Signin() {
   return (
-    <div class="wrapper">
-        <div class="title">
+    <div className="wrapper">
+        <div className="title">
             Registration Form
         </div>
-        <div class="form">
+        <div className="form">
 
-            <div class="inputfield">
+            <div className="inputfield">
                 <label>Email Address</label>
-                <input type="text" class="input"/>
+                <input type="text" className="input"/>
             </div>
-            <div class="inputfield">
+            <div className="inputfield">
                 <label>Password</label>
-                <input type="password" class="input"/>
+                <input type="password" className="input"/>
             </div>
-            <div class="inputfield">
-                <input type="submit" value="Register" class="btn"/>
+            <div className="inputfield">
+                <input type="submit" defaultValue="Register" className="btn"/>
             </div>
             <p>don't have an account? <Link to="">register now</Link></p>
         </div>
