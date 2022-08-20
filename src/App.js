@@ -13,14 +13,14 @@ import SharedCartLayout from './Pages/CartAdmin/SharedCartLayout'
 import ProducerList from './Pages/ProducerListAdmin/ProducerList'
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
-import PrivateRoute from './Helpers/PrivateRoute'
+// import PrivateRoute from './Helpers/PrivateRoute'
 // import {AuthProvider} from './Auth/AuthContect'
 import Supplier from "./Pages/SupplierAdmin/Supplier"
 import SupplierForm from "./Pages/SupplierAdmin/SupplierForm"
 import SharedSupplierLayout from "./Pages/SupplierAdmin/SharedSupplierLayout"
-import Delivery from "./Pages/Delivery"
-import DeliveryForm from "./Pages/DeliveryForm"
-import SharedDeliveryLayout from "./Pages/SharedDeliveryLayout"
+import Delivery from "./Pages/DeliveryAdmin/Delivery"
+import DeliveryForm from "./Pages/DeliveryAdmin/DeliveryForm"
+import SharedDeliveryLayout from "./Pages/DeliveryAdmin/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
 
 function App() {

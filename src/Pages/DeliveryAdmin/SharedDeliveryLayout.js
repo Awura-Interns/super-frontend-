@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom';
 
 
-import "../Assets/styles/ListForm.css"
+import "../../Assets/styles/ListForm.css"
  const SharedDLayout = () => {
   return (
     <><section>

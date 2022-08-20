@@ -1,10 +1,10 @@
 
-import "../Assets/styles/global.css"
-import "../Assets/styles/SideNavBar.css"
-import "../Assets/styles/ListForm.css"
-import "../Assets/styles/delivery.css"
+import "../../Assets/styles/global.css"
+import "../../Assets/styles/SideNavBar.css"
+import "../../Assets/styles/ListForm.css"
+import "../../Assets/styles/delivery.css"
 import * as ReactBootStrap from 'react-bootstrap'
-import "../Assets/styles/ListForm.css"
+import "../../Assets/styles/ListForm.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
