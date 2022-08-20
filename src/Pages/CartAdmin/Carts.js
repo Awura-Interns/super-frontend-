@@ -1,6 +1,6 @@
-import "../Assets/styles/Carts.css"
+import "../../Assets/styles/Carts.css"
 import { Link } from 'react-router-dom';
-import carts from '../Helpers/CartData';
+import carts from '../../Helpers/CartData';
 import * as ReactBootStrap from 'react-bootstrap'
 const Carts = () => {
   return (

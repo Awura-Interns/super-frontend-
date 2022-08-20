@@ -1,6 +1,6 @@
 
 import { Link, useParams } from 'react-router-dom';
-import carts from '../Helpers/CartData';
+import carts from '../../Helpers/CartData';
 
 const SingleCart = () => {
   
