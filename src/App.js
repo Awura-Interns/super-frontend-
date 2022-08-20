@@ -10,7 +10,13 @@ import OrderList from './Pages/OrderList'
 import Cart from './Pages/CartAdmin/Carts'
 import SingleCart from './Pages/CartAdmin/SingleCart'
 import SharedCartLayout from './Pages/CartAdmin/SharedCartLayout'
-import ProducerList from './Pages/ProducerListAdmin/ProducerList'
+
+
+
+import Producer from './Pages/ProducerListAdmin/Producer'
+import ProducerForm from './Pages/ProducerListAdmin/ProducerForm'
+import SharedProducerLayout from './Pages/ProducerListAdmin/SharedProducerLayout'
+
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
 // import PrivateRoute from './Helpers/PrivateRoute'
@@ -59,20 +65,26 @@ function App() {
           </Route>
 
 
+
+          
+          <Route path="Producer" element={<SharedProducerLayout />}>
+            <Route index element={<Producer />} />
+            <Route path='ProducerForm' element={<ProducerForm />} />
+          </Route>
+
+
           <Route path="carts" element={<SharedCartLayout />} >
 
             <Route index element={<Cart />} />
             <Route path=':cartId' element={<SingleCart />} />
           </Route>
 
-
-
-
           <Route path="Add" element={<Add />} />
           <Route path="MyProfile" element={<MyProfile />} />
           <Route path="OrderList" element={<OrderList />} />
           <Route path="NoPage" element={<NoPage />} />
-          <Route path="ProducerList" element={<ProducerList />} />
+
+
 
 
 

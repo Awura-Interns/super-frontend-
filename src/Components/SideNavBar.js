@@ -20,7 +20,7 @@ export default function SideNavBar() {
 
                     <li>
 
-                        <NavLink to='/ProducerList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Producer List</span></NavLink>
+                        <NavLink to='/Producer' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Producer List</span></NavLink>
                     </li>
                     <li>
 
