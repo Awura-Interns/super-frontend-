@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={
           <SharedLayout />
        
-        }>
+            }>
 
           <Route index element={<Index />} />
 
