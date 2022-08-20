@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Add from './Pages/Add';
-import EmployeeList from './Pages/EmployeeList'
-import EmployeeForm from "./Pages/EmployeeForm"
-import SharedEmployeeLayout from "./Pages/SharedEmployeeLayout"
+import EmployeeList from './Pages/EmployeeListAdmin/EmployeeList'
+import EmployeeForm from "./Pages/EmployeeListAdmin/EmployeeForm"
+import SharedEmployeeLayout from "./Pages/EmployeeListAdmin/SharedEmployeeLayout"
 import Index from './Pages/Index'
 import Error from './Pages/Error'
 import MyProfile from './Pages/MyProfile'

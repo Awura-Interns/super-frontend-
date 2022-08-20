@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom';
-import "../Assets/styles/employee.css"
+import "../../Assets/styles/employee.css"
 
 import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap'

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import React from 'react'
 
-import "../Assets/styles/ListForm.css"
+import "../../Assets/styles/ListForm.css"
 // export default function SharedEmployeeLayout() {
 //   return (
 //     <>

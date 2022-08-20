@@ -1,7 +1,7 @@
 
 import { Link, useParams } from 'react-router-dom';
 
-import "../Assets/styles/button.css"
+import "../../Assets/styles/button.css"
 const Singleemployee = () => {
   
   // const {EmployeeId} = useParams();
