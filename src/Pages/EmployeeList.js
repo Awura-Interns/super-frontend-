@@ -57,14 +57,14 @@ const EmployeeList = () => {
 
                                         <tr key={employee.id}>
                                             <td>{employee.id}</td>
-                                            <td> <img className="image_profile" src={employee.profile_picture} alt="Mark Zuckerberg"
-                                                class="picture" /> </td>
+                                            <td> <img className="image_profile_picture" src={employee.profile_picture} alt="Mark Zuckerberg"
+                                                 /> </td>
                                             <td>{employee.user.first_name} {employee.user.last_name}</td>
                                             <td>{employee.user.email}</td>
                                             <td>{employee.user.phone}</td>
                                             <td>{employee.birthdate}</td>
                                             <td><img src={employee.identification_card} alt={employee.user.first_name}
-                                                class="picture" /></td>
+                                                className="image_profile_picture" /></td>
 
                                         </tr>
                                     )

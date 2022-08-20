@@ -2,7 +2,7 @@
     margin-top:-3rem;
   }
   .employee_listing{
-    width: 150vh;
+    width: 125vh;
     height: 70vh;
     overflow: hidden;
     overflow-x: scroll;
@@ -11,7 +11,7 @@
     overflow-y: scroll;
   
   }
-  .image_profile{
+  .image_profile_picture{
     max-width: 100%;
     height: auto
-  }
+}
