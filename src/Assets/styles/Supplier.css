@@ -16,3 +16,7 @@
     max-width: 100%;
     height: auto
 }
+.image_profile_picture:hover{
+    transform: scale(5);
+    overflow:visible;
+  }

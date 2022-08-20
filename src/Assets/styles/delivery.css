@@ -2,12 +2,20 @@
     margin-top:-3rem;
 }
 .delivery_listing{
-    width: 150vh;
+    width: 120vh;
     height: 70vh;
     overflow: hidden;
     overflow-x: scroll;
-    margin-left: 15rem;
+    margin-left: 10rem;
     margin-top: 1rem;
     overflow-y: scroll;
 
 }
+.image_profile_picture{
+    max-width: 100%;
+    height: auto;
+    max-height: min-content;
+}
+.image_profile_picture:hover{
+    transform: scale(5);
+    overflow:visible;  }

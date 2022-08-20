@@ -62,13 +62,13 @@ const Delivery = () => {
                                         <tr key={delivery.id}>
                                             <td>{delivery.id}</td>
                                             <td> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
-                                                class="picture" /> </td>
+                                                 className="image_profile_picture"/> </td>
                                             <td>{delivery.user.first_name} {delivery.user.last_name}</td>
                                             <td>{delivery.user.email}</td>
                                             <td>{delivery.user.phone}</td>
                                             <td>{delivery.birthdate}</td>
                                             <td><img src={delivery.identification_card} alt="Mark Zuckerberg"
-                                                class="picture" /></td>
+                                                className="image_profile_picture" /></td>
 
                                         </tr>
                                     )
