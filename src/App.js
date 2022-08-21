@@ -19,8 +19,7 @@ import SharedProducerLayout from './Pages/ProducerListAdmin/SharedProducerLayout
 
 import SharedLayout from './Pages/SharedLayout'
 import NoPage from './Pages/NoPage'
-// import PrivateRoute from './Helpers/PrivateRoute'
-// import {AuthProvider} from './Auth/AuthContect'
+
 import Supplier from "./Pages/SupplierAdmin/Supplier"
 import SupplierForm from "./Pages/SupplierAdmin/SupplierForm"
 import SharedSupplierLayout from "./Pages/SupplierAdmin/SharedSupplierLayout"
@@ -28,61 +27,68 @@ import Delivery from "./Pages/DeliveryAdmin/Delivery"
 import DeliveryForm from "./Pages/DeliveryAdmin/DeliveryForm"
 import SharedDeliveryLayout from "./Pages/DeliveryAdmin/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
+import PrivateRoute from './Helpers/PrivateRoute'
+// import {AuthProvider} from './Auth/AuthContect'
 
 function App() {
   return (
 
-    <BrowserRouter>
+  
       <Routes>
         {/* <AuthProvider> */}
-
-        <Route path="/" element={
-          <SharedLayout />
-       
-            }>
+        <Route path="/" element={<SharedLayout />}>
 
           <Route index element={<Index />} />
 
-          <Route path="Delivery" element={<SharedDeliveryLayout />} >
-              <Route index element={<Delivery />} />
-               <Route path='DeliveryForm' element={<DeliveryForm />} />
+
+
+          <Route path="Delivery" element={
+            <PrivateRoute>
+              <SharedDeliveryLayout />
+            </PrivateRoute>
+          } >
+
+            <Route index element={<PrivateRoute><Delivery /></PrivateRoute>} />
+            <Route path='DeliveryForm' element={<PrivateRoute><DeliveryForm /></PrivateRoute>} />
           </Route>
-
-
-
-
-          <Route path="Supplier" element={<SharedSupplierLayout />}>
-            <Route index element={<Supplier />} />
-            <Route path='SupplierForm' element={<SupplierForm />} />
-          </Route>
-
-
-
-
-          <Route path="EmployeeList" element={<SharedEmployeeLayout />}>
-            <Route index element={<EmployeeList />} />
-            <Route path='EmployeeForm' element={<EmployeeForm />} />
-          </Route>
-
-
 
           
-          <Route path="Producer" element={<SharedProducerLayout />}>
-            <Route index element={<Producer />} />
-            <Route path='ProducerForm' element={<ProducerForm />} />
+
+
+
+
+          <Route path="Supplier" element={<PrivateRoute><SharedSupplierLayout /></PrivateRoute>}>
+            <Route index element={<PrivateRoute><Supplier /></PrivateRoute>} />
+            <Route path='SupplierForm' element={<PrivateRoute><SupplierForm /></PrivateRoute>} />
           </Route>
 
 
-          <Route path="carts" element={<SharedCartLayout />} >
 
-            <Route index element={<Cart />} />
-            <Route path=':cartId' element={<SingleCart />} />
+
+          <Route path="EmployeeList" element={<PrivateRoute><SharedEmployeeLayout /></PrivateRoute>}>
+            <Route index element={<PrivateRoute><EmployeeList /></PrivateRoute>} />
+            <Route path='EmployeeForm' element={<PrivateRoute><EmployeeForm /></PrivateRoute>} />
           </Route>
 
-          <Route path="Add" element={<Add />} />
-          <Route path="MyProfile" element={<MyProfile />} />
-          <Route path="OrderList" element={<OrderList />} />
-          <Route path="NoPage" element={<NoPage />} />
+
+
+
+          <Route path="Producer" element={<PrivateRoute><SharedProducerLayout /></PrivateRoute>}>
+            <Route index element={<PrivateRoute><Producer /></PrivateRoute>} />
+            <Route path='ProducerForm' element={<PrivateRoute><ProducerForm /></PrivateRoute>} />
+          </Route>
+
+
+          <Route path="carts" element={<PrivateRoute><SharedCartLayout /></PrivateRoute>} >
+
+            <Route index element={<PrivateRoute><Cart /></PrivateRoute>} />
+            <Route path=':cartId' element={<PrivateRoute><SingleCart /></PrivateRoute>} />
+          </Route>
+
+          <Route path="Add" element={<PrivateRoute><Add /></PrivateRoute>} />
+          <Route path="MyProfile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
+          <Route path="OrderList" element={<PrivateRoute><OrderList /></PrivateRoute>} />
+          <Route path="NoPage" element={<PrivateRoute><NoPage /></PrivateRoute>} />
 
 
 
@@ -94,7 +100,7 @@ function App() {
         </Route>
         {/* </AuthProvider> */}
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 
