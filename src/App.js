@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Add from './Pages/Add';
 import EmployeeList from './Pages/EmployeeListAdmin/EmployeeList'
 import EmployeeForm from "./Pages/EmployeeListAdmin/EmployeeForm"
@@ -28,14 +28,14 @@ import DeliveryForm from "./Pages/DeliveryAdmin/DeliveryForm"
 import SharedDeliveryLayout from "./Pages/DeliveryAdmin/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
 import PrivateRoute from './Helpers/PrivateRoute'
-// import {AuthProvider} from './Auth/AuthContect'
+import {AuthProvider} from './Auth/AuthContect'
 
 function App() {
   return (
 
   
+        <AuthProvider>
       <Routes>
-        {/* <AuthProvider> */}
         <Route path="/" element={<SharedLayout />}>
 
           <Route index element={<Index />} />
@@ -98,8 +98,8 @@ function App() {
 
           <Route path="*" element={<Error />} />
         </Route>
-        {/* </AuthProvider> */}
       </Routes>
+        </AuthProvider>
     
   );
 }

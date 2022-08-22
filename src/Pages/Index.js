@@ -3,12 +3,12 @@ import Modal from "../Components/Modal";
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/IndexPage.css"
-import Login from "../Components/Login"
-// import AuthContext from "../Auth/AuthContect"
+// import Login from "../Components/Login"
+import AuthContext from "../Auth/AuthContect"
 import "../Assets/styles/LoginForm.css"
 const Index = () => {
   
-  // let {loginUser} =useContext(AuthContext)
+  let {loginUser} =useContext(AuthContext)
   return (
 
     <body>
@@ -22,10 +22,10 @@ const Index = () => {
         <div class="contact">
             <p>Log in </p>
 
-            {/* <form onSubmit={loginUser} action="" class="contact-form" autocomplete="off" method=""> */}
-            <form action="" class="contact-form" autocomplete="off" method="">
+            <form onSubmit={loginUser} class="contact-form" autocomplete="off" method="">
+            {/* <form action="" class="contact-form" autocomplete="off" method=""> */}
                 <div class="input-group first">
-                    <input id="user" required="" type="text" name="text" class="input" />
+                    <input id="email" required="" type="email" name="email" class="input" />
                     <label class="user-label">Email</label>
                 </div>
                 <div class="input-group">
@@ -38,7 +38,7 @@ const Index = () => {
 
 
                 <div class="btnn">
-                    <button class="cta" id="btnn">
+                    <button class="cta" type="submit" id="btnn">
                         <span class="hover-underline-animation"> Login </span>
                         <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10"
                             viewBox="0 0 46 16">
@@ -47,7 +47,7 @@ const Index = () => {
                                 transform="translate(30)"></path>
                         </svg>
                     </button>
-
+                    
 
                 </div>
             </form>
