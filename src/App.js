@@ -4,8 +4,8 @@ import Profile from "./Pages/Profile";
 import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
 import Help from "./Pages/Help";
-// import Account from "./Pages/Account"
-import Cart from "./Pages/Cart";
+
+
 
 import Home from "./Pages/Home";
 import Modal from "./Components/Modal";
@@ -29,10 +29,10 @@ function App() {
         <Route path="Signin" element={<Signin />} />
         <Route path="Help" element={<Help />} />
         <Route path="Signup" element={<Signup />} />
-        {/* <Route path="Account" element={<Account/>}/> */}
-        <Route path="Cart" element={<Cart />} />
+       
+     
         <Route path="products/:id" element={<SingleCart />} />
-        {/* <Route path="Cards" element={<Cards/>}/> */}
+      
         
         <Route path="Modal" element={<Modal />} />
            </Route>
@@ -42,7 +42,7 @@ function App() {
 
       </Route>
     </Routes>
-    // <>Cool</>
+   
   );
 }
 

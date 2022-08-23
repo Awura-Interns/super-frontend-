@@ -1,8 +1,8 @@
-import Cart from "./Cart";
+
 import "../Assets/styles/App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Amazon from "./amazon";
+
 import Navbar from "../Components/Navbar";
 import ItemCard from "../Components/item-card";
 import items from "../local-data/items.json";

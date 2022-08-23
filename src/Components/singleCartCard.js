@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./singleitemcard.css"
+import "../Assets/styles/singleitemcard.css"
 
 export default function SingleItemCard({ product,trigger,settrigger }) {
 
