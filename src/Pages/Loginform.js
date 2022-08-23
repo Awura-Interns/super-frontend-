@@ -12,12 +12,10 @@ const Loginform = () => {
   return (
 
     <body>
-     
-      <h1></h1>
-      <div className="form">
+           <div className="form">
      
 
-<div class="theme-container grow">
+<div class="theme-container grow" style={{height: '100vh', marginTop: 'auto', marginBottom: 'auto'}}>
     <div class="contact-con">
         <div class="contact">
             <p>Log in </p>

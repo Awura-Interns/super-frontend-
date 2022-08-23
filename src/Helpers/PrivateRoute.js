@@ -1,9 +1,10 @@
+import { useContext } from "react";
 import { Route, Navigate } from "react-router-dom";
+import AuthContext from "../Auth/AuthContect";
 
 const PrivateRoute = ({children, ...rest})=>{
-    const  authenticated =false;
-    console.log('itworks the priver');
-    if(!authenticated){
+    const { user } = useContext(AuthContext)
+    if(user === null){
         return(
             <Navigate to="/Loginform"/>
         )

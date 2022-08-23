@@ -18,7 +18,11 @@
 }
 .image_profile_picture:hover{
   transform: scale(5);
-    overflow:visible;
     overflow-x:visible;
     overflow-y: visible;
+    z-index: 1000;
+}
+.image_profile_picture:hover .employee_listing{
+  overflow-x: visible;
+  overflow-y: visible;
 }
