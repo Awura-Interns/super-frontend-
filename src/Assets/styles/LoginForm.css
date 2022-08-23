@@ -53,9 +53,7 @@ body {
     opacity: .9;
     z-index: 1;
 }
-.dark-mode-checkbox:checked~.theme-container .msg{
-    display: none;
-}
+
 .theme-container .msg{
     position: absolute;
 	 transition: var(--transi);
@@ -101,10 +99,7 @@ body {
             
         }
 }
-.dark-mode-checkbox:checked~.theme-container .cat {
-    display:none;
 
-}
 
 .theme-container .contact-con {
     transition: var(--transi);
@@ -116,8 +111,9 @@ body {
     border-radius: 50px;
     aspect-ratio: 1/1;
     width: 500px;
-    box-shadow: 20px 20px 60px #acacac,
-        -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px 1px #acacac,
+        -20px -20px 60px #ffffff,
+        0 4px 2px -2px #acacac;;
     border: 1px solid #fff;
 }
 
@@ -145,9 +141,9 @@ body {
 
 .input {
     border: solid 1.5px #9e9e9e;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 1rem 1rem;
     background: none;
-    padding: 1rem;
+    padding: 1.5rem;
     font-size: 1rem;
     transition: var(--transi);
 }
@@ -195,7 +191,7 @@ input:valid~label {
 
 .cta span,
 .contact p {
-    padding-bottom: 7px;
+    padding-bottom: 5px;
     letter-spacing: 4px;
     font-size: 13px;
     padding-right: 15px;
@@ -244,86 +240,19 @@ input:valid~label {
     transform-origin: bottom left;
 }
 
-.dark-mode-checkbox:checked~.theme-container {
-    transition: var(--transi);
-    /* Override the default theme */
-    --c-text: var(--c-dark-text);
-    --c-background: var(--c-dark-background);
-    --c-interactive: var(--c-dark-interactive);
-    background: #05012a;
-}
 
-.dark-mode-checkbox~.theme-container .link {
-    margin-top: 2rem;
-    border: 1px solid;
-    padding: 10px;
-    border-radius: 10px;
-    text-transform: uppercase;
-}
 
-.dark-mode-checkbox:checked~.theme-container .link a {
-    color: cyan;
-}
 
-.dark-mode-checkbox~.theme-container .link a {
-    color: var(--c-light-text);
-}
 
-.dark-mode-checkbox:checked~.theme-container .hover-underline-animation {
-    color: #ffffff;
-}
 
-.dark-mode-checkbox:checked~.theme-container .hover-underline-animation:after {
-    background: -webkit-gradient(linear, left top, right top, from(#0ff), to(#04faa4));
-    background: linear-gradient(90deg, #0ff, #04faa4);
-}
 
-.dark-mode-checkbox:checked~.theme-container #arrow-horizontal {
-    background: -webkit-gradient(linear, left top, right top, from(#0ff), to(#04faa4));
-    background: linear-gradient(90deg, #0ff, #04faa4);
-    border-radius: 5px;
-}
 
-.dark-mode-checkbox:checked~.theme-container .contact-con {
-    border-radius: 60px;
-    -webkit-box-shadow: 50px 50px 100px #020011,
-        -50px -50px 100px #080243;
-    box-shadow: 50px 50px 100px #020011,
-        -50px -50px 100px #080243;
-    border: 1px solid #05012d;
-}
-
-.dark-mode-checkbox:checked~.theme-container .input:focus,
-.dark-mode-checkbox:checked~.theme-container input:valid {
-    border: 1.5px solid var(--c-text);
-}
-
-.dark-mode-checkbox:checked~.theme-container input {
-    color: var(--c-text);
-}
-
-.dark-mode-checkbox:checked~.theme-container .input:focus~label,
-.dark-mode-checkbox:checked~.theme-container input:valid~label {
-    background: #05012a;
-    color: var(--c-text);
-}
-
-.dark-mode-label {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: 1px solid var(--c-light-text);
-    padding: 5px;
-}
 
 a {
     color: var(--c-interactive);
 }
 
-.dark-mode-checkbox:checked~.theme-container .dark-mode-label::before {
-    content: "\2611";
-}
+
 
 .visually-hidden {
     position: absolute;

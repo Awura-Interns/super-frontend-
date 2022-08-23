@@ -45,17 +45,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  let logoutUser = () => {
-    setAuthTokens(null);
-    setUser(null);
-    localStorage.removeItem("authTokens");
-    history("/");
-  };
+  // let logoutUser = () => {
+  //   setAuthTokens(null);
+  //   setUser(null);
+  //   localStorage.removeItem("authTokens");
+  //   history("/");
+  // };
 
   let contextData = {
     user: user,
     loginUser: loginUser,
-    logoutUser: logoutUser,
+    // logoutUser: logoutUser,
   };
 
   return (

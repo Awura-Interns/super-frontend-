@@ -5,7 +5,7 @@ const PrivateRoute = ({children, ...rest})=>{
     console.log('itworks the priver');
     if(!authenticated){
         return(
-            <Navigate to="/"/>
+            <Navigate to="/Loginform"/>
         )
     }
     return children

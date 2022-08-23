@@ -28,79 +28,52 @@ import DeliveryForm from "./Pages/DeliveryAdmin/DeliveryForm"
 import SharedDeliveryLayout from "./Pages/DeliveryAdmin/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
 import PrivateRoute from './Helpers/PrivateRoute'
-import {AuthProvider} from './Auth/AuthContect'
+
+import Loginform from './Pages/Loginform'
+import { AuthProvider } from './Auth/AuthContect'
 
 function App() {
   return (
 
-  
-        <AuthProvider>
+
+    <AuthProvider>
       <Routes>
+        <Route path="/Loginform" element={<Loginform />} />
         <Route path="/" element={<SharedLayout />}>
-
-          <Route index element={<Index />} />
-
-
-
+          <Route index element={<PrivateRoute><Index /></PrivateRoute>} />
+          <Route path="NoPage" element={<PrivateRoute><NoPage /></PrivateRoute>} />
           <Route path="Delivery" element={
             <PrivateRoute>
               <SharedDeliveryLayout />
             </PrivateRoute>
           } >
-
             <Route index element={<PrivateRoute><Delivery /></PrivateRoute>} />
             <Route path='DeliveryForm' element={<PrivateRoute><DeliveryForm /></PrivateRoute>} />
           </Route>
-
-          
-
-
-
-
           <Route path="Supplier" element={<PrivateRoute><SharedSupplierLayout /></PrivateRoute>}>
             <Route index element={<PrivateRoute><Supplier /></PrivateRoute>} />
             <Route path='SupplierForm' element={<PrivateRoute><SupplierForm /></PrivateRoute>} />
           </Route>
-
-
-
-
           <Route path="EmployeeList" element={<PrivateRoute><SharedEmployeeLayout /></PrivateRoute>}>
             <Route index element={<PrivateRoute><EmployeeList /></PrivateRoute>} />
             <Route path='EmployeeForm' element={<PrivateRoute><EmployeeForm /></PrivateRoute>} />
           </Route>
-
-
-
-
           <Route path="Producer" element={<PrivateRoute><SharedProducerLayout /></PrivateRoute>}>
             <Route index element={<PrivateRoute><Producer /></PrivateRoute>} />
             <Route path='ProducerForm' element={<PrivateRoute><ProducerForm /></PrivateRoute>} />
           </Route>
-
-
           <Route path="carts" element={<PrivateRoute><SharedCartLayout /></PrivateRoute>} >
-
             <Route index element={<PrivateRoute><Cart /></PrivateRoute>} />
             <Route path=':cartId' element={<PrivateRoute><SingleCart /></PrivateRoute>} />
           </Route>
-
           <Route path="Add" element={<PrivateRoute><Add /></PrivateRoute>} />
           <Route path="MyProfile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
           <Route path="OrderList" element={<PrivateRoute><OrderList /></PrivateRoute>} />
-          <Route path="NoPage" element={<PrivateRoute><NoPage /></PrivateRoute>} />
-
-
-
-
-
-
-
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
-        </AuthProvider>
-    
+    </AuthProvider>
+
   );
 }
 

@@ -1,6 +1,8 @@
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/Add.css"
+import SideNavBar from '../Components/SideNavBar'
+import  Top from "../Components/Top"
 const Add = () => {
   return (
 
