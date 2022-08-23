@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import "./singleitemcard.css"
 
-export default function SingleItemCard({ product }) {
+export default function SingleItemCard({ product,trigger,settrigger }) {
+
+
+
+
   return (
-    <div className="flex w-full max-w-[600px] bg-gray-700 py-10 px-14 rounded-lg shadow-lg justify-around items-center">
+    <>{trigger?
+      <div className="outerpopout">
+        <div className="flex w-full max-w-[600px] bg-gray-700 py-10 px-14 rounded-lg shadow-lg justify-around items-center">
       <img src={product.image} className="w-[200px] h-[200px]" />
       <div className="text-2xl flex flex-col h-full justify-around text-gray-300">
         <p>{product.description}</p>
@@ -26,7 +33,9 @@ export default function SingleItemCard({ product }) {
             Add to List
           </button>
         </Link>
+        <button onClick={()=>settrigger(!trigger)}>return</button>
       </div>
     </div>
+      </div>:''}</>
   );
 }

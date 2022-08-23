@@ -8,6 +8,7 @@ import { getProductById } from "../Helpers/products";
 
 export default function SingleCart() {
   const params = useParams();
+  const [truth,settruth]=useState(false)
   const [product,setProduct] = useState(null)
   const [error,setError] = useState('')
   const [pageContent, setPageContent] = useState(
@@ -44,7 +45,7 @@ export default function SingleCart() {
             {product.product_name}
           </div>
           <div className="w-screen px-20 flex justify-center py-14">
-            <SingleItemCard product={product} />
+            <SingleItemCard trigger={truth} product={product} />
           </div>
       </main>
     </div>

@@ -1,14 +1,33 @@
 import Cart from "./Cart";
 import "../Assets/styles/App.css";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Amazon from "./amazon";
 import Navbar from "../Components/Navbar";
 import ItemCard from "../Components/item-card";
 import items from "../local-data/items.json";
 
-const UPP = () => {
+const Home = () => {
+  const [data,setdata]=useState([])
+  // useEffect(()=>{
+  //   const item=axios.get("http/hsdffa;ldj").then(res=>{
+  //      data=res.data
+
+  //   }).catch(err=>
+  //      data="error")
+  // })
+  // const mesale=(id,name)=>{
+  //   axios.post('http',{
+  //     id:`${id}`,
+  //     name:`${name}`
+  //   })
+  //   axios.delete('httpjf;lkjf/3')
+  // }
+
+
   console.log("hello");
   const [show, setShow] = useState(true);
+  const [truth,settruth]=useState(false);
   const [cart, setCart] = useState([]);
 
   const handleClick = (item) => {
@@ -38,10 +57,15 @@ const UPP = () => {
       <div className="w-screen px-20 flex justify-center py-14">
         <div className="flex bg-gray justify-around max-w-[800px] gap-10 flex-wrap">
           {items.map((item, index) => (
-            <ItemCard item={item} key={index} />
+            // <SingleItemCard trigger={truth} product={product} />
+            <ItemCard   item={item} key={index} />
           ))}
         </div>
       </div>
+
+
+
+
       {/* {show ? (
           <Amazon handleClick={handleClick} />
         ) : (
@@ -51,4 +75,4 @@ const UPP = () => {
   );
 };
 
-export default UPP;
+export default Home;

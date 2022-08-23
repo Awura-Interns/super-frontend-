@@ -22,8 +22,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import createSagaMiddleware from 'redux-saga';
-const SagaMiddleware=createSagaMiddleware();
+
+
 
 const container = document.getElementById('root');
 const root = createRoot(container);

@@ -13,7 +13,7 @@ export default function landingpage() {
             <i className="fas fabook"></i> super_link{" "}
           </a>
           <div className="icons">
-            <Link to="upp" className="bg-gray-800 text-white text-3xl p-5">
+            <Link to="Home" className="bg-gray-800 text-white text-3xl p-5">
               Get start
             </Link>
             <a href="signup" className="bg-gray-800 text-white text-3xl p-5">
