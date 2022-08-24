@@ -38,10 +38,11 @@ const Singleemployee = () => {
     <>
     
    
-    <StaffForm handleSubmit={handleSubmit} title ="Employee"  link="/EmployeeList"/>
+    <StaffForm handleSubmit={handleSubmit}/>
     </>
 
   );
 };
-
+{/* <Form  */}
+// const Form=({handleSubmit}){}
 export default Singleemployee;
