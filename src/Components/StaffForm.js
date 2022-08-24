@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const StaffForm = ({handleSubmit}) => {
-    
+const StaffForm = (props,{handleSubmit }) => {
+    const title= props.title;
+  
   return (
     <section>
 
                     <div class="Employewrapper">
                         <div class="title">
-                            employee registration
+                             { title } registration
                         </div>
                         <form class="form" onSubmit={handleSubmit} encType='multipart/form-data'>
                             <div class="inputfield">

@@ -38,7 +38,7 @@ const Singleemployee = () => {
     <>
     
    
-    <StaffForm handleSubmit={handleSubmit}/>
+    <StaffForm   handleSubmit={handleSubmit} title ="Employee"/>
     </>
 
   );

@@ -6,7 +6,7 @@ import  Top from "../Components/Top"
 const Home = () => {
     return (
         <>
-           <SideNavBar />
+           <SideNavBar  name=" it works "/>
             <Top/>
          
 
