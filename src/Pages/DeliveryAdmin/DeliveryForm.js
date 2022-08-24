@@ -37,7 +37,7 @@ import "../../Assets/styles/button.css"
     }
   return (
     <>
-        <StaffForm handleSubmit={handleSubmit}/>
+        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/Delivery"/>
 
     </>
   )
