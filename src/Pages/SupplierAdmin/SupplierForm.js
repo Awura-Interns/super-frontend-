@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import StaffForm from '../../Components/StaffForm';
 
-const SingleCart = () => {
+const SingleSupplier = () => {
   const url  = 'http://127.0.0.1:8000/staff/supplier/';
   
   
@@ -38,9 +38,9 @@ const SingleCart = () => {
   return (
 
     <>
-  <StaffForm handleSubmit={handleSubmit}/>
+  <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/Supplier"/>
     </>
   );
 };
 
-export default SingleCart;
+export default SingleSupplier;
