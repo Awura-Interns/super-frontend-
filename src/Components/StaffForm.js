@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 const StaffForm = (props,{handleSubmit }) => {
     const title= props.title;
+    const link= props.link;
   
   return (
     <section>
@@ -51,7 +52,7 @@ const StaffForm = (props,{handleSubmit }) => {
                             <div class="inputfield">
                                 <input required type="submit" class="btn" />
                             </div>
-                            <Link to='/EmployeeList' className='btn'>Back EmployeeList</Link> 
+                            <Link to={link} className='btn'>Back {title}</Link> 
                         </form>
                     </div>
                 </section>
