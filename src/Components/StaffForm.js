@@ -1,15 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const StaffForm = (props,{handleSubmit }) => {
-    const title= props.title;
-    const link= props.link;
-  
+const StaffForm = ({handleSubmit}) => {
   return (
     <section>
 
                     <div class="Employewrapper">
                         <div class="title">
-                             { title } registration
+                            employee registration
                         </div>
                         <form class="form" onSubmit={handleSubmit} encType='multipart/form-data'>
                             <div class="inputfield">
@@ -52,7 +49,7 @@ const StaffForm = (props,{handleSubmit }) => {
                             <div class="inputfield">
                                 <input required type="submit" class="btn" />
                             </div>
-                            <Link to={link} className='btn'>Back {title}</Link> 
+                            <Link to='/EmployeeList' className='btn'>Back EmployeeList</Link> 
                         </form>
                     </div>
                 </section>
