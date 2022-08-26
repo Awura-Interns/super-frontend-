@@ -81,18 +81,7 @@ const ProducerForm = () => {
             })}
                 </select>
 
-            {/* <select className="input">
-
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-              <option>hellow</option>
-
-            </select> */}
+            
           </div>
           <div className="inputfield">
             <input type="submit" className="btn" />

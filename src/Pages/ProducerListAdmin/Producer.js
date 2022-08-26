@@ -14,7 +14,7 @@ const Producer = () => {
   // fetch data from the localhost and save it to the state
   useEffect(() => {
     setLoading(true)
-    axios.get('http://127.0.0.1:8000/products/')
+    axios.get('https://dev.api.superlink.awuraplc.org/products/')
       .then(res => {
         console.log(res.data)
         setProducer(res.data)
