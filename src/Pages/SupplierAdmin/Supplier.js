@@ -24,7 +24,7 @@ const Supplier = () => {
                 setError(true)
             })
     }, [])
-    
+
     return (
         <>
             <body className="Body">
@@ -33,10 +33,10 @@ const Supplier = () => {
                     <h1>Supplier listing</h1>
 
                     <div class="supplier_listing">
-                    <div className='button'>
-                    <NavLink to='/Supplier/SupplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
-                   
-                    </div>
+                        <div className='button'>
+                            <NavLink to='/Supplier/SupplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+
+                        </div>
 
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -45,26 +45,31 @@ const Supplier = () => {
                                     <th>photo</th>
                                     <th>name</th>
                                     <th>email</th>
-                                 
+
                                     <th>phone number</th>
                                     <th>birthdate</th>
                                     <th>identification card</th>
+                                    <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
                                 {supplier.map((supplier) => {
                                     return (
-                                            
+
                                         <tr key={supplier.id}>
                                             <td>{supplier.id}</td>
-                                            <td> <img className='image_profile_picture' src={supplier.profile_picture} alt="Mark Zuckerberg"/> </td>
+                                            <td> <img className='image_profile_picture' src={supplier.profile_picture} alt="Mark Zuckerberg" /> </td>
                                             <td>{supplier.user.first_name} {supplier.user.last_name}</td>
                                             <td>{supplier.user.email}</td>
                                             <td>{supplier.user.phone}</td>
                                             <td>{supplier.birthdate}</td>
                                             <td><img className='image_profile_picture' src={supplier.identification_card} alt={supplier.user.first_name}
-                                                /></td>
+                                            /></td>
+                                            <td><div className="action_btn">
+                                                <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
+                                                <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                                            </div> </td>
 
                                         </tr>
                                     )
@@ -75,7 +80,7 @@ const Supplier = () => {
                         </ReactBootStrap.Table>
                     </div>
                 </section>
-               
+
             </body>
         </>
     )
