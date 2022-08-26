@@ -6,9 +6,8 @@ const SharedHomeLayout = () => {
   return (
   <>
   <Navbar/>
-
   <Outlet/>
-<Footer/>  
+  <Footer/>  
 
   </>
   )

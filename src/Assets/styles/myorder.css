@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+
+* {
+  list-style: none;
+  font-family: "Roboto", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+.view_itemss img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #b4b4b4;
+    margin-left: 15px;
+  }
+  
+  .wrappers {
+    width: 1200px;
+    margin: 20px auto;
+    border-radius: 2px;
+    background: #c6c6c6;
+  }
+  
+  .link {
+    margin-bottom: 25px;
+    background: rgb(215, 215, 215);
+    padding: 15px;
+    border-radius: 2px;
+  }
+  
+  .link ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .link ul li {
+    margin: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+  
+  .link ul li:hover,
+  .link ul li.active {
+    color: #454545;
+  }
+  
+  .view_mains {
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .grid-view .view_items .vi_left {
+    margin-bottom: 10px;
+  }
+  
+  .list-views .view_items {
+    background: rgb(255, 255, 255);
+    border: 0.5px solid #373737;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    align-items: center;
+    margin-left: 1rem;
+    display: inline-block;
+    width: 230px;
+    padding: 25px;
+    margin: 10px;
+  }
+  
+  .list-views .view_items:last-child {
+    margin-bottom: 0;
+  }
+  
+  .list-views .view_items .vi_left {
+    margin-right: 25px;
+  }
+  
+  .view_items .title {
+    font-weight: 600;
+  }
+  
+  .view_items .content {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 200;
+  }
+  .view_items .fa-edit {
+    width: 2rem;
+    background-color: #000969;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: 1.5rem;
+
+    margin-left: 10rem;
+   
+  }
+  
+  .view_items .fa-times {
+    width: 2rem;
+    background-color: #710000;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: 1.5rem;
+    border: border;
+    margin-left: 10rem;
+    margin-top:3px;
+   
+  }
