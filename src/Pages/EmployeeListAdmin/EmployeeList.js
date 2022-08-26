@@ -33,10 +33,10 @@ const EmployeeList = () => {
                     <h1>Employee listing</h1>
 
                     <div class="employee_listing">
-                    <div className='button'>
-                    <NavLink to='/EmployeeList/EmployeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
-                   
-                    </div>
+                        <div className='button'>
+                            <NavLink to='/EmployeeList/EmployeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+
+                        </div>
 
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -48,6 +48,7 @@ const EmployeeList = () => {
                                     <th>phone number</th>
                                     <th>birthdate</th>
                                     <th>identification card</th>
+                                    <th>Action</th>
 
                                 </tr>
                             </thead>
@@ -58,13 +59,17 @@ const EmployeeList = () => {
                                         <tr key={employee.id}>
                                             <td>{employee.id}</td>
                                             <td> <img className="image_profile_picture" src={employee.profile_picture} alt="Mark Zuckerberg"
-                                                 /> </td>
+                                            /> </td>
                                             <td>{employee.user.first_name} {employee.user.last_name}</td>
                                             <td>{employee.user.email}</td>
                                             <td>{employee.user.phone}</td>
                                             <td>{employee.birthdate}</td>
                                             <td><img src={employee.identification_card} alt={employee.user.first_name}
                                                 className="image_profile_picture" /></td>
+                                            <td><div className="action_btn">
+                                                <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
+                                                <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                                            </div> </td>
 
                                         </tr>
                                     )
@@ -78,7 +83,7 @@ const EmployeeList = () => {
                     {/* <Link to={`/EmployeeList/${employee.id}`}>more</Link> */}
 
                 </section>
-                
+
             </body>
         </>
     )
