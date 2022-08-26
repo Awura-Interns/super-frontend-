@@ -38,10 +38,10 @@ const Delivery = () => {
 
 
                     <div class="delivery_listing">
-                    <div className='button'>
-                    <NavLink to='/Delivery/DeliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
-                   
-                    </div>
+                        <div className='button'>
+                            <NavLink to='/Delivery/DeliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+
+                        </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
@@ -52,6 +52,7 @@ const Delivery = () => {
                                     <th>phone number</th>
                                     <th>birthdate</th>
                                     <th>identification card</th>
+                                    <th>Action</th>
 
                                 </tr>
                             </thead>
@@ -62,13 +63,17 @@ const Delivery = () => {
                                         <tr key={delivery.id}>
                                             <td>{delivery.id}</td>
                                             <td> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
-                                                 className="image_profile_picture"/> </td>
+                                                className="image_profile_picture" /> </td>
                                             <td>{delivery.user.first_name} {delivery.user.last_name}</td>
                                             <td>{delivery.user.email}</td>
                                             <td>{delivery.user.phone}</td>
                                             <td>{delivery.birthdate}</td>
                                             <td><img src={delivery.identification_card} alt="Mark Zuckerberg"
                                                 className="image_profile_picture" /></td>
+                                            <td><div className="action_btn">
+                                                <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
+                                                <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                                            </div> </td>
 
                                         </tr>
                                     )
@@ -82,7 +87,7 @@ const Delivery = () => {
                 </section>
 
 
-                
+
             </body>
         </>
     )
