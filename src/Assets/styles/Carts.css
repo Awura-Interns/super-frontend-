@@ -7,3 +7,16 @@
 .whole .cart{
     margin-left: 8rem;
 }
+.action_btn button+button{
+    margin-left: 30px;
+    background-color: transparent;
+    
+}
+.action_btn  .edite{
+    color: green;
+    background-color: transparent;
+}
+.action_btn  .delete{
+    color: red;
+    background-color: transparent;
+}

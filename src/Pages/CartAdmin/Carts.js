@@ -1,6 +1,7 @@
 import "../../Assets/styles/Carts.css"
 import { Link } from 'react-router-dom';
 import carts from '../../Helpers/CartData';
+
 import * as ReactBootStrap from 'react-bootstrap'
 const Carts = () => {
   return (
@@ -25,6 +26,7 @@ const Carts = () => {
                         <th>user id</th>
                         <th>order date</th>
                         <th>closed time</th>
+                        <th>Action</th>
                         <th>More</th>
                       </tr>
                     </thead>
@@ -37,6 +39,10 @@ const Carts = () => {
                         <td>{cart.user}</td>
                         <td>{cart.order_date}</td>
                         <td>{cart.closed_time}</td>
+                        <td><div className="action_btn"> 
+                          <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
+                          <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                          </div> </td>
                         <td><Link to={`/carts/${cart.id}`}>more info</Link></td>
                       </tr>
                       )
