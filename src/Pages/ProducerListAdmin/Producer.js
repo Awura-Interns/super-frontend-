@@ -54,6 +54,7 @@ const Producer = () => {
                   <th>discount</th>
                   <th>producer</th>
                   <th>posted_by</th>
+                  <th>Action</th>
 
                 </tr>
               </thead>
@@ -73,6 +74,10 @@ const Producer = () => {
                       <td>{producers.discount}</td>
                       <td>{producers.producer}</td>
                       <td>{producers.posted_by}</td>
+                      <td><div className="action_btn">
+                        <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
+                        <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                      </div> </td>
 
                     </tr>
                   )
