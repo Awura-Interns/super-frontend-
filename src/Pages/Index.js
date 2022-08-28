@@ -1,27 +1,32 @@
-import { useState, useContext } from "react";
-// import Modal from "../Components/Modal";
-// import "../Assets/styles/global.css"
-// import "../Assets/styles/SideNavBar.css"
 import "../Assets/styles/IndexPage.css"
-// import Login from "../Components/Login"
-import AuthContext from "../Auth/AuthContect"
 import "../Assets/styles/LoginForm.css"
+import axios from "axios";
+import { useEffect, useState } from 'react'
 const Index = () => {
+  const [user, setUser] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+    useEffect(() => {
+      setLoading(true)
+      axios.request({
+        method: 'get',
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+        },
+        url: 'https://dev.api.superlink.awuraplc.org/api/accounts/account/'
+      }).then(res => {
+        console.log(res.data)
+     setUser(res.data)
+      })
+    }, [])
   
-  let {loginUser} =useContext(AuthContext)
   return (
 
     <body>
-     
-      <h1></h1>
-      <div className="form">
-     
+<h1>welcome <span>{user.email}</span> </h1>
 
-<div class="theme-container grow">
-<h1>welcome <span>the email will be placed here</span> </h1>
-</div>
-      </div>
-
+      
     </body>
 
   );
