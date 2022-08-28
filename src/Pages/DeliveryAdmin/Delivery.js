@@ -16,7 +16,7 @@ const Delivery = () => {
     // fetch data from the localhost and save it to the state
     useEffect(() => {
         setLoading(true)
-        axios.get('http://127.0.0.1:8000/staff/delivery/')
+        axios.get('https://dev.api.superlink.awuraplc.org/staff/delivery/')
             .then(res => {
                 console.log(res.data)
                 setDelivery(res.data)

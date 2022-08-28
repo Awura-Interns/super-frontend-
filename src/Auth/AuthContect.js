@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   let loginUser = async (e) => {
     e.preventDefault();
-    let response = await fetch("http://127.0.0.1:8000/api/token/", {
+    let response = await fetch("https://dev.api.superlink.awuraplc.org//api/token/", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
