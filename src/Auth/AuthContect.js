@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   let loginUser = async (e) => {
     e.preventDefault();
-    let response = await fetch("https://dev.api.superlink.awuraplc.org//api/token/", {
+    let response = await fetch("https://dev.api.superlink.awuraplc.org/api/token/", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -44,18 +44,26 @@ export const AuthProvider = ({ children }) => {
       alert("Something went wrong");
     }
   };
+  // user = jwt_decode(data.access)
+  // setUser(user)
+  // localstorage.setItem(.......)// continue this part
+  // if(user.admin == true){
+  // naviagate('to your admin url')
+  // }
 
-  // let logoutUser = () => {
-  //   setAuthTokens(null);
-  //   setUser(null);
-  //   localStorage.removeItem("authTokens");
-  //   navigate("/");
-  // };
+
+
+  let logoutUser = () => {
+    setAuthTokens(null);
+    setUser(null);
+    localStorage.removeItem("authTokens");
+    navigate("/Loginform");
+  };
 
   let contextData = {
     user: user,
     loginUser: loginUser,
-    // logoutUser: logoutUser,
+    logoutUser: logoutUser,
   };
 
   return (

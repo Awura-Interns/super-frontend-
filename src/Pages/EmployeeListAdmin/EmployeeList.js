@@ -14,16 +14,26 @@ const EmployeeList = () => {
     // fetch data from the localhost and save it to the state
     useEffect(() => {
         setLoading(true)
-        axios.get('https://dev.api.superlink.awuraplc.org/staff/employee/')
-            .then(res => {
-                console.log(res.data)
-                setEmployees(res.data)
-                setLoading(false)
-            })
-            .catch(err => {
-                console.log(err)
-                setError(true)
-            })
+        axios.request({
+            method: 'get',
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+            },
+            url:'https://dev.api.superlink.awuraplc.org/staff/employee/'
+        }).then(res => {
+            console.log(res.data)
+            setEmployees(res.data)
+            setLoading(false)
+        })
+        // axios.get('https://dev.api.superlink.awuraplc.org/staff/employee/')
+        //     .then(res => {
+        //        
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //         setError(true)
+        //     })
     }, [])
     return (
         <>

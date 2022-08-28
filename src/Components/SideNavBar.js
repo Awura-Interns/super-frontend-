@@ -2,8 +2,11 @@ import { NavLink } from 'react-router-dom';
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import '../Assets/js/SideBtn'
-
+import AuthContext from '../Auth/AuthContect';
+import { useContext } from 'react';
 export default function SideNavBar() {
+
+    const {logoutUser}= useContext(AuthContext);
     return (
         <>
 
@@ -15,7 +18,11 @@ export default function SideNavBar() {
                 </div>
                 <ul class="nav-links">
                     <li>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-log-in-circle'></i><span class="links_name">Log out</span></NavLink>
+                        {/* <NavLink to='/' ><span class="links_name">Log out</span></NavLink> */}
+                            
+
+                        <button className={({ isActive }) => (isActive ? 'links_name' : 'links_name')} type="button" onClick={logoutUser}><i class='bx bx-log-in-circle'></i><span class="links_name">Log out</span> </button>
+
                     </li>
 
                     <li>
