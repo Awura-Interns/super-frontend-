@@ -1,7 +1,33 @@
 import "../Assets/styles/global.css"
 import "../Assets/styles/SideNavBar.css"
 import '../Assets/js/SideBtn'
+import axios from "axios";
+import logo from "../Assets/img/s.png"
+import { useEffect, useState } from 'react'
 export default function SideNavBar() {
+
+    const [user, setUser] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
+  
+    // fetch data from the localhost and save it to the state
+    useEffect(() => {
+      setLoading(true)
+      axios.request({
+        method: 'get',
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+        },
+        url: 'https://dev.api.superlink.awuraplc.org/api/accounts/account/'
+      }).then(res => {
+        console.log(res.data)
+     setUser(res.data)
+  
+      })
+    }, [])
+
+
     return (
         <div className='home-section'>
 
@@ -15,8 +41,8 @@ export default function SideNavBar() {
         <i class='bx bx-search'></i>
     </div>
     <div class="profile-details">
-        <img src="images/image.jpg" alt="" />
-        <span class="admin_name">super link</span>
+        <img src={logo} alt="" />
+        <span class="admin_name">{user.email}</span>
 
     </div>
 </nav>
