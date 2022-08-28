@@ -11,17 +11,47 @@ const ProducerForm = () => {
   // fetch data from the localhost and save it to the state
   useEffect(() => {
     setLoading(true)
-    axios.get('http://127.0.0.1:8000/staff/supplier/')
-      .then(res => {
-        console.log(res.data)
-        setSupplier(res.data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.log(err)
-        setError(true)
-      })
+    axios.request({
+      method: 'get',
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+      },
+      url: 'https://dev.api.superlink.awuraplc.org/staff/supplier/'
+    }).then(res => {
+      console.log(res.data)
+      setSupplier(res.data)
+
+    })
   }, [])
+
+
+  const [employees, setEmployees] = useState([])
+    
+
+    
+    useEffect(() => {
+        setLoading(true)
+        axios.request({
+            method: 'get',
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+            },
+            url:'https://dev.api.superlink.awuraplc.org/staff/employee/'
+        }).then(res => {
+            console.log(res.data)
+            setEmployees(res.data)
+           
+        })
+        
+    }, [])
+
+
+
+
+
+
   return (
     <section>
 
@@ -67,22 +97,33 @@ const ProducerForm = () => {
           </div>
           <div className="inputfield">
             <label for="file">Producer</label>
-
-
             <select className="input">
-            {supplier.map((supplier) => {
-             
-              return (
-               
-
+              {supplier.map((supplier) => {
+                return (
                   <option value={supplier.id}>{supplier.user.first_name} {supplier.user.last_name}</option>
+                )
+              })}
+            </select>
 
-              )
-            })}
-                </select>
 
-            
           </div>
+          
+
+          <div className="inputfield">
+            <label for="file">Producer</label>
+            <select className="input">
+              {employees.map((employee) => {
+                return (
+                  <option value={employee.id}>{employee.user.first_name} {employee.user.last_name}</option>
+                )
+              })}
+            </select>
+
+
+          </div>
+
+
+
           <div className="inputfield">
             <input type="submit" className="btn" />
           </div>
