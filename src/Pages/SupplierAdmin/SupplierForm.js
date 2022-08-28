@@ -4,7 +4,7 @@ import axios from 'axios';
 import StaffForm from '../../Components/StaffForm';
 
 const SingleSupplier = () => {
-  const url  = 'http://127.0.0.1:8000/staff/supplier/';
+  const url  = 'https://dev.api.superlink.awuraplc.org/staff/supplier/';
   
   
   const handleSubmit = (event)=>{
