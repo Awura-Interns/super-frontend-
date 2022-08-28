@@ -28,6 +28,20 @@ const Producer = () => {
     })
     
 }, [])
+
+
+const handleDelete = (id)=>{
+axios.request({
+  method:'delete',
+  headers: {
+    "Content-Type": "multipart/form-data",
+    "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+},
+url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
+
+})
+}
+
   return (
     <>
       <body className="Body">
@@ -62,11 +76,11 @@ const Producer = () => {
                 </tr>
               </thead>
               <tbody>
-                {producer.map((producers) => {
+                {producer.map((producers,index) => {
                   return (
 
-                    <tr key={producers.id}>
-                      <td>{producers.id}</td>
+                    <tr key={index}>
+                      <td>{index}</td>
                       <td> <img className='image_profile_picture' src={producers.image} alt="Mark Zuckerberg" /> </td>
                       <td> <img className='image_profile_picture' src={producers.doc} alt="Mark Zuckerberg" /> </td>
                       <td>{producers.product_name} </td>
@@ -78,8 +92,11 @@ const Producer = () => {
                       <td>{producers.producer}</td>
                       <td>{producers.posted_by}</td>
                       <td><div className="action_btn">
-                        <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
-                        <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
+                        <button  className="edite" title="edite"><i className='bx bx-pencil'></i></button>
+                        <button onClick={()=>handleDelete(producers.id)} className="delete" title="delete">
+                        
+                        <i className='bx bxs-trash-alt'></i>
+                        </button>
                       </div> </td>
 
                     </tr>
