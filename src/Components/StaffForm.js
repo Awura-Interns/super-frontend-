@@ -34,7 +34,16 @@ const StaffForm = (props) => {
                             </div>
                             <div class="inputfield">
                                 <label>Phone</label>
+                                    <div style={{display:"flex"}}>
+                                 <select name="code">
+                                    <option value="+251">+251</option>
+                                    </select>       
                                 <input required type="tel" class="input" name='phone'/>
+
+                                    </div>
+
+
+
                             </div>
 
                             <div class="inputfield">

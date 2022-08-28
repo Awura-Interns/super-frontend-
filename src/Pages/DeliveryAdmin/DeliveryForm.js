@@ -18,7 +18,7 @@ import "../../Assets/styles/button.css"
               "email": event.target.email.value,
               "password": event.target.password.value,
               "confirm_password": event.target.confirm_password.value,
-              "phone": event.target.phone.value
+              "phone": event.target.code.value + event.target.phone.value
           },
           "profile_picture": event.target.profile_picture.files[0],
           "birthdate": event.target.birthdate.value,
@@ -38,7 +38,7 @@ import "../../Assets/styles/button.css"
     }
   return (
     <>
-        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/Delivery"/>
+        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/Delivery" />
 
     </>
   )
