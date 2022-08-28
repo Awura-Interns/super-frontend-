@@ -11,7 +11,7 @@ const EmployeeList = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
-    // fetch data from the localhost and save it to the state
+    
     useEffect(() => {
         setLoading(true)
         axios.request({
@@ -26,14 +26,7 @@ const EmployeeList = () => {
             setEmployees(res.data)
             setLoading(false)
         })
-        // axios.get('https://dev.api.superlink.awuraplc.org/staff/employee/')
-        //     .then(res => {
-        //        
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //         setError(true)
-        //     })
+        
     }, [])
     return (
         <>
