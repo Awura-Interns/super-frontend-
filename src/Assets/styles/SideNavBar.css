@@ -57,10 +57,26 @@
   text-decoration: none;
   transition: all 0.4s ease;
 }
+.sidebar .nav-links li button{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #03163b;
+  
+}
 .sidebar .nav-links li a.active{
   background: #081D45;
 }
+.sidebar .nav-links li button.active{
+  background: #081D45;
+}
 .sidebar .nav-links li a:hover{
+  background: #081D45;
+}
+.sidebar .nav-links li button:hover{
   background: #081D45;
 }
 .sidebar .nav-links li i{
@@ -70,6 +86,12 @@
   color: #fff;
 }
 .sidebar .nav-links li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.sidebar .nav-links li button .links_name{
   color: #fff;
   font-size: 15px;
   font-weight: 400;

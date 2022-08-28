@@ -17,13 +17,7 @@ export default function SideNavBar() {
                     <span class="logo_name">super link</span>
                 </div>
                 <ul class="nav-links">
-                    <li>
-                        {/* <NavLink to='/' ><span class="links_name">Log out</span></NavLink> */}
-                            
-
-                        <button className={({ isActive }) => (isActive ? 'links_name' : 'links_name')} type="button" onClick={logoutUser}><i class='bx bx-log-in-circle'></i><span class="links_name">Log out</span> </button>
-
-                    </li>
+                   
 
                     <li>
 
@@ -72,11 +66,13 @@ export default function SideNavBar() {
                         <NavLink to='/Supplier' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-boxes-stacked"></i><span class="links_name">Supplier</span></NavLink>
                     </li>
 
-{/* 
-                    <li class="log_out">
+                    <li>
+                       
+                            
 
-                        <NavLink to='/NoPage' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-log-out'></i><span class="links_name">Log out</span></NavLink>
-                    </li> */}
+                       <button className="links_name"type="button" onClick={logoutUser}><i class='bx bx-log-in-circle'></i><span class="links_name">Log out</span> </button>
+
+                   </li>
                 </ul>
 
             </div>
