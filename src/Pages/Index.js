@@ -18,15 +18,7 @@ const Index = () => {
      
 
 <div class="theme-container grow">
-    <div class="contact-con">
-        <div class="contact">
-            
-            <div>
-             <h1>hello</h1>   
-            </div>
-            
-        </div>
-    </div>
+<h1>welcome <span>the email will be placed here</span> </h1>
 </div>
       </div>
 
