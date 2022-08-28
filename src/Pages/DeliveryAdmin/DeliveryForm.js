@@ -33,9 +33,7 @@ import "../../Assets/styles/button.css"
         url:'https://dev.api.superlink.awuraplc.org/staff/delivery/',
         data
       }).then(res => {
-        console.log(res)
-        
-        
+        console.log(res);
       })
     }
   return (

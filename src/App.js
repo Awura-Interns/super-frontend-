@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Add from './Pages/Add';
+
 import EmployeeList from './Pages/EmployeeListAdmin/EmployeeList'
 import EmployeeForm from "./Pages/EmployeeListAdmin/EmployeeForm"
 import SharedEmployeeLayout from "./Pages/EmployeeListAdmin/SharedEmployeeLayout"
@@ -18,7 +18,7 @@ import ProducerForm from './Pages/ProducerListAdmin/ProducerForm'
 import SharedProducerLayout from './Pages/ProducerListAdmin/SharedProducerLayout'
 
 import SharedLayout from './Pages/SharedLayout'
-import NoPage from './Pages/NoPage'
+
 
 import Supplier from "./Pages/SupplierAdmin/Supplier"
 import SupplierForm from "./Pages/SupplierAdmin/SupplierForm"
@@ -41,7 +41,7 @@ function App() {
         <Route path="/Loginform" element={<Loginform />} />
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<PrivateRoute><Index /></PrivateRoute>} />
-          <Route path="NoPage" element={<PrivateRoute><NoPage /></PrivateRoute>} />
+         
           <Route path="Delivery" element={
             <PrivateRoute>
               <SharedDeliveryLayout />
@@ -66,7 +66,7 @@ function App() {
             <Route index element={<PrivateRoute><Cart /></PrivateRoute>} />
             <Route path=':cartId' element={<PrivateRoute><SingleCart /></PrivateRoute>} />
           </Route>
-          <Route path="Add" element={<PrivateRoute><Add /></PrivateRoute>} />
+          
           
           <Route path="OrderList" element={<PrivateRoute><OrderList /></PrivateRoute>} />
           <Route path="*" element={<Error />} />
