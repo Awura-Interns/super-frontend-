@@ -27,12 +27,15 @@ import "../../Assets/styles/button.css"
       axios.request({
           method: 'post',
           headers: {
-              "Content-Type": "multipart/form-data",
-          },
-          url,
-          data
+            "Content-Type": "multipart/form-data",
+            "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+        },
+        url:'https://dev.api.superlink.awuraplc.org/staff/delivery/',
+        data
       }).then(res => {
-          console.log(res)
+        console.log(res)
+        
+        
       })
     }
   return (
