@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import code from "../Helpers/Codes"
+import Codes from "../Helpers/Codes"
 const StaffForm = (props) => {
     const handleSubmit = props.handleSubmit;
     const title = props.title;
@@ -36,22 +36,19 @@ const StaffForm = (props) => {
                             </div>
                             <div class="inputfield">
                                 <label>Phone</label>
-                                    <div style={{display:"flex"}}>
+                                    <div class="inputfield" style={{display:"block"}}>
 
-
-                                    {/* {Codes.map((Code) => {
+                                    <select class="input" name="code">
+                                    {Codes.map((Code) => {
                                 return (
-                                    <select key={Code.name} name="code">
-                                    <option value="+251">{Code.code}</option>
-                                </select>
+                                   
+                                    <option key={Code.id} value={Code.code} title={Code.name}>{Code.name}--{Code.code}</option>
                                     )
+                                    
+                                    
+                                })}
+                                </select>
 
-
-                            })} */}
-
-                                 <select name="code">
-                                    <option value="+251">+251</option>
-                                    </select>      
 
 
 

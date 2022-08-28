@@ -58,7 +58,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
             <ReactBootStrap.Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>id</th>
+                  <th>No.</th>
                   <th>image</th>
                   <th>doc</th>
                   <th>product_name</th>
@@ -79,8 +79,8 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                 {producer.map((producers,index) => {
                   return (
 
-                    <tr key={index}>
-                      <td>{index}</td>
+                    <tr key={index+1}>
+                      <td>{index+1}</td>
                       <td> <img className='image_profile_picture' src={producers.image} alt="Mark Zuckerberg" /> </td>
                       <td> <img className='image_profile_picture' src={producers.doc} alt="Mark Zuckerberg" /> </td>
                       <td>{producers.product_name} </td>
