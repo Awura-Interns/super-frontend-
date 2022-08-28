@@ -91,13 +91,21 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                       <td>{producers.discount}</td>
                       <td>{producers.producer}</td>
                       <td>{producers.posted_by}</td>
-                      <td><div className="action_btn">
-                        <button  className="edite" title="edite"><i className='bx bx-pencil'></i></button>
-                        <button onClick={()=>handleDelete(producers.id)} className="delete" title="delete">
+                      <td>
                         
+                        <div className="action_btn">
+                        <div className='btn'>
+                        <button  className="edite" title="edite"><i className='bx bx-pencil'></i></button>
+
+                        </div>
+                        <div className='btn'>
+
+                        <button onClick={()=>handleDelete(producers.id)} className="delete" title="delete">
                         <i className='bx bxs-trash-alt'></i>
                         </button>
-                      </div> </td>
+                        </div>
+                      </div> 
+                      </td>
 
                     </tr>
                   )
