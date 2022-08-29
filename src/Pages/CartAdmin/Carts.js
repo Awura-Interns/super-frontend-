@@ -1,64 +1,70 @@
 import "../../Assets/styles/Carts.css"
-import { Link } from 'react-router-dom';
-import carts from '../../Helpers/CartData';
+
+import axios from "axios";
+import { useEffect, useState } from 'react'
 
 import * as ReactBootStrap from 'react-bootstrap'
 const Carts = () => {
+
+  const [carts, setCarts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  // fetch data from the localhost and save it to the state
+  useEffect(() => {
+    setLoading(true)
+    axios.request({
+      method: 'get',
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+      },
+      url: 'https://dev.api.superlink.awuraplc.org/staff/cart/'
+    }).then(res => {
+      console.log(res.data)
+      setCarts(res.data)
+      setLoading(false)
+    })
+
+  }, [])
   return (
-    <div className="whole">
-      <h1>Carts list</h1>
-     
+    <>
+      <body className="Body">
 
+        <section class="employee_listing_whole">
+          <h1>Cart listing</h1>
 
+          <div class="employee_listing">
+            
+            <ReactBootStrap.Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>delivery</th>
 
+                </tr>
+              </thead>
+              <tbody>
+                {carts.map((cart) => {
+                  return (
 
-        <div className='cart'>
-          
-              <article   >
+                    <tr key={cart.id}>
+                      <td>{cart.id}</td>
+                      <td>{cart.delivery}</td>
 
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </ReactBootStrap.Table>
+          </div>
 
+        
 
-                <div >
-                  <ReactBootStrap.Table striped bordered hover>
-                    <thead>
-                      <tr>
-                        <th>id</th>
-                        <th>user id</th>
-                        <th>order date</th>
-                        <th>closed time</th>
-                        <th>Action</th>
-                        <th>More</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {carts.map((cart) =>{
-                      return(
-                        
-                      <tr key={cart.id}>
-                        <td>{cart.id}</td>
-                        <td>{cart.user}</td>
-                        <td>{cart.order_date}</td>
-                        <td>{cart.closed_time}</td>
-                        <td><div className="action_btn"> 
-                          <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
-                          <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
-                          </div> </td>
-                        <td><Link to={`/carts/${cart.id}`}>more info</Link></td>
-                      </tr>
-                      )
-                    })}
+        </section>
 
-
-                    </tbody>
-                  </ReactBootStrap.Table>
-                </div>
-              </article>
-           
-        </div>
-
-
-     
-    </div>
+      </body>
+    </>
   );
 };
 

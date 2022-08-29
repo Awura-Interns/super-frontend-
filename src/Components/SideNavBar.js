@@ -29,7 +29,7 @@ export default function SideNavBar() {
                     </li>
                     <li>
 
-                        <NavLink to='/OrderList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Order list</span></NavLink>
+                        <NavLink to='/Carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Carts list</span></NavLink>
                     </li>
                     <li>
 

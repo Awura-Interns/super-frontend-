@@ -1,22 +1,28 @@
-.carts,h1{
-    /* margin-top: 100px; */
-    margin-left: 400px;
-    padding-top: 100px;
-    /* #003 */
+.employee_listing_whole{
+    margin-top:3rem;
+  }
+  .employee_listing{
+    width: 120vh;
+    height: 70vh;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-left: 15rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
+  
+  }
+  .image_profile_picture{
+    max-width: 100%;
+    height: auto;
+    max-height:fit-content;
 }
-.whole .cart{
-    margin-left: 8rem;
+.image_profile_picture:hover{
+  transform: scale(5);
+    overflow-x:visible;
+    overflow-y: visible;
+    z-index: 1000;
 }
-.action_btn button+button{
-    margin-left: 30px;
-    background-color: transparent;
-    
-}
-.action_btn  .edite{
-    color: green;
-    background-color: transparent;
-}
-.action_btn  .delete{
-    color: red;
-    background-color: transparent;
+.image_profile_picture:hover .employee_listing{
+  overflow-x: visible;
+  overflow-y: visible;
 }
