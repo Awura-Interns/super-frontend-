@@ -6,7 +6,7 @@ import SharedEmployeeLayout from "./Pages/EmployeeListAdmin/SharedEmployeeLayout
 import Index from './Pages/Index'
 import Error from './Pages/Error'
 
-import OrderList from './Pages/OrderList'
+
 import Cart from './Pages/CartAdmin/Carts'
 import SingleCart from './Pages/CartAdmin/SingleCart'
 import SharedCartLayout from './Pages/CartAdmin/SharedCartLayout'
@@ -68,7 +68,7 @@ function App() {
           </Route>
           
           
-          <Route path="OrderList" element={<PrivateRoute><OrderList /></PrivateRoute>} />
+         
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
