@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
-import EmployeeList from './Pages/EmployeeListAdmin/EmployeeList'
-import EmployeeForm from "./Pages/EmployeeListAdmin/EmployeeForm"
-import SharedEmployeeLayout from "./Pages/EmployeeListAdmin/SharedEmployeeLayout"
+import EmployeeList from './Pages/StaffEmployeeAdmin/EmployeeList'
+import EmployeeForm from "./Pages/StaffEmployeeAdmin/EmployeeForm"
+import SharedEmployeeLayout from "./Pages/StaffEmployeeAdmin/SharedEmployeeLayout"
 import Index from './Pages/Index'
 import Error from './Pages/Error'
 
@@ -20,12 +20,12 @@ import SharedProducerLayout from './Pages/ProducerListAdmin/SharedProducerLayout
 import SharedLayout from './Pages/SharedLayout'
 
 
-import Supplier from "./Pages/SupplierAdmin/Supplier"
-import SupplierForm from "./Pages/SupplierAdmin/SupplierForm"
-import SharedSupplierLayout from "./Pages/SupplierAdmin/SharedSupplierLayout"
-import Delivery from "./Pages/DeliveryAdmin/Delivery"
-import DeliveryForm from "./Pages/DeliveryAdmin/DeliveryForm"
-import SharedDeliveryLayout from "./Pages/DeliveryAdmin/SharedDeliveryLayout"
+import Supplier from "./Pages/StaffSupplierAdmin/Supplier"
+import SupplierForm from "./Pages/StaffSupplierAdmin/SupplierForm"
+import SharedSupplierLayout from "./Pages/StaffSupplierAdmin/SharedSupplierLayout"
+import Delivery from "./Pages/StaffDeliveryAdmin/Delivery"
+import DeliveryForm from "./Pages/StaffDeliveryAdmin/DeliveryForm"
+import SharedDeliveryLayout from "./Pages/StaffDeliveryAdmin/SharedDeliveryLayout"
 import '../src/Assets/styles/App.css';
 import PrivateRoute from './Helpers/PrivateRoute'
 
