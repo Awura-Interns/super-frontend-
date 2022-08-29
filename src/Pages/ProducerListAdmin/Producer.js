@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import "../../Assets/styles/global.css"
 import "../../Assets/styles/SideNavBar.css"
 import "../../Assets/styles/ProducerList.css"
+import "../../Assets/styles/actionBtn.css"
 
 const Producer = () => {
   const [producer, setProducer] = useState([])

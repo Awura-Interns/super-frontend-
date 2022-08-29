@@ -8,6 +8,7 @@ import "../../Assets/styles/ListForm.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import "../../Assets/styles/actionBtn.css"
 const Delivery = () => {
     const [delivery, setDelivery] = useState([])
     const [loading, setLoading] = useState(true)

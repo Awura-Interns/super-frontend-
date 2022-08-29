@@ -23,18 +23,5 @@
  .Employewrapper{
    margin-top: 2rem;
  }
- .action_btn {
-  display: flex;
- }
- .action_btn button {
-   align-items: center;
-   
-
- }
- .action_btn button i {
-  font-size: 2rem;
-   color: #03163b;
-
-   
- }
+ 
  
