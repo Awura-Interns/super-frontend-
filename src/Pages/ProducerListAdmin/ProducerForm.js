@@ -108,11 +108,11 @@ const ProducerForm = () => {
           </div>
           <div className="inputfield">
             <label>amount</label>
-            <input type="number" className="input" placeholder='IN kilogram' name="amount"/>
+            <input type="number" className="input" placeholder='IN kilogram ' name="amount" />
           </div>
           <div className="inputfield">
             <label>price</label>
-            <input type="number" className="input" name="price"/>
+            <input type="number" className="input" name="price" maxLength="4" placeholder='4 didgits ' />
           </div>
 
 
