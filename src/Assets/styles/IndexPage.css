@@ -92,10 +92,7 @@ body{
     margin-inline-end: 0px;
     font-weight: bold;
   }
-  #container{
-    
-  }
- 
+  
  
 
   @media only screen and (max-width: 600px) {
@@ -112,4 +109,15 @@ body{
     .hero-text button, .hero2-text button, .hero3-text button {
       font-size: 16px;
     }
+  }
+
+
+  .landing_page{
+    margin-top: 7rem;
+    margin-left: 7rem;
+  
+  }
+  .landing_page span{
+    text-decoration: underline;
+    font-weight: bolder;
   }

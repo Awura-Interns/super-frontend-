@@ -23,8 +23,11 @@ const Index = () => {
   
   return (
 
-    <body>
+    <body> 
+      <div className="landing_page">
 <h1>welcome <span>{user.email}</span> </h1>
+
+      </div>
 
       
     </body>
