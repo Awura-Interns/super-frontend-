@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import StaffForm from '../../Components/StaffForm';
 import "../../Assets/styles/button.css"
 const Singleemployee = () => {
-    const url  = 'http://localhost:8000/staff/employee/';
+    
   
   
   const handleSubmit = (event)=>{
@@ -26,10 +26,11 @@ const Singleemployee = () => {
     axios.request({
         method: 'post',
         headers: {
-            "Content-Type": "multipart/form-data",
-        },
-        url,
-        data
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+      },
+      url:'https://dev.api.superlink.awuraplc.org/staff/employee/',
+      data
     }).then(res => {
         console.log(res)
     })
