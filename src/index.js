@@ -23,18 +23,13 @@ import { BrowserRouter } from "react-router-dom";
 // Importing the Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { store } from "./store"; // redux store
-import { Provider } from "react-redux";
-
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 // ReactDOM.render(
