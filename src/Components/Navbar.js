@@ -1,8 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -10,11 +7,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-export default function NavBar() {
+export default function NavBar({ onSearch }) {
+  const [q, setQ] = useState("");
   return (
-    <Navbar bg="light" expand="sm" className="mb-3">
+    <Navbar bg="white" expand="sm" className="mb-3 shadow">
       <Container fluid className=" flex justify-content-between">
-        <Navbar.Brand href="/home" className="">
+        <Navbar.Brand href="/" className="">
           <span className="fs-3">Super_link</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
@@ -51,7 +49,8 @@ export default function NavBar() {
                 />
                 <Button
                   className="m-0 py-3"
-                  variant="outline-success"
+                  variant="outline-primary"
+                  onClick={() => onSearch(q)}
                   style={{
                     borderStartEndRadius: "10px",
                     borderEndEndRadius: "10px",
@@ -65,24 +64,10 @@ export default function NavBar() {
             </div>
             <Nav className="pe-3 ">
               <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/account">Account</Nav.Link>
-              <Nav.Link href="/home/Signin">Login</Nav.Link>
-              <NavDropdown
-                title="Cart"
-                drop="start"
-                id={`offcanvasNavbarDropdown-expand-sm`}
-              >
-                <NavDropdown.Item href="#action3">
-                  List Cart Items
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  See Cart History
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="/home/cart">Cart</Nav.Link>
+              <Nav.Link href="/home/Signin">
+                {localStorage.getItem("accessToken") == "" ? "Login" : "Logout"}
+              </Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

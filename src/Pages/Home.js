@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import ItemCard from "../Components/item-card";
 import http from "../services/http";
 import endpoints from "../services/endpoints";
+import { Link } from "react-router-dom";
 
 // import Jumbotron from "react-bootstrap/";
 import Toast from "react-bootstrap/Toast";
@@ -32,18 +33,6 @@ const Home = () => {
       console.log(response);
       if (response.success) {
         setItems(response.data);
-        // var tempList = [];
-        // tempList.push(response.data[0]);
-        // tempList.push(response.data[1]);
-        // tempList.push(response.data[0]);
-        // tempList.push(response.data[1]);
-        // tempList.push(response.data[0]);
-        // tempList.push(response.data[1]);
-        // tempList.push(response.data[0]);
-        // tempList.push(response.data[1]);
-        // tempList.push(response.data[0]);
-        // tempList.push(response.data[1]);
-        // setItems(tempList);
       } else {
         setErrorMessage({
           header: response.error.header,
@@ -82,31 +71,38 @@ const Home = () => {
   // console.log(accessToken);
   return (
     <div className="">
-      <Navbar setShow={setShow} size={cart.length} />
+      <Navbar />
       <Container>
         {JSON.stringify(errorMessage) != "{}" ? (
-          <Alert className="my-5" variant="danger">
-            <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-            <hr />
-            {typeof errorMessage.message === "string" ? (
-              <p>{errorMessage.message}</p>
-            ) : (
-              <div>
-                {Object.entries(errorMessage.message).map(([key, value]) => (
-                  <div key={key} className="flex">
-                    <b>{key}</b>
-                    <div className="mx-2"></div>
-                    <p>{`${JSON.stringify(value)}`}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="my-5">
+            <Alert variant="danger">
+              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+              <hr />
+              {typeof errorMessage.message === "string" ? (
+                <p>{errorMessage.message}</p>
+              ) : (
+                <div>
+                  {Object.entries(errorMessage.message).map(([key, value]) => (
+                    <div key={key} className="flex">
+                      <b>{key}</b>
+                      <div className="mx-2"></div>
+                      <p>{`${JSON.stringify(value)}`}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </Alert>
+            {errorMessage.message.code == "token_not_valid" && (
+              <Link to="/home/Signin" className="btn btn-outline-primary">
+                Login
+              </Link>
             )}
-          </Alert>
+          </div>
         ) : (
           <div
             className="my-5 pb-5 flex justify-content-center flex-wrap"
             style={{
-              gap: "2rem",
+              gap: "1.5rem",
             }}
           >
             {items.length != 0 &&
@@ -116,28 +112,6 @@ const Home = () => {
       </Container>
     </div>
   );
-  // <div className="min-h-screen bg-gray-200">
-  //   <div className="text-center text-4xl font-bold text-white py-14 bg-gray-800">
-  //     Eheloch
-  //   </div>
-
-  //   <div className="w-screen px-20 flex justify-center py-14">
-  //     <div className="flex bg-gray justify-around max-w-[800px] gap-10 flex-wrap">
-  // {items.map((item, index) => (
-  //   <ItemCard item={item} key={index} />
-  // ))}
-  //     </div>
-  //   </div>
-
-  {
-    /* {show ? (
-          <Amazon handleClick={handleClick} />
-        ) : (
-          <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
-        )} */
-  }
-  // </div>
-  // );
 };
 
 export default Home;

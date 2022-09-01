@@ -8,8 +8,8 @@ import Alert from "react-bootstrap/Alert";
 export default function Signin() {
   const navigate = useNavigate();
 
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("aaa@gmail.com");
+  const [password, setPassword] = useState("asdfzxcv1234");
   const [errorMessage, setErrorMessage] = useState({});
 
   async function handleSubmit() {

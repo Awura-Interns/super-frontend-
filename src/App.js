@@ -11,6 +11,7 @@ import SharedLayOut from "./Pages/SharedLayOut";
 import SharedHomeLayout from "./Pages/SharedHomeLayout";
 import "../src/Assets/styles/App.css";
 import SingleCart from "./Pages/single-cart";
+import Cart from "./Pages/cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="Profile" element={<Profile />} />
           <Route path="Signin" element={<Signin />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="Help" element={<Help />} />
           <Route path="Signup" element={<Signup />} />
 
