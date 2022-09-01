@@ -276,7 +276,7 @@ const ProducerForm = () => {
 
        
 
-          <Link to='/Producer' className='btn'>Back Producers</Link>
+          <Link to='/product' className='btn'>Back Producers</Link>
         </form>
       </div>
     </section>
