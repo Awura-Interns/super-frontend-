@@ -54,7 +54,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
 
           <div class="producer_listing">
             <div className='button'>
-              <NavLink to='/Producer/ProducerForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+              <NavLink to='/product/productForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
 
             </div>
 
@@ -99,7 +99,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                         <div className="action_btn">
                         <div className='btn'>
                         
-                      <button className="edite"><Link  to={`/Producer/ProducerEdit/${producers.id}`} ><i className='bx bx-pencil'></i></Link></button>  
+                      <button className="edite"><Link  to={`/product/productEdit/${producers.id}`} ><i className='bx bx-pencil'></i></Link></button>  
 
                         </div>
                         <div className='btn'>
