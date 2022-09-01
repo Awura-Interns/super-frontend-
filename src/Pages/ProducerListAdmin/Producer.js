@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import * as ReactBootStrap from 'react-bootstrap'
 import axios from "axios";
 import { useEffect, useState } from 'react'
@@ -10,7 +10,7 @@ import "../../Assets/styles/actionBtn.css"
 const Producer = () => {
   const [producer, setProducer] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const [formErrors, setFormErrors] = useState([])
 
   // fetch data from the localhost and save it to the state
   useEffect(() => {
@@ -26,7 +26,9 @@ const Producer = () => {
         console.log(res.data)
         setProducer(res.data)
         setLoading(false)
-    })
+    }).catch(error=>{
+
+    });
     
 }, [])
 
@@ -48,7 +50,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
       <body className="Body">
 
         <section class="producer_listing_whole">
-          <h1>producer listing</h1>
+          <h1>Product listing</h1>
 
           <div class="producer_listing">
             <div className='button'>
@@ -65,7 +67,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                   <th>product_name</th>
 
                   <th>product_type</th>
-                  <th>description</th>
+                  
                   <th>amount</th>
                   <th>price</th>
 
@@ -82,11 +84,11 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
 
                     <tr key={index+1}>
                       <td>{index+1}</td>
-                      <td> <img className='image_profile_picture' src={producers.image} alt="Mark Zuckerberg" /> </td>
-                      <td> <img className='image_profile_picture' src={producers.doc} alt="Mark Zuckerberg" /> </td>
+                      <td> <img className='image_profile_picture' src={producers.image} alt={producers.product_name}  /> </td>
+                      <td> <img className='image_profile_picture' src={producers.doc} alt={producers.product_name}  /> </td>
                       <td>{producers.product_name} </td>
                       <td>{producers.product_type}</td>
-                      <td>{producers.description}</td>
+                      
                       <td>{producers.amount}</td>
                       <td>{producers.price}</td>
                       <td>{producers.discount}</td>
@@ -96,7 +98,8 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                         
                         <div className="action_btn">
                         <div className='btn'>
-                        <button  className="edite" title="edite"><i className='bx bx-pencil'></i></button>
+                        
+                      <button className="edite"><Link  to={`/Producer/ProducerEdit/${producers.id}`} ><i className='bx bx-pencil'></i></Link></button>  
 
                         </div>
                         <div className='btn'>
