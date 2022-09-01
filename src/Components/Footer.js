@@ -6,7 +6,7 @@ import "../Assets/styles/footer.css";
 import Diamond from "../Assets/img/question.png";
 export default function Footer() {
   return (
-    <>
+    <div>
       <footer className="bg-gray-800 text-[90px] py-20">
         <div className="container">
           <div className="flex w-full justify-end pr-32 pb-5">
@@ -14,7 +14,7 @@ export default function Footer() {
               <Icon icon="carbon:help-filled" className="text-7xl" />
             </Link>
           </div>
-          <div className="row">
+          <div className="flex flex-wrap">
             <div className="footer-col">
               <h4>company</h4>
               <ul>
@@ -82,6 +82,6 @@ export default function Footer() {
           <img src={Diamond} alt="arrow up" />
         </section>{" "}
       </Link> */}
-    </>
+    </div>
   );
 }

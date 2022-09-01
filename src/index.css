@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.headerActionIcon{
-    @apply text-5xl;
+.headerActionIcon {
+  @apply text-5xl;
+}
+.rounder {
+  border-radius: 1rem;
 }

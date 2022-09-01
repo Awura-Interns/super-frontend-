@@ -15,23 +15,26 @@
 // // // to log results (for example: reportWebVitals(console.log))
 // // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // // reportWebVitals();
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+// Importing the Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
 
+import { store } from "./store"; // redux store
+import { Provider } from "react-redux";
 
-
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 // ReactDOM.render(

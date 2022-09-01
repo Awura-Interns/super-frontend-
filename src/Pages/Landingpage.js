@@ -1,26 +1,34 @@
-import React from "react";
+import React, { setState } from "react";
 import { Link } from "react-router-dom";
 import "../Assets/styles/landingpage.css";
 import im1 from "../Assets/img/shop.png";
+import axios from "axios";
 
 export default function landingpage() {
   return (
     <main>
       <header className="header py-4">
-        <div className="header-1">
+        {/* <div className="header-1">
           <a href="#" className="logo">
             {" "}
-            <i className="fas fabook"></i> super_link{" "}
+            <i className="fas facebook"></i> super_link{" "}
           </a>
           <div className="icons">
             <Link to="Home" className="bg-gray-800 text-white text-3xl p-5">
-              Get start
+              Get starts
             </Link>
-            <a href="signup" className="bg-gray-800 text-white text-3xl p-5">
+            <Link
+              to="Home/Signup"
+              className="bg-gray-800 text-white text-3xl p-5"
+            >
               Sign Up
-            </a>
+            </Link>
+            <a
+              href="signup"
+              className="bg-gray-800 text-white text-3xl p-5"
+            ></a>
           </div>
-        </div>
+        </div> */}
       </header>
       <div className="flex flex-col items-center min-h-screen bg-gray-200 py-10">
         <div className="flex justify-between h-60 px-44">
