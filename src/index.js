@@ -26,11 +26,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  // </React.StrictMode>
 );
 // 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
 // ReactDOM.render(

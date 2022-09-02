@@ -8,6 +8,7 @@ import SingleItemCard from "./singleCartCard";
 import { useState } from "react";
 
 export default function ItemCard({ item }) {
+  const [quantity, setQuantity] = useState(1);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -75,6 +76,18 @@ export default function ItemCard({ item }) {
                 width: "300px",
               }}
             >
+              <p className="flex align-items-center">
+                <b>Quantity</b>:{" "}
+                <input
+                  style={{ width: 50 }}
+                  value={quantity}
+                  onChange={(e) => {
+                    setQuantity(e.target.value);
+                  }}
+                  className="d-inline ms-3 p-1 rounded border border-secondary"
+                  type="number"
+                />
+              </p>
               <p>
                 <b>Type</b>: {item.product_type}
               </p>
@@ -111,7 +124,7 @@ export default function ItemCard({ item }) {
                 },
                 data: {
                   product: item.id,
-                  quantity: 1,
+                  quantity: quantity,
                 },
               })
                 .then((response) => {

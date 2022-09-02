@@ -34,9 +34,13 @@ export default function landingpage() {
               <Offcanvas.Body className="flex flex-column flex-sm-row flex-grow-1 justify-content-sm-end justify-content-start align-items-sm-center align-items-start">
                 <Nav className="pe-3 ">
                   <Nav.Link href="/home">Home</Nav.Link>
-                  <Nav.Link href="/account">Account</Nav.Link>
-                  <Nav.Link href="/home/Signin">Login</Nav.Link>
-                  <NavDropdown
+                  <Nav.Link href="/home/cart">Cart</Nav.Link>
+                  <Nav.Link href="/home/Signin">
+                    {localStorage.getItem("accessToken") == ""
+                      ? "Login"
+                      : "Logout"}
+                  </Nav.Link>
+                  {/* <NavDropdown
                     title="Cart"
                     drop="start"
                     id={`offcanvasNavbarDropdown-expand-sm`}
@@ -51,7 +55,7 @@ export default function landingpage() {
                     <NavDropdown.Item href="#action5">
                       See Cart History
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
