@@ -4,7 +4,6 @@ import "../../Assets/styles/ProducerList.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import Form from "react-bootstrap/Form"
-import Col from 'react-bootstrap/Col';
 const ProducerForm = () => {
   const [supplier, setSupplier] = useState([])
   const [product, setProduct] = useState(null)
@@ -12,8 +11,6 @@ const ProducerForm = () => {
   const [employees, setEmployees] = useState([])
   const [loading, setLoading] = useState(true)
   const {id} = useParams();
-
-  // fetch data from the localhost and save it to the state
   useEffect(() => {
     setLoading(true)
     axios.request({
@@ -26,12 +23,9 @@ const ProducerForm = () => {
     }).then(res => {
       console.log(res.data)
       setSupplier(res.data)
-
     })
   }, [])
-
-
-  useEffect(() => {
+useEffect(() => {
     setLoading(true)
     axios.request({
       method: 'get',
@@ -43,13 +37,9 @@ const ProducerForm = () => {
     }).then(res => {
       console.log(res.data)
       setProduct(res.data)
-
     })
   }, [])
-
-
-
-  useEffect(() => {
+    useEffect(() => {
     setLoading(true)
     axios.request({
       method: 'get',
@@ -61,9 +51,7 @@ const ProducerForm = () => {
     }).then(res => {
       console.log(res.data)
       setEmployees(res.data)
-
     })
-
   }, [])
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -93,73 +81,44 @@ const ProducerForm = () => {
       if (error.response) {
         setFormErrors(error.response.data);
       }
-      
-
     })
   }
-
-
-
-
-
   return (
     <section>
-
-
       <div className="Employewrapper">
         <div className="title">
         Product update form
         </div>
         <form className="form" onSubmit={handleSubmit}>
-
-
-
           <Form.Group className="inputfield">
             <Form.Label for="file">Product Picture</Form.Label>
             <div style={{ width: "100%" }}>
                 <a href={`${product ? product.image : null}`}>hello</a>
               <Form.Control isInvalid={formErrors.image} type="file" id="file" accept="image/*" className="input" name="product_picture" />
               <Form.Control.Feedback type="invalid">
-                
                 {formErrors.image ? formErrors.image : null}
               </Form.Control.Feedback>
-
             </div>
-
           </Form.Group>
-
-
-
           <Form.Group className="inputfield">
             <Form.Label for="file">agreement Picture</Form.Label>
             <div style={{ width: "100%" }}>
             <a href={`${product ? product.agreement_picture : null}`}>hello</a>
               <Form.Control isInvalid={formErrors.doc} type="file" id="file" accept="image/*" className="input" name="agreement_picture" />
-
               <Form.Control.Feedback type="invalid">
               {formErrors.doc ? formErrors.doc : null}
               </Form.Control.Feedback>
-
             </div>
-
           </Form.Group>
-
-
-
           <Form.Group className="inputfield">
             <Form.Label> Product Name </Form.Label>
             <div style={{ width: "100%" }}>
-
-
               <Form.Control isInvalid={formErrors.product_name} defaultValue={product ? product.product_name : null} type="text" className="input" name="product_name" />
               <Form.Control.Feedback type="invalid">
               {formErrors.product_name ? formErrors.product_name : null}
               </Form.Control.Feedback>
             </div>
           </Form.Group>
-
-
-
           <Form.Group className="inputfield">
             <Form.Label>product type</Form.Label>
             <div style={{ width: "100%" }}>
@@ -170,10 +129,6 @@ const ProducerForm = () => {
               </Form.Control.Feedback>
             </div>
           </Form.Group>
-
-
-
-
           <Form.Group className="inputfield">
             <Form.Label>description</Form.Label>
             <div style={{ width: "100%" }}>
@@ -184,13 +139,9 @@ const ProducerForm = () => {
               </Form.Control.Feedback>
             </div>
           </Form.Group>
-
-
-
           <Form.Group className="inputfield">
             <Form.Label>amount</Form.Label>
             <div style={{ width: "100%" }}>
-
               <Form.Control isInvalid={formErrors.amount}
               defaultValue={product ? product.amount : null} type="number" className="input" placeholder='IN kilogram ' name="amount" />
               <Form.Control.Feedback type="invalid">
@@ -198,11 +149,6 @@ const ProducerForm = () => {
               </Form.Control.Feedback>
             </div>
           </Form.Group>
-
-
-
-
-
           <Form.Group className="inputfield">
             <Form.Label>price</Form.Label>
             <div style={{ width: "100%" }}>
@@ -213,14 +159,7 @@ const ProducerForm = () => {
               </Form.Control.Feedback>
             </div>
           </Form.Group>
-
-
-
-
-
           <Form.Group className="inputfield">
-
-
             <Form.Label>Discount</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.discount}
@@ -228,19 +167,11 @@ const ProducerForm = () => {
               <Form.Control.Feedback type="invalid">
               {formErrors.discount ? formErrors.discount : null}.
               </Form.Control.Feedback>
-
             </div>
-
-
           </Form.Group>
-
-
-
-
           <Form.Group className="inputfield">
             <Form.Label for="file">Producer</Form.Label>
             <div style={{ width: "100%" }}>
-
               <Form.Select isInvalid={formErrors.producer} 
               className="input" name="producer">
                 <option selected="selected">{product ? product.producer : null} </option>
@@ -255,52 +186,31 @@ const ProducerForm = () => {
               <Form.Control.Feedback type="invalid">
               {formErrors.producer ? formErrors.producer : null}.
               </Form.Control.Feedback>
-
-
             </div>
-
-
-
           </Form.Group>
-
-
           <Form.Group className="inputfield">
             <Form.Label for="file">posted by</Form.Label>
             <div style={{ width: "100%" }}>
-
               <Form.Select isInvalid={formErrors.posted_by} className="input" name="posted_by">
               <option selected="selected">{product ? product.posted_by : null} </option>
                 {employees.map((employee) => {
                   const id = employee.id
                   const splitted_id = id.split('/')
-
                   return (
                     <option value={splitted_id[splitted_id.length - 2]}>{employee.user.first_name} {employee.user.last_name}</option>
                   )
                 }
                 )
-
-
                 }
               </Form.Select>
               <Form.Control.Feedback type="invalid">
               {formErrors.posted_by ? formErrors.posted_by : null}.
               </Form.Control.Feedback>
             </div>
-
-
           </Form.Group>
-
-
-
-         
-
-
           <div className="inputfield">
-           
             <button className="btn"> update </button>
           </div>
-
           <Link to='/product' className='btn'>Back Producers</Link>
         </form>
       </div>

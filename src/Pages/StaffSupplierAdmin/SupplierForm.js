@@ -1,12 +1,11 @@
 
 import axios from 'axios';
-
+import { useNavigate } from 'react-router';
 import StaffForm from '../../Components/StaffForm';
 import { useState } from 'react';
 const SingleSupplier = () => {
   const [formErrors,setFormErrors]= useState({})
-  
-  
+  const navigate=useNavigate();
   const handleSubmit = (event)=>{
     event.preventDefault();
     const data = {
@@ -32,22 +31,17 @@ const SingleSupplier = () => {
       data
     }).then(res => {
         console.log(res)
+        navigate(-1)
     }).catch(error => {
       if (error.response) {
         setFormErrors(error.response.data);
       }
-      
-
     })
   }
-
-
   return (
-
     <>
   <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/supplier" formErrors={formErrors}/>
     </>
   );
 };
-
 export default SingleSupplier;

@@ -1,15 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import React from 'react'
-
-
-
 const Supplier = () => {
   return (
-      <section>
-        
+      <section>        
           <Outlet />
       </section>
-      
   );
 };
 export default Supplier;

@@ -1,14 +1,12 @@
 
 import axios from 'axios';
-// import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import StaffForm from '../../Components/StaffForm';
 import "../../Assets/styles/button.css"
 import { useState } from 'react';
 const Singleemployee = () => {
     const [formErrors,setFormErrors]= useState({})
-  
-  
+    const navigate=useNavigate(); 
   const handleSubmit = (event)=>{
     event.preventDefault();
     const data = {
@@ -34,24 +32,17 @@ const Singleemployee = () => {
       data
     }).then(res => {
         console.log(res)
+        navigate(-1)
     }).catch(error => {
       if (error.response) {
         setFormErrors(error.response.data);
       }
-      
-
     })
   }
-  
   return (
-    <>
-    
-   
+    <> 
     <StaffForm  handleSubmit={handleSubmit} title="Employee" link="/employeeList" formErrors={formErrors}/>
     </>
-
   );
 };
-{/* <Form  */}
-// const Form=({handleSubmit}){}
 export default Singleemployee;

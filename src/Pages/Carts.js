@@ -1,16 +1,11 @@
 import "../Assets/styles/Carts.css"
-
 import axios from "axios";
 import { useEffect, useState } from 'react'
-
 import * as ReactBootStrap from 'react-bootstrap'
 const Carts = () => {
-
   const [carts, setCarts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
-
-  // fetch data from the localhost and save it to the state
   useEffect(() => {
     setLoading(true)
     axios.request({
@@ -25,17 +20,13 @@ const Carts = () => {
       setCarts(res.data)
       setLoading(false)
     })
-
   }, [])
   return (
     <>
       <body className="Body">
-
         <section class="employee_listing_whole">
-
           <div class="employee_listing">
           <h1>    Cart listing</h1>
-            
             <ReactBootStrap.Table striped bordered hover>
               <thead>
                 <tr>
@@ -45,14 +36,11 @@ const Carts = () => {
                   <th>closed</th>
                   <th>payed</th>
                   <th>items amount</th>
-
-                  
                 </tr>
               </thead>
               <tbody>
                 {carts.map((cart,index) => {
                   return (
-
                     <tr key={index+1}>
                       <td>{index+1}</td>
                       <td>{cart.delivery ? "its delivered" : "it not delivered " }</td>
@@ -66,14 +54,9 @@ const Carts = () => {
               </tbody>
             </ReactBootStrap.Table>
           </div>
-
-        
-
         </section>
-
       </body>
     </>
   );
 };
-
 export default Carts;

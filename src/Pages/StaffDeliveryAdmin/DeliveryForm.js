@@ -1,16 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-import Form from "react-bootstrap/Form"
-import Col from 'react-bootstrap/Col';
-
+import { useState } from 'react'
 import StaffForm from '../../Components/StaffForm';
 import "../../Assets/styles/button.css"
  const DeliveryForm = () => {
   const [formErrors, setFormErrors] = useState({})
-    
-  
+  const navigate=useNavigate();
     const handleSubmit = (event)=>{
       event.preventDefault();
       const data = {
@@ -36,18 +32,16 @@ import "../../Assets/styles/button.css"
         data
       }).then(res => {
         console.log(res);
+        navigate(-1)
       }).catch(error => {
         if (error.response) {
           setFormErrors(error.response.data);
         }
-        
-  
       })
     }
   return (
     <>
         <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/delivery" formErrors={formErrors} />
-
     </>
   )
 }
