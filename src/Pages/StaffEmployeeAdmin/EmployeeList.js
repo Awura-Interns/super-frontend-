@@ -5,29 +5,65 @@ import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap'
 // import employees from "../Helpers/EmployeeData"
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner';
+
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
-    
-    useEffect(() => {
-        setLoading(true)
+
+    const listEmployees =()=>{
         axios.request({
             method: 'get',
             headers: {
                 "Content-Type": "multipart/form-data",
                 "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
             },
-            url:'https://dev.api.superlink.awuraplc.org/staff/employee/'
+            url: 'https://dev.api.superlink.awuraplc.org/staff/employee/'
         }).then(res => {
             console.log(res.data)
+            
             setEmployees(res.data)
             setLoading(false)
         })
-        
+    }
+
+    useEffect(() => {
+       
+        listEmployees()
+
     }, [])
+
+
+
+    const handleDelete = (id) => {
+        axios.request({
+            method: 'delete',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+            },
+            url: `https://dev.api.superlink.awuraplc.org/staff/employee/${id}/`
+
+        }).then(()=>{
+            listEmployees()
+        }).catch(error=>{
+            alert(error.response.data);
+        })
+    }
+
+    if(loading){
+        return (
+        <div style={{width:"100vw", height:"100vh", backgroundColor:"rgba(0,0,0,0.6)", display:"flex", alignItems:"center", justifyContent:"center"}}>
+              
+            <Spinner animation="border" style={{color:"white"}} />
+        </div>
+        )
+    }
+    
+
     return (
         <>
             <body className="Body">
@@ -44,7 +80,7 @@ const EmployeeList = () => {
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>id</th>
+                                    <th>No.</th>
                                     <th>photo</th>
                                     <th>name</th>
                                     <th>email</th>
@@ -56,11 +92,11 @@ const EmployeeList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {employees.map((employee) => {
+                                {employees.map((employee,index) => {
                                     return (
 
-                                        <tr key={employee.id}>
-                                            <td>{employee.id}</td>
+                                        <tr key={index + 1}>
+                                        <td>{index + 1}</td>
                                             <td> <img className="image_profile_picture" src={employee.profile_picture} alt="Mark Zuckerberg"
                                             /> </td>
                                             <td>{employee.user.first_name} {employee.user.last_name}</td>
@@ -69,10 +105,19 @@ const EmployeeList = () => {
                                             <td>{employee.birthdate}</td>
                                             <td><img src={employee.identification_card} alt={employee.user.first_name}
                                                 className="image_profile_picture" /></td>
-                                            <td><div className="action_btn">
-                                                <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
-                                                <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
-                                            </div> </td>
+                                            <td>
+                                                <div className="action_btn">
+                                                    <div className='btn'>
+                                                    <button className="edite"><Link  to={`/employeeList/employeeEdit/${employee.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
+
+                                                    </div>
+                                                    <div className='btn'>
+
+                                                        <button onClick={() => handleDelete(employee.pk)} className="delete" title="delete">
+                                                            <i className='bx bxs-trash-alt'></i>
+                                                        </button>
+                                                    </div>
+                                                </div>  </td>
 
                                         </tr>
                                     )
@@ -83,7 +128,7 @@ const EmployeeList = () => {
                         </ReactBootStrap.Table>
                     </div>
 
-                    {/* <Link to={`/EmployeeList/${employee.id}`}>more</Link> */}
+                   
 
                 </section>
 

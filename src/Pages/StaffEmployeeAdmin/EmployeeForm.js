@@ -4,8 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StaffForm from '../../Components/StaffForm';
 import "../../Assets/styles/button.css"
+import { useState } from 'react';
 const Singleemployee = () => {
-    
+    const [formErrors,setFormErrors]= useState({})
   
   
   const handleSubmit = (event)=>{
@@ -33,13 +34,20 @@ const Singleemployee = () => {
       data
     }).then(res => {
         console.log(res)
+    }).catch(error => {
+      if (error.response) {
+        setFormErrors(error.response.data);
+      }
+      
+
     })
   }
+  
   return (
     <>
     
    
-    <StaffForm handleSubmit={handleSubmit} title="Employee" link="/EmployeeList"/>
+    <StaffForm  handleSubmit={handleSubmit} title="Employee" link="/employeeList" formErrors={formErrors}/>
     </>
 
   );

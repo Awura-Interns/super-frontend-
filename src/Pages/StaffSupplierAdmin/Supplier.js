@@ -1,33 +1,71 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
+
 import * as ReactBootStrap from 'react-bootstrap'
 import "../../Assets/styles/Supplier.css"
 import "../../Assets/styles/button.css"
 import "../../Assets/styles/actionBtn.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
+import Spinner from 'react-bootstrap/Spinner';
 const Supplier = () => {
     const [supplier, setSupplier] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
+
+    const listSupplier=()=>{
+        axios.request({
+            method: 'get',
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+            },
+            url: 'https://dev.api.superlink.awuraplc.org/staff/supplier/'
+          }).then(res => {
+            console.log(res.data)
+            setSupplier(res.data)
+            setLoading(false)
+      
+          })
+    }
     // fetch data from the localhost and save it to the state
     useEffect(() => {
-        setLoading(true)
+        
+        listSupplier()
+      }, [])
+
+
+
+      const handleDelete = (id)=>{
         axios.request({
-          method: 'get',
+          method:'delete',
           headers: {
             "Content-Type": "multipart/form-data",
             "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
-          },
-          url: 'https://dev.api.superlink.awuraplc.org/staff/supplier/'
-        }).then(res => {
-          console.log(res.data)
-          setSupplier(res.data)
-    
+        },
+        url:`https://dev.api.superlink.awuraplc.org/staff/supplier/${id}/`
+        
+        }).then(()=>{
+            listSupplier()
+        }).catch(error=>{
+            alert(error.response.data);
         })
-      }, [])
+        }
 
+
+
+
+
+        
+        if(loading){
+            return (
+            <div style={{width:"100vw", height:"100vh", backgroundColor:"rgba(0,0,0,0.6)", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                  
+                <Spinner animation="border" style={{color:"white"}} />
+            </div>
+            )
+        }
     return (
         <>
             <body className="Body">
@@ -37,14 +75,14 @@ const Supplier = () => {
 
                     <div class="supplier_listing">
                         <div className='button'>
-                            <NavLink to='/Supplier/SupplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                            <NavLink to='/supplier/supplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
 
                         </div>
 
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>id</th>
+                                    <th>No.</th>
                                     <th>photo</th>
                                     <th>name</th>
                                     <th>email</th>
@@ -57,11 +95,11 @@ const Supplier = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {supplier.map((supplier) => {
+                                {supplier.map((supplier,index) => {
                                     return (
 
-                                        <tr key={supplier.id}>
-                                            <td>{supplier.id}</td>
+                                        <tr key={index + 1}>
+                                        <td>{index + 1}</td>
                                             <td> <img className='image_profile_picture' src={supplier.profile_picture} alt="Mark Zuckerberg" /> </td>
                                             <td>{supplier.user.first_name} {supplier.user.last_name}</td>
                                             <td>{supplier.user.email}</td>
@@ -69,10 +107,18 @@ const Supplier = () => {
                                             <td>{supplier.birthdate}</td>
                                             <td><img className='image_profile_picture' src={supplier.identification_card} alt={supplier.user.first_name}
                                             /></td>
-                                            <td><div className="action_btn">
-                                                <button className="edite" title="edite"><i className='bx bxs-trash-alt'></i></button>
-                                                <button className="delete" title="delete"><i className='bx bx-pencil'></i></button>
-                                            </div> </td>
+                                            <td>  <div className="action_btn">
+                        <div className='btn'>
+                        <button className="edite"><Link  to={`/supplier/supplierEdit/${supplier.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
+
+                        </div>
+                        <div className='btn'>
+
+                        <button onClick={()=>handleDelete(supplier.pk)} className="delete" title="delete">
+                        <i className='bx bxs-trash-alt'></i>
+                        </button>
+                        </div>
+                      </div> </td>
 
                                         </tr>
                                     )

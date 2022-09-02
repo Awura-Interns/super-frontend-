@@ -2,9 +2,9 @@
 import axios from 'axios';
 
 import StaffForm from '../../Components/StaffForm';
-
+import { useState } from 'react';
 const SingleSupplier = () => {
-  const url  = 'https://dev.api.superlink.awuraplc.org/staff/supplier/';
+  const [formErrors,setFormErrors]= useState({})
   
   
   const handleSubmit = (event)=>{
@@ -32,6 +32,12 @@ const SingleSupplier = () => {
       data
     }).then(res => {
         console.log(res)
+    }).catch(error => {
+      if (error.response) {
+        setFormErrors(error.response.data);
+      }
+      
+
     })
   }
 
@@ -39,7 +45,7 @@ const SingleSupplier = () => {
   return (
 
     <>
-  <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/Supplier"/>
+  <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/supplier" formErrors={formErrors}/>
     </>
   );
 };

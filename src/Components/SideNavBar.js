@@ -25,20 +25,20 @@ export default function SideNavBar() {
                     </li>
                     <li>
 
-                        <NavLink to='/Producer' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Producer List</span></NavLink>
+                        <NavLink to='/product' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Product List</span></NavLink>
                     </li>
                     <li>
 
-                        <NavLink to='/Carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Carts list</span></NavLink>
+                        <NavLink to='/carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Carts list</span></NavLink>
                     </li>
                     <li>
 
-                        <NavLink to='/EmployeeList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-book-alt'></i><span class="links_name">Employee list</span></NavLink>
+                        <NavLink to='/employeeList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-book-alt'></i><span class="links_name">Employee list</span></NavLink>
                     </li>
 
                     <li>
 
-                        <NavLink to='/Delivery' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-truck-pickup"></i><span class="links_name">Delivery </span></NavLink>
+                        <NavLink to='/delivery' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-truck-pickup"></i><span class="links_name">Delivery </span></NavLink>
 
                     </li>
                     {/* <li>
@@ -48,7 +48,7 @@ export default function SideNavBar() {
 
                     <li>
 
-                        <NavLink to='/Supplier' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-boxes-stacked"></i><span class="links_name">Supplier</span></NavLink>
+                        <NavLink to='/supplier' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-boxes-stacked"></i><span class="links_name">Supplier</span></NavLink>
                     </li>
 
                     <li>

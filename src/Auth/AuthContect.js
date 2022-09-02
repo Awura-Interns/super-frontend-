@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const AuthContext = createContext();
 
 
@@ -35,6 +36,7 @@ export const AuthProvider = ({ children }) => {
     });
 
     let data = await response.json();
+
     if (response.status === 200) {
       setAuthTokens(data);
       setUser(jwt_decode(data.access));
@@ -60,10 +62,41 @@ export const AuthProvider = ({ children }) => {
     navigate("/Loginform");
   };
 
+
+
+let refreshUser= async() =>{
+  const refreshToken=JSON.parse(localStorage.getItem("authTokens")).refresh
+  let response = await axios.request({
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+
+    data: JSON.stringify({
+      refresh: refreshToken,
+      
+    }),
+    url:"https://dev.api.superlink.awuraplc.org/api/token/refresh/"
+    
+  });
+  
+  let data = await response.json();
+    
+  if (response.status === 200) {
+    setAuthTokens(data);
+    setUser(jwt_decode(data.access));
+    localStorage.setItem("authTokens", JSON.stringify(data));
+    alert("correctly working")
+  } else {
+    console.log(response)
+  }
+ 
+}
   let contextData = {
     user: user,
     loginUser: loginUser,
     logoutUser: logoutUser,
+    refreshUser:refreshUser
   };
 
   return (

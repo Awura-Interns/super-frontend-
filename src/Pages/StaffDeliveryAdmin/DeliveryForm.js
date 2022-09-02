@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import { useEffect, useState } from 'react'
+import Form from "react-bootstrap/Form"
+import Col from 'react-bootstrap/Col';
 
 import StaffForm from '../../Components/StaffForm';
 import "../../Assets/styles/button.css"
  const DeliveryForm = () => {
-    const url  = 'http://127.0.0.1:8000/staff/delivery/';
-  
+  const [formErrors, setFormErrors] = useState({})
+    
   
     const handleSubmit = (event)=>{
       event.preventDefault();
@@ -34,11 +36,17 @@ import "../../Assets/styles/button.css"
         data
       }).then(res => {
         console.log(res);
+      }).catch(error => {
+        if (error.response) {
+          setFormErrors(error.response.data);
+        }
+        
+  
       })
     }
   return (
     <>
-        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/Delivery" />
+        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/delivery" formErrors={formErrors} />
 
     </>
   )
