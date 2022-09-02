@@ -86,9 +86,17 @@ export default function landingpage() {
               <span className="fw-bold">! ;)</span>
             </div>
             <div className="my-4 fs-4">Best products in the market</div>
-            <Link to="/home" className="btn btn-outline-light p-3">
-              See available items
-            </Link>
+            <div className="flex align-items-end">
+              <Link to="/home" className="btn btn-outline-light p-3">
+                See available items
+              </Link>
+              <Link
+                to="/home/chat"
+                className="ms-3 fw-normal text-white alert-link"
+              >
+                Chat with us
+              </Link>
+            </div>
           </div>
         </div>
         <div className="my-5 py-5 px-4 ">

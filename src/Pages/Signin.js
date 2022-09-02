@@ -24,6 +24,7 @@ export default function Signin() {
       if (response.success) {
         //TODO: use a better way of verifying response is success
         localStorage.setItem("accessToken", response.data.access);
+        localStorage.setItem("refreshToken", response.data.refresh);
         navigate("/home");
       } else {
         setErrorMessage({

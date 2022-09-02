@@ -15,6 +15,28 @@ export default function Cart() {
   const handleShow = () => setShow(true);
   const [quantity, setQuantity] = useState(-1);
 
+  async function refreshToken() {
+    var result = await http({
+      method: "POST",
+      url: endpoints.refreshToken,
+      data: {
+        refresh: localStorage.getItem("refreshToken"),
+      },
+    }).then((response) => {
+      if (response.success) {
+        //TODO: use a better way of verifying response is success
+        localStorage.setItem("accessToken", response.data.access);
+      } else {
+        setErrorMessage({
+          header: response.error.header,
+          message: response.error.message,
+        });
+        console.log("errorMessage");
+        console.log(errorMessage);
+      }
+    });
+  }
+
   var updateData = () => {
     var accessToken = localStorage.getItem("accessToken");
 
@@ -50,12 +72,16 @@ export default function Cart() {
           console.log(cartItems);
         });
       } else {
-        setErrorMessage({
-          header: response.error.header,
-          message: response.error.message,
-        });
-        console.log("errorMessage");
-        console.log(errorMessage);
+        if (response.error.message.code == "token_not_valid") {
+          refreshToken();
+        } else {
+          setErrorMessage({
+            header: response.error.header,
+            message: response.error.message,
+          });
+          console.log("errorMessage");
+          console.log(errorMessage);
+        }
       }
     });
   };
@@ -90,108 +116,135 @@ export default function Cart() {
                   </div>
                 )}
               </Alert>
-              {errorMessage.message.code == "token_not_valid" && (
-                <Link to="/home/Signin" className="btn btn-outline-primary">
-                  Login
-                </Link>
-              )}
             </div>
           ) : (
-            <div
-              className="w-100 my-5 pb-5 flex justify-content-center flex-wrap"
-              style={{
-                gap: "1.5rem",
-                //   maxWidth: 500,
-                overflow: "auto",
-              }}
-            >
-              {/* {JSON.stringify(cartItems.length)} */}
-              {cartItems &&
-                cartItems.length != 0 &&
-                cartItems.map((order, index) => (
-                  <>
-                    <div className="rounder mx-3 mt-2 p-4 flex-grow-1">
-                      <div className="flex justify-content-between align-items-center shadow border rounder p-3">
-                        <div className="flex justify-content-start align-items-center">
-                          <div
-                            className="rounder"
-                            style={{
-                              height: "75px",
-                              width: "75px",
-                              minWidth: "75px",
-                              backgroundImage: `url("${order.image}")`,
-                              backgroundRepeat: "no-repeat",
-                              backgroundSize: "cover",
-                              backgroundPosition: "center",
-                            }}
-                          ></div>
-                          <div className="m-3"></div>
-                          <div>
-                            <div className="flex">
-                              <b>Name</b>:{" "}
-                              <p className="ms-2 text-capitalize">
-                                {order.product_name}
-                              </p>
-                            </div>
-                            <div className="flex">
-                              <b>Total-Price</b>:{" "}
-                              <p className="ms-2">
-                                {parseFloat(order.price) *
-                                  parseFloat(order.qty)}
-                              </p>
-                            </div>
-                            <div className="flex">
-                              <b>Amount</b>: <p className="ms-2">{order.qty}</p>
+            <div className="my-5 flex flex-column align-items-center">
+              <div
+                className="w-100 my-5 flex justify-content-center flex-wrap"
+                style={{
+                  gap: "1.5rem",
+                  //   maxWidth: 500,
+                  overflow: "auto",
+                }}
+              >
+                {/* {JSON.stringify(cartItems.length)} */}
+                {cartItems &&
+                  cartItems.length != 0 &&
+                  cartItems.map((order, index) => (
+                    <>
+                      <div className="rounder mx-3 mt-2 p-4 flex-grow-1">
+                        <div className="flex justify-content-between align-items-center shadow border rounder p-3">
+                          <div className="flex justify-content-start align-items-center">
+                            <div
+                              className="rounder"
+                              style={{
+                                height: "75px",
+                                width: "75px",
+                                minWidth: "75px",
+                                backgroundImage: `url("${order.image}")`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            ></div>
+                            <div className="m-3"></div>
+                            <div>
+                              <div className="flex">
+                                <b>Name</b>:{" "}
+                                <p className="ms-2 text-capitalize">
+                                  {order.product_name}
+                                </p>
+                              </div>
+                              <div className="flex">
+                                <b>Total-Price</b>:{" "}
+                                <p className="ms-2">
+                                  {parseFloat(order.price) *
+                                    parseFloat(order.qty)}
+                                </p>
+                              </div>
+                              <div className="flex">
+                                <b>Amount</b>:{" "}
+                                <p className="ms-2">{order.qty}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="flex flex-column">
-                          <button
-                            onClick={() => {
-                              setShowIndex(index);
-                              handleShow();
-                            }}
-                            className="ms-4 btn btn-outline-success"
-                          >
-                            Update
-                          </button>
-                          <button
-                            onClick={() => {
-                              var accessToken =
-                                localStorage.getItem("accessToken");
-                              http({
-                                method: "DELETE",
-                                url: `${cartItems[showIndex].cartItemId
-                                  .replace("http", "https")
-                                  .replace(":80", "")}`,
-                                header: {
-                                  Authorization: `Bearer ${accessToken}`,
-                                },
-                                data: {
-                                  product: cartItems[showIndex].id,
-                                  quantity:
-                                    quantity === -1
-                                      ? cartItems[showIndex].qty
-                                      : quantity,
-                                },
-                              })
-                                .then((response) => {
-                                  updateData();
+                          <div className="flex flex-column">
+                            <button
+                              onClick={() => {
+                                setShowIndex(index);
+                                handleShow();
+                              }}
+                              className="ms-4 btn btn-outline-success"
+                            >
+                              Update
+                            </button>
+                            <button
+                              onClick={() => {
+                                var accessToken =
+                                  localStorage.getItem("accessToken");
+                                http({
+                                  method: "DELETE",
+                                  url: `${cartItems[showIndex].cartItemId
+                                    .replace("http", "https")
+                                    .replace(":80", "")}`,
+                                  header: {
+                                    Authorization: `Bearer ${accessToken}`,
+                                  },
+                                  data: {
+                                    product: cartItems[showIndex].id,
+                                    quantity:
+                                      quantity === -1
+                                        ? cartItems[showIndex].qty
+                                        : quantity,
+                                  },
                                 })
-                                .catch((error) => {
-                                  console.log("error add to cart");
-                                  console.log(error);
-                                });
-                            }}
-                            className="ms-4 btn btn-outline-danger"
-                          >
-                            Remove
-                          </button>
+                                  .then((response) => {
+                                    updateData();
+                                  })
+                                  .catch((error) => {
+                                    console.log("error add to cart");
+                                    console.log(error);
+                                  });
+                              }}
+                              className="ms-4 btn btn-outline-danger"
+                            >
+                              Remove
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </>
-                ))}
+                    </>
+                  ))}
+              </div>
+
+              {cartItems && cartItems.length != 0 && (
+                <div>
+                  <button
+                    className="btn btn-outline-primary p-3 fs-4"
+                    onClick={() => {
+                      var accessToken = localStorage.getItem("accessToken");
+                      http({
+                        method: "POST",
+                        url: `${endpoints.closeToCart}`,
+                        header: {
+                          Authorization: `Bearer ${accessToken}`,
+                        },
+                      })
+                        .then((response) => {
+                          console.log("!!!!!!!!!!1updateData();Confirmed");
+                          updateData();
+                        })
+                        .catch((error) => {
+                          console.log("error add to cart");
+                          console.log(error);
+                        });
+                      handleClose();
+                    }}
+                  >
+                    Confirm
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>

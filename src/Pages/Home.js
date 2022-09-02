@@ -18,6 +18,28 @@ const Home = () => {
   const [cart, setCart] = useState([]);
   const [show_, toggleShow_] = useState(true);
 
+  async function refreshToken() {
+    var result = await http({
+      method: "POST",
+      url: endpoints.refreshToken,
+      data: {
+        refresh: localStorage.getItem("refreshToken"),
+      },
+    }).then((response) => {
+      if (response.success) {
+        //TODO: use a better way of verifying response is success
+        localStorage.setItem("accessToken", response.data.access);
+      } else {
+        setErrorMessage({
+          header: response.error.header,
+          message: response.error.message,
+        });
+        console.log("errorMessage");
+        console.log(errorMessage);
+      }
+    });
+  }
+
   useEffect(() => {
     // setErrorMessage({});
     // setItems([]);
@@ -29,17 +51,19 @@ const Home = () => {
         Authorization: `Bearer ${accessToken}`,
       },
     }).then((response) => {
-      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      console.log(response);
       if (response.success) {
         setItems(response.data);
       } else {
-        setErrorMessage({
-          header: response.error.header,
-          message: response.error.message,
-        });
-        console.log("errorMessage");
-        console.log(errorMessage);
+        if (response.error.message.code == "token_not_valid") {
+          refreshToken();
+        } else {
+          setErrorMessage({
+            header: response.error.header,
+            message: response.error.message,
+          });
+          console.log("errorMessage");
+          console.log(errorMessage);
+        }
       }
     });
   }, []);
@@ -93,11 +117,6 @@ const Home = () => {
                 </div>
               )}
             </Alert>
-            {errorMessage.message.code == "token_not_valid" && (
-              <Link to="/home/Signin" className="btn btn-outline-primary">
-                Login
-              </Link>
-            )}
           </div>
         ) : (
           <div
