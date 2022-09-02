@@ -8,9 +8,9 @@ import Col from 'react-bootstrap/Col';
 const ProducerForm = () => {
   const [supplier, setSupplier] = useState([])
   const [product, setProduct] = useState(null)
-  const [loading, setLoading] = useState(true)
   const [formErrors, setFormErrors] = useState({})
-
+  const [employees, setEmployees] = useState([])
+  const [loading, setLoading] = useState(true)
   const {id} = useParams();
 
   // fetch data from the localhost and save it to the state
@@ -46,9 +46,6 @@ const ProducerForm = () => {
 
     })
   }, [])
-
-
-  const [employees, setEmployees] = useState([])
 
 
 
