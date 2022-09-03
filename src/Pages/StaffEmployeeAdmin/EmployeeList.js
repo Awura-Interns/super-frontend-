@@ -54,7 +54,7 @@ const EmployeeList = () => {
                     <h1>Employee listing</h1>
                     <div class="employee_listing">
                         <div className='button'>
-                            <NavLink to='/EmployeeList/EmployeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                            <NavLink to='/admin-page/employeeList/employeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
                         </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -85,7 +85,7 @@ const EmployeeList = () => {
                                             <td>
                                                 <div className="action_btn">
                                                     <div className='btn'>
-                                                    <button className="edite"><Link  to={`/employeeList/employeeEdit/${employee.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
+                                                    <button className="edite"><Link  to={`/admin-page/employeeList/employeeEdit/${employee.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
                                                     </div>
                                                     <div className='btn'>
                                                         <button onClick={() => handleDelete(employee.pk)} className="delete" title="delete">

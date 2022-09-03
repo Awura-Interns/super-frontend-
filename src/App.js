@@ -28,7 +28,7 @@ function App() {
     <AuthProvider>
       <Routes>
         <Route path="/Loginform" element={<Loginform />} />
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/admin-page" element={<SharedLayout />}>
           <Route index element={<PrivateRoute><Index /></PrivateRoute>} />
           <Route path="delivery" element={ <PrivateRoute><SharedDeliveryLayout /> </PrivateRoute>} >
             <Route index element={<PrivateRoute><Delivery /></PrivateRoute>} />

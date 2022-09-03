@@ -85,7 +85,7 @@ const StaffForm = (props) => {
                     <div className="inputfield">
                         <button className="btn"> update </button>
                     </div>
-                    <Link to="/supplier" className='btn'>Back to supplier</Link>
+                    <Link to="/admin-page/supplier" className='btn'>Back to supplier</Link>
                 </form>
             </div>
         </section>

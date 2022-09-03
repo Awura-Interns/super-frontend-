@@ -211,7 +211,7 @@ useEffect(() => {
           <div className="inputfield">
             <button className="btn"> update </button>
           </div>
-          <Link to='/product' className='btn'>Back Producers</Link>
+          <Link to='/admin-page/product' className='btn'>Back Producers</Link>
         </form>
       </div>
     </section>

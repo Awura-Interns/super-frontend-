@@ -14,22 +14,22 @@ export default function SideNavBar() {
                 </div>
                 <ul class="nav-links">
                     <li>
-                        <NavLink to='/' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bxs-home-smile'></i><span class="links_name">home</span></NavLink>
+                        <NavLink to='/admin-page' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bxs-home-smile'></i><span class="links_name">home</span></NavLink>
                     </li>
                     <li>
-                        <NavLink to='/product' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Product List</span></NavLink>
+                        <NavLink to='/admin-page/product' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-box'></i><span class="links_name">Product List</span></NavLink>
                     </li>
                     <li>
-                        <NavLink to='/carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Carts list</span></NavLink>
+                        <NavLink to='/admin-page/carts' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-list-ul'></i><span class="links_name">Carts list</span></NavLink>
                     </li>
                     <li>
-                        <NavLink to='/employeeList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-book-alt'></i><span class="links_name">Employee list</span></NavLink>
+                        <NavLink to='/admin-page/employeeList' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class='bx bx-book-alt'></i><span class="links_name">Employee list</span></NavLink>
                     </li>
                     <li>
-                        <NavLink to='/delivery' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-truck-pickup"></i><span class="links_name">Delivery </span></NavLink>
+                        <NavLink to='/admin-page/delivery' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-truck-pickup"></i><span class="links_name">Delivery </span></NavLink>
                     </li>
                     <li>
-                        <NavLink to='/supplier' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-boxes-stacked"></i><span class="links_name">Supplier</span></NavLink>
+                        <NavLink to='/admin-page/supplier' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i class="fa-solid fa-boxes-stacked"></i><span class="links_name">Supplier</span></NavLink>
                     </li>
                     <li>
                         <button className="links_name" type="button" onClick={logoutUser}><i class='bx bx-log-in-circle'></i><span class="links_name">Log out</span> </button>

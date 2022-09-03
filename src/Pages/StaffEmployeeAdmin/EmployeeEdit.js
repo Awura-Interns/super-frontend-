@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import Form from "react-bootstrap/Form"
 import axios from "axios";
 const StaffForm = (props) => {
-    // const [delivery, setdelivery] = useState([])
-    const [delivery, setDelivery] = useState([])
+    
+    const [employee, setEmployee] = useState([])
     const [loading, setLoading] = useState(true)
     const [formErrors, setFormErrors] = useState({})
   const navigate=useNavigate();
@@ -18,10 +18,10 @@ const StaffForm = (props) => {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
         },
-        url: `https://dev.api.superlink.awuraplc.org/staff/delivery/${id}/`
+        url: `https://dev.api.superlink.awuraplc.org/staff/employee/${id}/`
       }).then(res => {
         console.log(res.data)
-        setDelivery(res.data)
+        setEmployee(res.data)
         setLoading(false)
       })
     }, [])  
@@ -38,7 +38,7 @@ const StaffForm = (props) => {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
         },
-        url: `https://dev.api.superlink.awuraplc.org/staff/delivery/${id}/`,
+        url: `https://dev.api.superlink.awuraplc.org/staff/employee/${id}/`,
         data
       }).then(res => {
         console.log(res);
@@ -53,13 +53,13 @@ const StaffForm = (props) => {
         <section>
             <div class="Employewrapper">
                 <div class="title">
-                delivery registration
+                employee registration
                 </div>
                 <form class="form" onSubmit={handleSubmit} encType='multipart/form-data'>               
                     <Form.Group class="inputfield">
                         <Form.Label for="file">Profile Picture</Form.Label>
                         <div style={{ width: "100%" }}>
-                            <Form.Control isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={delivery ? delivery.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
+                            <Form.Control isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={employee ? employee.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
                             <Form.Control.Feedback type="invalid">
                             {formErrors ? formErrors.profile_picture : null}
                             </Form.Control.Feedback>
@@ -68,7 +68,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label>Birthdate</Form.Label>
                         <div style={{ width: "100%" }}>
-                        <Form.Control isInvalid={formErrors ? formErrors.birthdate : null} defaultValue={delivery ? delivery.birthdate : null} required type="date" class="input" name='birthdate' />
+                        <Form.Control isInvalid={formErrors ? formErrors.birthdate : null} defaultValue={employee ? employee.birthdate : null} required type="date" class="input" name='birthdate' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.birthdate : null}
                             </Form.Control.Feedback>
@@ -86,7 +86,7 @@ const StaffForm = (props) => {
                     <div className="inputfield">
                         <button className="btn"> update </button>
                     </div>
-                    <Link to="/employeeList" className='btn'>Back to delivery</Link>
+                    <Link to="/admin-page/employeeList" className='btn'>Back to employee</Link>
                 </form>
             </div>
         </section>

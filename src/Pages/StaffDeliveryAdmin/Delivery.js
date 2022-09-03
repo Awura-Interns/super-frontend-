@@ -60,7 +60,7 @@ const Delivery = () => {
                     <h1>delivery listing</h1>
                     <div class="delivery_listing">
                         <div className='button'>
-                            <NavLink to='/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                            <NavLink to='/admin-page/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
                         </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -91,7 +91,7 @@ const Delivery = () => {
                                             <td>
                                                 <div className="action_btn">
                                                     <div className='btn'>
-                                                    <button className="edite"><Link  to={`/delivery/deliveryEdit/${delivery.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
+                                                    <button className="edite"><Link  to={`/admin-page/delivery/deliveryEdit/${delivery.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
                                                     </div>
                                                     <div className='btn'>
                                                         <button onClick={() => handleDelete(delivery.pk)} className="delete" title="delete">

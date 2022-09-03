@@ -1,4 +1,4 @@
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink,Link} from 'react-router-dom';
 import * as ReactBootStrap from 'react-bootstrap'
 import axios from "axios";
 import { useEffect, useState } from 'react'
@@ -9,22 +9,24 @@ import "../../Assets/styles/actionBtn.css"
 const Producer = () => {
   const [producer, setProducer] = useState([])
   const [loading, setLoading] = useState(true)
-  const [formErrors, setFormErrors] = useState([])
+  const listProduct=()=>{
+    axios.request({
+      method: 'get',
+      headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
+      },
+      url:'https://dev.api.superlink.awuraplc.org/products/'
+  }).then(res => {
+      console.log(res.data)
+      setProducer(res.data)
+      setLoading(false)
+  }).catch(error=>{
+  });
+  } 
   useEffect(() => {
     setLoading(true)
-    axios.request({
-        method: 'get',
-        headers: {
-            "Content-Type": "multipart/form-data",
-            "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
-        },
-        url:'https://dev.api.superlink.awuraplc.org/products/'
-    }).then(res => {
-        console.log(res.data)
-        setProducer(res.data)
-        setLoading(false)
-    }).catch(error=>{
-    });
+    listProduct(); 
 }, [])
 const handleDelete = (id)=>{
 axios.request({
@@ -34,6 +36,10 @@ axios.request({
     "Authorization": `Bearer ${JSON.parse(localStorage.getItem("authTokens")).access}`
 },
 url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
+}).then(() => {
+  listProduct()
+}).catch(error => {
+  alert(error.response.data);
 })
 }
   return (
@@ -43,7 +49,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
           <h1>Product listing</h1>
           <div class="producer_listing">
             <div className='button'>
-              <NavLink to='/product/productForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+              <NavLink to='/admin-page/product/productForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
             </div>
             <ReactBootStrap.Table striped bordered hover>
               <thead>
@@ -78,7 +84,7 @@ url:`https://dev.api.superlink.awuraplc.org/products/${id}/`
                       <td>
                         <div className="action_btn">
                         <div className='btn'>
-                      <button className="edite"><Link  to={`/product/productEdit/${producers.id}`} ><i className='bx bx-pencil'></i></Link></button>  
+                      <button className="edite"><Link  to={`/admin-page/product/productEdit/${producers.id}`} ><i className='bx bx-pencil'></i></Link></button>  
                         </div>
                         <div className='btn'>
                         <button onClick={()=>handleDelete(producers.id)} className="delete" title="delete">

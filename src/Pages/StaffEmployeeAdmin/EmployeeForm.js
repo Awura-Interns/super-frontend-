@@ -41,7 +41,7 @@ const Singleemployee = () => {
   }
   return (
     <> 
-    <StaffForm  handleSubmit={handleSubmit} title="Employee" link="/employeeList" formErrors={formErrors}/>
+    <StaffForm  handleSubmit={handleSubmit} title="Employee" link="/admin-page/employeeList" formErrors={formErrors}/>
     </>
   );
 };

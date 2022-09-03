@@ -56,7 +56,7 @@ const Supplier = () => {
                     <h1>Supplier listing</h1>
                     <div class="supplier_listing">
                         <div className='button'>
-                            <NavLink to='/supplier/supplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                            <NavLink to='/admin-page/supplier/supplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
                         </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
@@ -85,7 +85,7 @@ const Supplier = () => {
                                             /></td>
                                             <td>  <div className="action_btn">
                                                 <div className='btn'>
-                                                    <button className="edite"><Link to={`/supplier/supplierEdit/${supplier.pk}`} ><i className='bx bx-pencil'></i></Link></button>
+                                                    <button className="edite"><Link to={`/admin-page/supplier/supplierEdit/${supplier.pk}`} ><i className='bx bx-pencil'></i></Link></button>
                                                 </div>
                                                 <div className='btn'>
                                                     <button onClick={() => handleDelete(supplier.pk)} className="delete" title="delete">

@@ -41,7 +41,7 @@ import "../../Assets/styles/button.css"
     }
   return (
     <>
-        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/delivery" formErrors={formErrors} />
+        <StaffForm handleSubmit={handleSubmit} title="Delivery" link="/admin-page/delivery" formErrors={formErrors} />
     </>
   )
 }

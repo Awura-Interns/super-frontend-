@@ -40,7 +40,7 @@ const SingleSupplier = () => {
   }
   return (
     <>
-  <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/supplier" formErrors={formErrors}/>
+  <StaffForm handleSubmit={handleSubmit} title="Supplier" link="/admin-page/supplier" formErrors={formErrors}/>
     </>
   );
 };

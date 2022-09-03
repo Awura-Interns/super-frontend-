@@ -190,7 +190,7 @@ const ProducerForm = () => {
           <div className="inputfield">
             <input type="submit" className="btn" name="submit" />
           </div>
-          <Link to='/product' className='btn'>Back Producers</Link>
+          <Link to='/admin-page/product' className='btn'>Back Producers</Link>
         </form>
       </div>
     </section>
