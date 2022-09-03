@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../Components/Navbar";
-import http from "../services/http";
-import endpoints from "../services/endpoints";
+import http from "../Helpers/services/http";
+import endpoints from "../Helpers/services/endpoints";
 import { Alert, Button, Container, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -24,15 +24,13 @@ export default function Cart() {
       },
     }).then((response) => {
       if (response.success) {
-        //TODO: use a better way of verifying response is success
-        localStorage.setItem("accessToken", response.data.access);
+        localStorage.setItem("accessToken", "");
+        localStorage.setItem("refreshToken", "");
       } else {
         setErrorMessage({
           header: response.error.header,
           message: response.error.message,
         });
-        console.log("errorMessage");
-        console.log(errorMessage);
       }
     });
   }
@@ -50,8 +48,6 @@ export default function Cart() {
       setCartItems([]);
       if (response.success) {
         set_(response.data);
-        console.log("_____________Response________________");
-        console.log(_);
         response.data[0].items.map((item) => {
           http({
             method: "GET",
@@ -68,8 +64,6 @@ export default function Cart() {
               });
             });
           });
-          console.log("____________cartItems_________________");
-          console.log(cartItems);
         });
       } else {
         if (response.error.message.code == "token_not_valid") {
@@ -79,8 +73,6 @@ export default function Cart() {
             header: response.error.header,
             message: response.error.message,
           });
-          console.log("errorMessage");
-          console.log(errorMessage);
         }
       }
     });
@@ -88,7 +80,6 @@ export default function Cart() {
 
   useEffect(() => {
     updateData();
-    console.log("i fire once");
   }, []);
   return (
     <>
@@ -202,8 +193,6 @@ export default function Cart() {
                                     updateData();
                                   })
                                   .catch((error) => {
-                                    console.log("error add to cart");
-                                    console.log(error);
                                   });
                               }}
                               className="ms-4 btn btn-outline-danger"
@@ -231,12 +220,9 @@ export default function Cart() {
                         },
                       })
                         .then((response) => {
-                          console.log("!!!!!!!!!!1updateData();Confirmed");
                           updateData();
                         })
                         .catch((error) => {
-                          console.log("error add to cart");
-                          console.log(error);
                         });
                       handleClose();
                     }}
@@ -336,8 +322,6 @@ export default function Cart() {
                     updateData();
                   })
                   .catch((error) => {
-                    console.log("error add to cart");
-                    console.log(error);
                   });
                 handleClose();
               }}

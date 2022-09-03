@@ -65,7 +65,9 @@ export default function NavBar({ onSearch }) {
             <Nav className="pe-3 ">
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/home/cart">Cart</Nav.Link>
-              <Nav.Link href="/home/Signin">
+              <Nav.Link href="/home/Signin" onClick={()=>{
+                localStorage.clear();
+              }}>
                 {localStorage.getItem("accessToken") == "" ? "Login" : "Logout"}
               </Nav.Link>
             </Nav>

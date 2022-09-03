@@ -1,12 +1,8 @@
 import React from "react";
 import "../Assets/styles/landingpage.css";
-import im1 from "../Assets/img/shop.png";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 
@@ -35,27 +31,14 @@ export default function landingpage() {
                 <Nav className="pe-3 ">
                   <Nav.Link href="/home">Home</Nav.Link>
                   <Nav.Link href="/home/cart">Cart</Nav.Link>
-                  <Nav.Link href="/home/Signin">
-                    {localStorage.getItem("accessToken") == ""
+                  <Nav.Link href="/home/Signin"  onClick={()=>{
+                localStorage.setItem("accessToken", "");
+                localStorage.setItem("refreshToken", "");
+              }}>
+                    {localStorage.getItem("accessToken") === ""
                       ? "Login"
-                      : "Logout"}
+                      : "Lo~~gout"}
                   </Nav.Link>
-                  {/* <NavDropdown
-                    title="Cart"
-                    drop="start"
-                    id={`offcanvasNavbarDropdown-expand-sm`}
-                  >
-                    <NavDropdown.Item href="#action3">
-                      List Cart Items
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      See Cart History
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

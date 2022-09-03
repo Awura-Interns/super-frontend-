@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import http from "../services/http";
-import endpoints from "../services/endpoints";
+import http from "../Helpers/services/http";
+import endpoints from "../Helpers/services/endpoints";
 
 import SingleItemCard from "./singleCartCard";
 import { useState } from "react";
@@ -112,10 +112,6 @@ export default function ItemCard({ item }) {
             variant="primary"
             onClick={() => {
               var accessToken = localStorage.getItem("accessToken");
-              console.log(accessToken);
-              console.log("accessToken");
-              console.log(item);
-              console.log("product");
               http({
                 method: "POST",
                 url: endpoints.addToCart,
@@ -128,13 +124,8 @@ export default function ItemCard({ item }) {
                 },
               })
                 .then((response) => {
-                  console.log("response add to cart");
-                  console.log(response);
-                  // setItems(response.data);
                 })
                 .catch((error) => {
-                  console.log("error add to cart");
-                  console.log(error);
                 });
               handleClose();
             }}

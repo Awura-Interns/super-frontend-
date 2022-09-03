@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "../Assets/styles/footer.css";
-// import { Button } from './Button';
-import Diamond from "../Assets/img/question.png";
+import {FaFacebook,FaTwitter,FaInstagram,FaLinkedinIn} from "react-icons/fa"
+
 export default function Footer() {
   return (
     <div>
@@ -59,18 +59,50 @@ export default function Footer() {
             </div>
             <div className="footer-col">
               <h4>follow us</h4>
-              <div className="social-links">
-                <Link to="#">
-                  <i className="fab fa-facebook-f"></i>
+              <div className="flex social-links">
+                <Link to="#" 
+                style={{
+                  borderRadius:"100%",
+                  // border:"1px dashed green",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+                >
+                  <FaFacebook  color="white" size={30}/>
                 </Link>
-                <Link to="#">
-                  <i className="fab fa-twitter"></i>
+                <Link to="#" 
+                style={{
+                  borderRadius:"100%",
+                  // border:"1px dashed green",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+                >
+                <FaTwitter  color="white" size={30}/>
                 </Link>
-                <Link to="#">
-                  <i className="fab fa-instagram"></i>
+                <Link to="#" 
+                style={{
+                  borderRadius:"100%",
+                  // border:"1px dashed green",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+                >
+                <FaInstagram  color="white" size={30}/>
                 </Link>
-                <Link to="#">
-                  <i className="fab fa-linkedin-in"></i>
+                <Link to="#" 
+                style={{
+                  borderRadius:"100%",
+                  // border:"1px dashed green",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+                >
+                <FaLinkedinIn  color="white" size={30}/>
                 </Link>
               </div>
             </div>

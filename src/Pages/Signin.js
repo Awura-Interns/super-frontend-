@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../Assets/styles/signin.css";
 import { Link, useNavigate } from "react-router-dom";
-import http from "../services/http";
-import endpoints from "../services/endpoints";
+import http from "../Helpers/services/http";
+import endpoints from "../Helpers/services/endpoints";
 import Alert from "react-bootstrap/Alert";
 
 export default function Signin() {
@@ -31,8 +31,6 @@ export default function Signin() {
           header: response.error.header,
           message: response.error.message,
         });
-        console.log("errorMessage");
-        console.log(errorMessage);
       }
     });
   }

@@ -1,6 +1,6 @@
 import "../Assets/styles/singleitemcard.css";
-import http from "../services/http";
-import endpoints from "../services/endpoints";
+import http from "../Helpers/services/http";
+import endpoints from "../Helpers/services/endpoints";
 
 export default function SingleItemCard({ product, trigger, settrigger }) {
   return (
