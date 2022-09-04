@@ -37,7 +37,7 @@ export default function Signin() {
 
   return (
     <div className="wrapper">
-      <div className="title">Registration Form</div>
+      <div className="title">Login</div>
       {JSON.stringify(errorMessage) != "{}" && (
         <Alert className="my-5" variant="danger">
           <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
@@ -79,7 +79,7 @@ export default function Signin() {
         <div className="inputfield">
           <input
             type="submit"
-            defaultValue="Register"
+            value="Login"
             onClick={() => {
               handleSubmit();
             }}

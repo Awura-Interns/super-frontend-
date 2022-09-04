@@ -1,5 +1,5 @@
 import React from "react";
-import "../Assets/styles/landingpage.css";
+// import "../Assets/styles/landingpage.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -32,12 +32,12 @@ export default function landingpage() {
                   <Nav.Link href="/home">Home</Nav.Link>
                   <Nav.Link href="/home/cart">Cart</Nav.Link>
                   <Nav.Link href="/home/Signin"  onClick={()=>{
-                localStorage.setItem("accessToken", "");
-                localStorage.setItem("refreshToken", "");
+                localStorage.setItem("accessToken", "response.data.access");
+                localStorage.setItem("refreshToken", "response.data.refresh");
               }}>
                     {localStorage.getItem("accessToken") === ""
                       ? "Login"
-                      : "Lo~~gout"}
+                      : "Logout"}
                   </Nav.Link>
                 </Nav>
               </Offcanvas.Body>

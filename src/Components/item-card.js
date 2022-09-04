@@ -3,8 +3,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import http from "../Helpers/services/http";
 import endpoints from "../Helpers/services/endpoints";
-
-import SingleItemCard from "./singleCartCard";
 import { useState } from "react";
 
 export default function ItemCard({ item }) {

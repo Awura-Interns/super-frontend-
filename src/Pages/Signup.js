@@ -152,7 +152,7 @@ export default function Signup() {
         <div className="inputfield">
           <input
             type="submit"
-            defaultValue="Register"
+            value="Register"
             className="btn"
             onClick={() => {
               handleSubmit();
