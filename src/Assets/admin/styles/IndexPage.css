@@ -1,0 +1,123 @@
+:root{
+    
+    --background:#f5f5f5;
+    --theme:#081D45;
+ }
+body{
+    background-color: var(--background);
+} 
+
+.container{
+    
+    
+    margin-left: 20rem;
+    
+}
+
+.hero2-text {
+    /* z-index: 0; */
+    width: 30%;
+    top: 35%;
+    font-family: "IBM Plex Serif", serif;
+    letter-spacing: 1.8px;
+    position: relative;
+    border: solid rgba(222, 178, 33, 0.3) 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    
+ 
+  }
+  .hero2-text p {
+    margin: 0px;
+  }
+  .hero2-text h1 {
+    font-family: "Abril Fatface", cursive;
+    font-size: 52px;
+    letter-spacing: 4px;
+  }
+  /* .hero2-text button {
+    position: relative;
+    border: solid #deb221 3px;
+    border-radius: 0;
+    background-color: #212121;
+    text-transform: uppercase;
+    font-family: "IBM Plex Serif", serif;
+    letter-spacing: 2px;
+    margin-left: 0;
+    bottom: -40px;
+    color: #deb221;
+    font-size: 18px;
+  }
+  .hero2-text button:hover {
+    transform: translate(0px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    color: #deb221;
+    background-color: black;
+    border: solid #deb221 3px;
+  }
+  .hero-text button a, .hero2-text button a {
+    letter-spacing: 1.5px;
+    font-family: "Varela Round", sans-serif;
+    color: #6f2a59;
+  }
+  .hero-text button:hover, .hero2-text button:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    color: #4a1c3b;
+  } */
+  .border-text {
+    width: 160px;
+    text-transform: uppercase;
+    /* z-index: 1; */
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    color: #deb221;
+    text-align: left;
+    overflow: hidden;
+    margin-top: 50rem;
+  }
+  .headerTitle{
+    font-family: "Abril Fatface", cursive;
+    font-size: 52px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-family: "Varela Round", sans-serif;
+    font-size: 46px;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  
+ 
+
+  @media only screen and (max-width: 600px) {
+    .hero-text, .hero2-text, .hero3-text {
+      top: 10px;
+      margin: auto;
+    }
+    .hero-text h1, .hero2-text h1, .hero3-text h1 {
+      font-size: 30px;
+    }
+    .hero-text p, .hero2-text p, .hero3-text p {
+      font-size: 18px;
+    }
+    .hero-text button, .hero2-text button, .hero3-text button {
+      font-size: 16px;
+    }
+  }
+
+
+  .landing_page{
+    margin-top: 7rem;
+    margin-left: 7rem;
+  
+  }
+  .landing_page span{
+    text-decoration: underline;
+    font-weight: bolder;
+  }

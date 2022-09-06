@@ -1,0 +1,35 @@
+.supplier_listing_whole{
+  margin-top:3rem;
+}
+.supplier_listing{
+    width: 135vh;
+    height: 70vh;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
+
+
+}
+.image_profile_picture{
+    max-width: 100%;
+    height: auto
+}
+.image_profile_picture:hover{
+    transform: scale(5);
+    overflow:visible;
+  }
+  .action_btn button+button{
+    margin-left: 30px;
+    background-color: transparent;
+    
+  }
+  .action_btn  .edite{
+    color: green;
+    background-color: transparent;
+  }
+  .action_btn  .delete{
+    color: red;
+    background-color: transparent;
+  }
