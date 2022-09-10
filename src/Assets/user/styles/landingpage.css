@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
    --yellow:#fed330;
@@ -39,7 +39,7 @@
 }
 
 .header .header-1 .logo{
-    font-size: 2.5rem;
+    font-size: 5.5rem;
     font-weight: bolder;
     color:var(--black);
 }
@@ -69,7 +69,7 @@
 }
 
 .header .header-1 .search-form label{
-    font-size: 2.5rem;
+    font-size: 5.5rem;
     padding-right: 1.5rem;
     color:var(--black);
     cursor: pointer;
@@ -93,7 +93,7 @@
  .title{
     text-align: center;
     margin-bottom: 2.5rem;
-    font-size: 4rem;
+    font-size: 8rem;
     color:var(--black);
     text-transform: uppercase;
     text-decoration: underline;
@@ -111,13 +111,13 @@
  }
     
  .heading h3{
-    font-size: 5rem;
+    font-size: 9rem;
     color:var(--white);
     text-transform: capitalize;
  }
  
  .heading p{
-    font-size: 2.3rem;
+    font-size: 5.3rem;
     color:var(--light-color);
  }
  
@@ -134,17 +134,17 @@
  .delete-btn{
     margin-top: 1rem;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 5rem;
     padding:1rem 3rem;
     cursor: pointer;
     text-transform: capitalize;
     transition: .2s linear;
  }
  
- .btn{
+ /* .btn{
     background-color: var(--yellow);
     color:var(--black);
- }
+ } */
  
  .delete-btn{
     background-color: var(--red);
@@ -182,7 +182,7 @@
  }
  
  .about .row .content h3{
-    font-size: 3rem;
+    font-size: 5rem;
     color:var(--black);
     text-transform: capitalize;
     margin-bottom: 1rem;
@@ -191,9 +191,9 @@
  .about .row .content p{
     padding:1rem 0;
     line-height: 2;
-    font-size: 1.6rem;
+    font-size: 5.6rem;
     color:var(--light-color);
  }
  
 
-  */
+ 

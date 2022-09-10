@@ -11,9 +11,7 @@
     --background:#f5f5f5;
     --theme:#081D45;
  }
- .Body{
-    background-color:var(--theme);
- }
+
 .sidebar{
   position: fixed;
   height: 100%;
