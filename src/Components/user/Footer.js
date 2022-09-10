@@ -76,11 +76,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      {/* <Link to={"/Help"}>
-        <section className="scrollup show" id="html">
-          <img src={Diamond} alt="arrow up" />
-        </section>{" "}
-      </Link> */}
+     
     </div>
   );
 }

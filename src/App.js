@@ -36,7 +36,7 @@ import Signup from "./Pages/user/Signup";
 import Help from "./Pages/user/Help";
 
 import Home from "./Pages/user/Home";
-// import Modal from "./Components/Modal";
+
 import SharedLayOut from "./Pages/user/SharedLayOut";
 import SharedHomeLayout from "./Pages/user/SharedHomeLayout";
 
@@ -89,7 +89,6 @@ function App() {
 
           <Route path="products/:id" element={<SingleCart />} />
 
-          {/* <Route path="Modal" element={<Modal />} /> */}
         </Route>
       </Route>
 
