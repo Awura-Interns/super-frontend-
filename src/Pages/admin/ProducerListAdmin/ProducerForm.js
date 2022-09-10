@@ -4,7 +4,26 @@ import "../../../Assets/admin/styles/ProducerList.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import Form from "react-bootstrap/Form"
-import Col from 'react-bootstrap/Col';
+
+
+
+const title = {
+  
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  fontWeight: "bolder",
+  color: "rgb(2, 2, 56)"
+}
+const regForm={
+  fontWeight:"700"
+}
+const subBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
+const backBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
 const ProducerForm = () => {
   const [supplier, setSupplier] = useState([])
   const [loading, setLoading] = useState(true)
@@ -73,12 +92,12 @@ const ProducerForm = () => {
   return (
     <section>
       <div className="Employewrapper">
-        <div className="title">
+        <div style={title} className="title">
           Producer registration
         </div>
         <form className="form" onSubmit={handleSubmit}>
           <Form.Group className="inputfield">
-            <Form.Label for="file">Product Picture</Form.Label>
+            <Form.Label style={regForm} for="file">Product Picture</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.image} type="file" id="file" accept="image/*" className="input" name="product_picture" />
               <Form.Control.Feedback type="invalid">
@@ -87,7 +106,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">agreement Picture</Form.Label>
+            <Form.Label style={regForm} for="file">agreement Picture</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.doc} type="file" id="file" accept="image/*" className="input" name="agreement_picture" />
               <Form.Control.Feedback type="invalid">
@@ -96,7 +115,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label> Product Name </Form.Label>
+            <Form.Label style={regForm}> Product Name </Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.product_name}  type="text" className="input" name="product_name" />
               <Form.Control.Feedback type="invalid">
@@ -105,7 +124,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>product type</Form.Label>
+            <Form.Label style={regForm}>product type</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.product_type} type="text" className="input" name="product_type" />
               <Form.Control.Feedback type="invalid">
@@ -114,7 +133,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>description</Form.Label>
+            <Form.Label style={regForm}>description</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.description} type="textarea" className="input" maxLength="100" placeholder='100 characters' name="description" />
               <Form.Control.Feedback type="invalid">
@@ -123,7 +142,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>amount</Form.Label>
+            <Form.Label style={regForm}>amount</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.amount} type="number" className="input" placeholder='IN kilogram ' name="amount" />
               <Form.Control.Feedback type="invalid">
@@ -132,7 +151,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>price</Form.Label>
+            <Form.Label style={regForm}>price</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.price} type="number" className="input" name="price" maxLength="4" placeholder='4 digits ' />
               <Form.Control.Feedback type="invalid">
@@ -141,7 +160,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>Discount</Form.Label>
+            <Form.Label style={regForm}>Discount</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.discount} type="number" className="input" maxLength="1" placeholder='in percentage' name="discount" />
               <Form.Control.Feedback type="invalid">
@@ -150,7 +169,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">Producer</Form.Label>
+            <Form.Label style={regForm} for="file">Producer</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Select isInvalid={formErrors.producer} className="input" name="producer">
                 <option> </option>
@@ -168,7 +187,7 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">posted by</Form.Label>
+            <Form.Label style={regForm} for="file">posted by</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Select isInvalid={formErrors.posted_by} className="input" name="posted_by">
                 <option> </option>
@@ -188,9 +207,9 @@ const ProducerForm = () => {
             </div>
           </Form.Group>
           <div className="inputfield">
-            <input type="submit" className="btn" name="submit" />
+            <input type="submit" className="btn" name="submit" style={subBtn} />
           </div>
-          <Link to='/admin-page/product' className='btn'>Back Producers</Link>
+          <Link to='/admin-page/product' className='btn' style={backBtn}>Back Producers</Link>
         </form>
       </div>
     </section>

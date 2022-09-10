@@ -3,6 +3,29 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import Form from "react-bootstrap/Form"
 import axios from "axios";
+
+
+
+const title = {
+  
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  fontWeight: "bolder",
+  color: "rgb(2, 2, 56)"
+}
+const regForm={
+  fontWeight:"700"
+}
+const formInput={
+  fontSize: "1.5rem"
+}
+const subBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
+const backBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
 const StaffForm = (props) => {
     
     const [employee, setEmployee] = useState([])
@@ -51,41 +74,41 @@ const StaffForm = (props) => {
     return (
         <section>
             <div class="Employewrapper">
-                <div class="title">
+                <div style={title} class="title">
                 employee registration
                 </div>
                 <form class="form" onSubmit={handleSubmit} encType='multipart/form-data'>               
                     <Form.Group class="inputfield">
-                        <Form.Label for="file">Profile Picture</Form.Label>
+                        <Form.Label style={regForm} for="file">Profile Picture</Form.Label>
                         <div style={{ width: "100%" }}>
-                            <Form.Control isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={employee ? employee.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
+                            <Form.Control style={formInput} isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={employee ? employee.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
                             <Form.Control.Feedback type="invalid">
                             {formErrors ? formErrors.profile_picture : null}
                             </Form.Control.Feedback>
                         </div>
                     </Form.Group>
                     <Form.Group class="inputfield">
-                        <Form.Label>Birthdate</Form.Label>
+                        <Form.Label style={regForm}>Birthdate</Form.Label>
                         <div style={{ width: "100%" }}>
-                        <Form.Control isInvalid={formErrors ? formErrors.birthdate : null} defaultValue={employee ? employee.birthdate : null} required type="date" class="input" name='birthdate' />
+                        <Form.Control style={formInput} isInvalid={formErrors ? formErrors.birthdate : null} defaultValue={employee ? employee.birthdate : null} required type="date" class="input" name='birthdate' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.birthdate : null}
                             </Form.Control.Feedback>
                         </div>
                     </Form.Group>
                     <Form.Group class="inputfield">
-                        <Form.Label for="file">Id Card</Form.Label>
+                        <Form.Label style={regForm} for="file">Id Card</Form.Label>
                         <div style={{ width: "100%" }}>
-                        <Form.Control isInvalid={formErrors ? formErrors.identification_card : null} required type="file" id="file" accept="image/*" class="input" name='identification_card' />
+                        <Form.Control style={formInput} isInvalid={formErrors ? formErrors.identification_card : null} required type="file" id="file" accept="image/*" class="input" name='identification_card' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.identification_card : null}
                             </Form.Control.Feedback>
                         </div>
                     </Form.Group>
                     <div className="inputfield">
-                        <button className="btn"> update </button>
+                        <button className="btn" style={subBtn}> update </button>
                     </div>
-                    <Link to="/admin-page/employeeList" className='btn'>Back to employee</Link>
+                    <Link to="/admin-page/employeeList" className='btn' style={backBtn}>Back to employee</Link>
                 </form>
             </div>
         </section>

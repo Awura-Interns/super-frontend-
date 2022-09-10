@@ -4,6 +4,26 @@ import "../../../Assets/admin/styles/ProducerList.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import Form from "react-bootstrap/Form"
+
+
+
+const title = {
+  
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  fontWeight: "bolder",
+  color: "rgb(2, 2, 56)"
+}
+const regForm={
+  fontWeight:"700"
+}
+const subBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
+const backBtn={
+  fontSize:"2rem",
+  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+}
 const ProducerForm = () => {
   const [supplier, setSupplier] = useState([])
   const [product, setProduct] = useState(null)
@@ -86,12 +106,12 @@ useEffect(() => {
   return (
     <section>
       <div className="Employewrapper">
-        <div className="title">
+        <div style={title} className="title">
         Product update form
         </div>
         <form className="form" onSubmit={handleSubmit}>
           <Form.Group className="inputfield">
-            <Form.Label for="file">Product Picture</Form.Label>
+            <Form.Label style={regForm} for="file">Product Picture</Form.Label>
             <div style={{ width: "100%" }}>
                 <a href={`${product ? product.image : null}`}>hello</a>
               <Form.Control isInvalid={formErrors.image} type="file" id="file" accept="image/*" className="input" name="product_picture" />
@@ -101,7 +121,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">agreement Picture</Form.Label>
+            <Form.Label style={regForm} for="file">agreement Picture</Form.Label>
             <div style={{ width: "100%" }}>
             <a href={`${product ? product.agreement_picture : null}`}>hello</a>
               <Form.Control isInvalid={formErrors.doc} type="file" id="file" accept="image/*" className="input" name="agreement_picture" />
@@ -111,7 +131,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label> Product Name </Form.Label>
+            <Form.Label style={regForm}> Product Name </Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.product_name} defaultValue={product ? product.product_name : null} type="text" className="input" name="product_name" />
               <Form.Control.Feedback type="invalid">
@@ -120,7 +140,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>product type</Form.Label>
+            <Form.Label style={regForm}>product type</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.product_type} 
               defaultValue={product ? product.product_type : null} type="text" className="input" name="product_type" />
@@ -130,7 +150,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>description</Form.Label>
+            <Form.Label style={regForm}>description</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.description} 
               defaultValue={product ? product.description : null}type="textarea" className="input" maxLength="100" placeholder='100 characters' name="description" />
@@ -140,7 +160,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>amount</Form.Label>
+            <Form.Label style={regForm}>amount</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.amount}
               defaultValue={product ? product.amount : null} type="number" className="input" placeholder='IN kilogram ' name="amount" />
@@ -150,7 +170,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>price</Form.Label>
+            <Form.Label style={regForm}>price</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.price}
               defaultValue={product ? product.price : null}  type="number" className="input" name="price" maxLength="4" placeholder='4 digits ' />
@@ -160,7 +180,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label>Discount</Form.Label>
+            <Form.Label style={regForm}>Discount</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Control isInvalid={formErrors.discount}
               defaultValue={product ? product.discount : null}  type="number" className="input" maxLength="1" placeholder='in percentage' name="discount" />
@@ -170,7 +190,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">Producer</Form.Label>
+            <Form.Label style={regForm} for="file">Producer</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Select isInvalid={formErrors.producer} 
               className="input" name="producer">
@@ -189,7 +209,7 @@ useEffect(() => {
             </div>
           </Form.Group>
           <Form.Group className="inputfield">
-            <Form.Label for="file">posted by</Form.Label>
+            <Form.Label style={regForm} for="file">posted by</Form.Label>
             <div style={{ width: "100%" }}>
               <Form.Select isInvalid={formErrors.posted_by} className="input" name="posted_by">
               <option selected="selected">{product ? product.posted_by : null} </option>
@@ -209,9 +229,9 @@ useEffect(() => {
             </div>
           </Form.Group>
           <div className="inputfield">
-            <button className="btn"> update </button>
+            <button className="btn" style={subBtn}> update </button>
           </div>
-          <Link to='/admin-page/product' className='btn'>Back Producers</Link>
+          <Link to='/admin-page/product' className='btn' style={backBtn}>Back Producers</Link>
         </form>
       </div>
     </section>

@@ -9,6 +9,38 @@ import "../../../Assets/admin/styles/ListForm.css"
 import "../../../Assets/admin/styles/delivery.css"
 import "../../../Assets/admin/styles/actionBtn.css"
 import "../../../Assets/admin/styles/ListForm.css"
+
+
+const positionSection = {
+    marginTop: "8rem",
+  }
+  const positionTitle = {
+    marginLeft: "10rem",
+    fontSize: "3rem",
+    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    fontWeight: "bolder",
+    color: "rgb(2, 2, 56)"
+  }
+  const RegBtn = {
+    fontSize: "2rem"
+  }
+  const tableHeading = {
+    fontSize: "1.5rem"
+  }
+  const tableContent = {
+    fontSize: "1.5rem",
+    fontWeight: "600",
+  }
+  const actionBox = {
+    fontSize: "1rem",
+    padding:"0rem 1rem 0rem 1rem"
+  
+  }
+  const actionBtn = {
+    fontSize: "2rem",
+    padding:"0"
+  }
+
 const Delivery = () => {
     const [delivery, setDelivery] = useState([])
     const [loading, setLoading] = useState(true)
@@ -56,45 +88,45 @@ const Delivery = () => {
     return (
         <>
             <body className="Body">
-                <section className="delivery_listing_whole">
-                    <h1>delivery listing</h1>
+                <section className="delivery_listing_whole" style={positionSection}>
+                    <h1 style={positionTitle}>delivery listing</h1>
                     <div class="delivery_listing">
                         <div className='button'>
-                            <NavLink to='/admin-page/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')}>registration</NavLink>
+                            <NavLink to='/admin-page/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')} style={RegBtn}>registration</NavLink>
                         </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th>photo</th>
-                                    <th>name</th>
-                                    <th>email</th>
-                                    <th>phone number</th>
-                                    <th>birthdate</th>
-                                    <th>identification card</th>
-                                    <th>Action</th>
+                                    <th style={tableHeading}>No.</th>
+                                    <th style={tableHeading}>photo</th>
+                                    <th style={tableHeading}>name</th>
+                                    <th style={tableHeading}>email</th>
+                                    <th style={tableHeading}>phone number</th>
+                                    <th style={tableHeading}>birthdate</th>
+                                    <th style={tableHeading}>identification card</th>
+                                    <th style={tableHeading}>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {delivery.map((delivery, index) => {
                                     return (
                                         <tr key={index + 1}>
-                                            <td>{index + 1}</td>
-                                            <td> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
+                                            <td style={tableContent}>{index + 1}</td>
+                                            <td style={tableContent}> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
                                                 className="image_profile_picture" /> </td>
-                                            <td>{delivery.user.first_name} {delivery.user.last_name}</td>
-                                            <td>{delivery.user.email}</td>
-                                            <td>{delivery.user.phone}</td>
-                                            <td>{delivery.birthdate}</td>
-                                            <td><img src={delivery.identification_card} alt="Mark Zuckerberg"
+                                            <td style={tableContent}>{delivery.user.first_name} {delivery.user.last_name}</td>
+                                            <td style={tableContent}>{delivery.user.email}</td>
+                                            <td style={tableContent}>{delivery.user.phone}</td>
+                                            <td style={tableContent}>{delivery.birthdate}</td>
+                                            <td style={tableContent}><img src={delivery.identification_card} alt="Mark Zuckerberg"
                                                 className="image_profile_picture" /></td>
-                                            <td>
+                                            <td style={tableContent}>
                                                 <div className="action_btn">
-                                                    <div className='btn'>
-                                                    <button className="edite"><Link  to={`/admin-page/delivery/deliveryEdit/${delivery.pk}`} ><i className='bx bx-pencil'></i></Link></button>  
+                                                    <div className='btn' style={actionBox}>
+                                                    <button className="edite"><Link  to={`/admin-page/delivery/deliveryEdit/${delivery.pk}`} style={actionBtn} ><i className='bx bx-pencil'></i></Link></button>  
                                                     </div>
-                                                    <div className='btn'>
-                                                        <button onClick={() => handleDelete(delivery.pk)} className="delete" title="delete">
+                                                    <div className='btn' style={actionBox}>
+                                                        <button onClick={() => handleDelete(delivery.pk)} className="delete" title="delete" style={actionBtn}>
                                                             <i className='bx bxs-trash-alt'></i>
                                                         </button>
                                                     </div>
