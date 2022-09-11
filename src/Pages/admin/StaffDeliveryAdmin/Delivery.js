@@ -33,7 +33,8 @@ const positionSection = {
   }
   const actionBox = {
     fontSize: "1rem",
-    padding:"0rem 1rem 0rem 1rem"
+    padding:"0rem 1rem 0rem 1rem",
+    backgroundColor: "transparent"
   
   }
   const actionBtn = {

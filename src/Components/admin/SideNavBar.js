@@ -11,7 +11,7 @@ const FontSizeTitle={
 
 }
 const FontSizeBtn={
-    fontSize: "2rem",
+    fontSize: "1.7rem",
     textTransform: "capitalize"
 
 }

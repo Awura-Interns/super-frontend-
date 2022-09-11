@@ -23,6 +23,7 @@ const subBtn={
 const backBtn={
   fontSize:"2rem",
   fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  backgroundColor: "transparent"
 }
 const ProducerForm = () => {
   const [supplier, setSupplier] = useState([])
