@@ -85,11 +85,8 @@ const Supplier = () => {
         <>
             <body className="Body">
                 <section class="supplier_listing_whole" style={positionSection}>
-                    <h1 style={positionTitle}>Supplier listing</h1>
+                    <h1 style={positionTitle}>Supplier listing <NavLink to='/admin-page/supplier/supplierForm' className={({ isActive }) => (isActive ? 'addSupplier' : 'addSupplier')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
                     <div class="supplier_listing">
-                        <div className='button'>
-                            <NavLink to='/admin-page/supplier/supplierForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')} style={RegBtn}>registration</NavLink>
-                        </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>

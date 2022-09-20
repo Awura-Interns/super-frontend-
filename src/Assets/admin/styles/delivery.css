@@ -32,3 +32,9 @@
         color: red;
         background-color: transparent;
     }
+    .addDelivery{
+        margin-left: 49rem;
+      }
+      .addDelivery:hover{
+        color: green;
+      }

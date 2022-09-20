@@ -78,11 +78,8 @@ const Producer = () => {
     <>
       <body className="Body">
         <section class="producer_listing_whole" style={positionSection}>
-          <h1 style={positionTitle}>Product listing</h1>
+          <h1 style={positionTitle}>Product listing <NavLink to='/admin-page/product/productForm' className={({ isActive }) => (isActive ? 'add' : 'add')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
           <div class="producer_listing">
-            <div className='button'>
-              <NavLink to='/admin-page/product/productForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')} style={RegBtn}>registration</NavLink>
-            </div>
             <ReactBootStrap.Table striped bordered hover>
               <thead>
                 <tr>

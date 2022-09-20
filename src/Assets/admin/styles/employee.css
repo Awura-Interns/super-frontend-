@@ -1,9 +1,10 @@
 .employee_listing_whole{
     margin-top:-3rem;
+    margin-left: 10rem;
   }
   .employee_listing{
-    width: 120vh;
-    height: 70vh;
+    width: 170vh;
+    height: 60vh;
     overflow: hidden;
     overflow-x: scroll;
     margin-left: 15rem;
@@ -38,4 +39,10 @@
 .action_btn  .delete{
   color: red;
   background-color: transparent;
+}
+.addEmployee{
+  margin-left: 49rem;
+}
+.addEmployee:hover{
+  color: green;
 }

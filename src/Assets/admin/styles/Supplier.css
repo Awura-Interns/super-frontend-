@@ -33,3 +33,9 @@
     color: red;
     background-color: transparent;
   }
+  .addSupplier{
+    margin-left: 60rem;
+  }
+  .addSupplier:hover{
+    color: green;
+  }

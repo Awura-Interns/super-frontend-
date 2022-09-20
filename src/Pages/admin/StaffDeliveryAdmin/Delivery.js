@@ -90,11 +90,8 @@ const Delivery = () => {
         <>
             <body className="Body">
                 <section className="delivery_listing_whole" style={positionSection}>
-                    <h1 style={positionTitle}>delivery listing</h1>
+                    <h1 style={positionTitle}>Delivery listing<NavLink to='/admin-page/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'addDelivery' : 'addDelivery')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
                     <div class="delivery_listing">
-                        <div className='button'>
-                            <NavLink to='/admin-page/delivery/deliveryForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')} style={RegBtn}>registration</NavLink>
-                        </div>
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>

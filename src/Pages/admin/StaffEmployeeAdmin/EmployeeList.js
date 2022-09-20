@@ -82,11 +82,10 @@ const EmployeeList = () => {
         
             <body className="Body">
                 <section class="employee_listing_whole" style={positionSection}>
-                    <h1 style={positionTitle}>Employee listing</h1>
+                    <h1 style={positionTitle}>Employee listing<NavLink to='/admin-page/employeeList/employeeForm' className={({ isActive }) => (isActive ? 'addEmployee' : 'addEmployee')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
+
                     <div class="employee_listing">
-                        <div className='button'>
-                            <NavLink to='/admin-page/employeeList/employeeForm' className={({ isActive }) => (isActive ? 'button-12' : 'button-12')} style={RegBtn}>registration</NavLink>
-                        </div>
+                       
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>
                                 <tr>
