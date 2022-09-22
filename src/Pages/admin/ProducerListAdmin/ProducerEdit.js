@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link,useNavigate, useParams } from 'react-router-dom';
 import "../../../Assets/admin/styles/ProducerList.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
@@ -31,6 +31,7 @@ const ProducerForm = () => {
   const [formErrors, setFormErrors] = useState({})
   const [employees, setEmployees] = useState([])
   const [loading, setLoading] = useState(true)
+  const navigate=useNavigate();
   const {id} = useParams();
   useEffect(() => {
     setLoading(true)
@@ -58,6 +59,7 @@ useEffect(() => {
     }).then(res => {
       console.log(res.data)
       setProduct(res.data)
+      
     })
   }, [])
     useEffect(() => {
@@ -98,6 +100,7 @@ useEffect(() => {
       data
     }).then(res => {
       console.log(res);
+      navigate(-1)
     }).catch(error => {
       if (error.response) {
         setFormErrors(error.response.data);
@@ -105,7 +108,7 @@ useEffect(() => {
     })
   }
   return (
-    <section>
+    <section className='wholeProducer'>
       <div className="Employewrapper">
         <div style={title} className="title">
         Product update form
@@ -114,8 +117,9 @@ useEffect(() => {
           <Form.Group className="inputfield">
             <Form.Label style={regForm} for="file">Product Picture</Form.Label>
             <div style={{ width: "100%" }}>
-                <a href={`${product ? product.image : null}`}>hello</a>
+                <img src={`${product ? product.image : null}`} alt={`${product ? product.product_name : null}`} />
               <Form.Control isInvalid={formErrors.image} type="file" id="file" accept="image/*" className="input" name="product_picture" />
+              
               <Form.Control.Feedback type="invalid">
                 {formErrors.image ? formErrors.image : null}
               </Form.Control.Feedback>
@@ -124,7 +128,8 @@ useEffect(() => {
           <Form.Group className="inputfield">
             <Form.Label style={regForm} for="file">agreement Picture</Form.Label>
             <div style={{ width: "100%" }}>
-            <a href={`${product ? product.agreement_picture : null}`}>hello</a>
+            
+            <img src={`${product ? product.doc : null}`} alt={`${product ? product.product_name : null}`} />
               <Form.Control isInvalid={formErrors.doc} type="file" id="file" accept="image/*" className="input" name="agreement_picture" />
               <Form.Control.Feedback type="invalid">
               {formErrors.doc ? formErrors.doc : null}

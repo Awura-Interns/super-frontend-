@@ -82,6 +82,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label style={regForm} for="file">Profile Picture</Form.Label>
                         <div style={{ width: "100%" }}>
+                        <img src={`${employee ? employee.profile_picture : null}`} alt={`${employee ? employee.first_name : null}`} />
                             <Form.Control style={formInput} isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={employee ? employee.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
                             <Form.Control.Feedback type="invalid">
                             {formErrors ? formErrors.profile_picture : null}
@@ -91,6 +92,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label style={regForm}>Birthdate</Form.Label>
                         <div style={{ width: "100%" }}>
+                          
                         <Form.Control style={formInput} isInvalid={formErrors ? formErrors.birthdate : null} defaultValue={employee ? employee.birthdate : null} required type="date" class="input" name='birthdate' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.birthdate : null}
@@ -100,6 +102,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label style={regForm} for="file">Id Card</Form.Label>
                         <div style={{ width: "100%" }}>
+                        <img src={`${employee ? employee.identification_card : null}`} alt={`${employee ? employee.first_name : null}`} />
                         <Form.Control style={formInput} isInvalid={formErrors ? formErrors.identification_card : null} required type="file" id="file" accept="image/*" class="input" name='identification_card' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.identification_card : null}

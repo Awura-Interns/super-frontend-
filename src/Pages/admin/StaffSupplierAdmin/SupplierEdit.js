@@ -83,6 +83,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label style={regForm} for="file">Profile Picture</Form.Label>
                         <div style={{ width: "100%" }}>
+                        <img src={`${supplier ? supplier.profile_picture : null}`} alt={`${supplier ? supplier.first_name : null}`} />
                             <Form.Control style={formInput} isInvalid={formErrors ? formErrors.profile_picture : null} defaultValue={supplier ? supplier.profile_picture : null} required type="file" id="file" accept="image/*" class="input" name='profile_picture' />
                             <Form.Control.Feedback type="invalid">
                             {formErrors ? formErrors.profile_picture : null}
@@ -101,6 +102,7 @@ const StaffForm = (props) => {
                     <Form.Group class="inputfield">
                         <Form.Label style={regForm} for="file">Id Card</Form.Label>
                         <div style={{ width: "100%" }}>
+                        <img src={`${supplier ? supplier.identification_card : null}`} alt={`${supplier ? supplier.first_name : null}`} />
                         <Form.Control style={formInput} isInvalid={formErrors ? formErrors.identification_card : null} required type="file" id="file" accept="image/*" class="input" name='identification_card' />
                         <Form.Control.Feedback type="invalid">
                         {formErrors ? formErrors.identification_card : null}

@@ -91,7 +91,7 @@ const ProducerForm = () => {
     })
   }
   return (
-    <section>
+    <section className='wholeProducer'>  
       <div className="Employewrapper">
         <div style={title} className="title">
           Producer registration

@@ -2,6 +2,11 @@ import "../../Assets/admin/styles/Carts.css"
 import axios from "axios";
 import { useEffect, useState } from 'react'
 import * as ReactBootStrap from 'react-bootstrap'
+
+const whole={
+  marginLeft:"10rem",
+  marginTop:"2rem"
+}
 const positionSection = {
   marginTop: "8rem",
 }
@@ -41,7 +46,7 @@ const Carts = () => {
   }, [])
   return (
     <>
-      <body className="Body">
+      <body className="Body" style={whole}>
         <section class="employee_listing_whole" style={positionSection}>
           <div class="employee_listing">
           <h1 style={positionTitle}>Cart listing</h1>
