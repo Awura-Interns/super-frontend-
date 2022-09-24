@@ -3,8 +3,7 @@
     margin-left: 10rem;
   }
   .employee_listing{
-    width: 170vh;
-    height: 60vh;
+    
     overflow: hidden;
     overflow-x: scroll;
     margin-left: 15rem;
@@ -41,7 +40,7 @@
   background-color: transparent;
 }
 .addEmployee{
-  margin-left: 49rem;
+  margin-left: 61rem;
 }
 .addEmployee:hover{
   color: green;

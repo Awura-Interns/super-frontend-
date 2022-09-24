@@ -36,6 +36,10 @@ const positionSection = {
     fontSize: "2rem",
     padding:"0"
   }
+  const tableSize={
+    width: "140vh",
+    height: "60vh"
+  }
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([])
     const [loading, setLoading] = useState(true)
@@ -84,7 +88,7 @@ const EmployeeList = () => {
                 <section class="employee_listing_whole" style={positionSection}>
                     <h1 style={positionTitle}>Employee listing<NavLink to='/admin-page/employeeList/employeeForm' className={({ isActive }) => (isActive ? 'addEmployee' : 'addEmployee')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
 
-                    <div class="employee_listing">
+                    <div class="employee_listing" style={tableSize}>
                        
                         <ReactBootStrap.Table striped bordered hover>
                             <thead>

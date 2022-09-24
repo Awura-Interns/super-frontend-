@@ -13,8 +13,7 @@
    margin-top:3rem;
 }
 .producer_listing{
-   width: 145vh;
-   height: 60vh;
+  
    margin-left: 10rem;
    margin-top: 1rem;
    overflow: hidden;
@@ -35,7 +34,7 @@
    margin-top: 2rem;
  }
  .add{
-   margin-left: 65rem;
+   margin-left: 75rem;
  }
  .add:hover{
    color: green;

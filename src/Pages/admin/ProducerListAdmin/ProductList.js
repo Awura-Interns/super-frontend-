@@ -6,7 +6,7 @@ import "../../../Assets/admin/styles/global.css"
 import "../../../Assets/admin/styles/SideNavBar.css"
 import "../../../Assets/admin/styles/ProducerList.css"
 import "../../../Assets/admin/styles/actionBtn.css"
-
+import Spinner from 'react-bootstrap/Spinner';
 const positionSection = {
   marginTop: "8rem",
 }
@@ -36,6 +36,10 @@ const actionBox = {
 const actionBtn = {
   fontSize: "2rem",
   padding:"0"
+}
+const tableSize={
+  width: "160vh",
+  height: "60vh",
 }
 
 const Producer = () => {
@@ -74,12 +78,19 @@ const Producer = () => {
       alert(error.response.data);
     })
   }
+  if(loading){
+    return (
+    <div style={{width:"100vw", height:"100vh", backgroundColor:"rgba(0,0,0,0.6)", display:"flex", alignItems:"center", justifyContent:"center"}}>    
+        <Spinner animation="border" style={{color:"white"}} />
+    </div>
+    )
+}
   return (
     <>
       <body className="Body">
         <section class="producer_listing_whole" style={positionSection}>
           <h1 style={positionTitle}>Product listing <NavLink to='/admin-page/product/productForm' className={({ isActive }) => (isActive ? 'add' : 'add')} ><i class='bx bxs-add-to-queue' title="add"></i> </NavLink> </h1>
-          <div class="producer_listing">
+          <div class="producer_listing" style={tableSize} >
             <ReactBootStrap.Table striped bordered hover>
               <thead>
                 <tr>
@@ -107,7 +118,7 @@ const Producer = () => {
                       <td style={tableContent}>{producers.product_type}</td>
                       <td style={tableContent}>{producers.amount}</td>
                       <td style={tableContent}>{producers.price}</td>
-                      <td style={tableContent}>{producers.discount}</td>
+                      <td style={tableContent}>{producers.discount? producers.discount: "No Discount" }</td>
                       <td style={tableContent}>{producers.producer}</td>
                       <td style={tableContent}>{producers.posted_by}</td>
                       <td style={tableContent}>
