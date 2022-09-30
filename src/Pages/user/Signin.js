@@ -9,8 +9,8 @@ import jwt_decode from "jwt-decode";
 export default function Signin() {
   const navigate = useNavigate();
   const context =useContext(AuthContext)
-  const [email, setEmail] = useState("aaa@gmail.com");
-  const [password, setPassword] = useState("asdfzxcv1234");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [errorMessage, setErrorMessage] = useState({});
 
   async function handleSubmit() {
