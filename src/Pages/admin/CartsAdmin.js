@@ -47,8 +47,8 @@ const Carts = () => {
   return (
     <>
       <body className="Body" style={whole}>
-        <section class="employee_listing_whole" style={positionSection}>
-          <div class="employee_listing">
+        <section class="cart_listing_whole" style={positionSection}>
+          <div class="cart_listing">
           <h1 style={positionTitle}>Cart listing</h1>
             <ReactBootStrap.Table striped bordered hover>
               <thead>
