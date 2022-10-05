@@ -2,11 +2,14 @@
     margin-top:-3rem;
     margin-left: 10rem;
   }
+  .employee_listing_whole h1{
+    align-items:initial;
+  }
   .employee_listing{
     
     overflow: hidden;
     overflow-x: scroll;
-    margin-left: 15rem;
+    margin-left: 2%;
     margin-top: 1rem;
     overflow-y: scroll;
   
@@ -16,32 +19,77 @@
     height: auto;
     max-height:fit-content;
 }
-.image_profile_picture:hover{
-  transform: scale(5);
-    overflow-x:visible;
-    overflow-y: visible;
-    z-index: 1000;
-}
-.image_profile_picture:hover .employee_listing{
-  overflow-x: visible;
-  overflow-y: visible;
-}
-.action_btn button+button{
-  margin-left: 30px;
-  background-color: transparent;
-  
-}
-.action_btn  .edite{
-  color: green;
-  background-color: transparent;
-}
-.action_btn  .delete{
-  color: red;
-  background-color: transparent;
-}
-.addEmployee{
-  margin-left: 61rem;
-}
 .addEmployee:hover{
   color: green;
+}
+@media (max-width: 1240px) {
+  .producer_listing{
+  
+    margin-left: .1%;
+    margin-top: 3%;
+    overflow: hidden;
+    overflow-x:scroll;
+    overflow-y: scroll;
+ }
+ .Employewrapper{
+  margin-top: 1rem;
+  margin-left: -2rem;
+}
+.producer_listing_whole h1{
+  margin-left: -1%;
+}
+
+}
+@media (max-width: 1150px) {
+  .employee_listing_whole{
+   
+    margin-left: 1%;
+  }
+  .employee_listing{
+    margin-left: 15rem;
+    margin-top: 1rem;
+    
+  max-width: 100%;
+  max-height: 75%;
+  overflow: hidden;
+    overflow-x: scroll;
+    
+    overflow-y: scroll;
+  }
+
+}
+@media (max-width: 700px) {
+  .employee_listing_whole{
+   
+    margin-left: 1%;
+  }
+  .employee_listing{
+    margin-left: 15rem;
+    margin-top: 1rem;
+    
+  max-width: 50%;
+  max-height: 75%;
+  overflow: hidden;
+    overflow-x: scroll;
+    
+    overflow-y: scroll;
+  }
+}
+@media (max-width: 550px) {
+  .employee_listing_whole{
+   
+    margin-left: -10%;
+  }
+  .employee_listing{
+    margin-left: 15rem;
+    margin-top: 1rem;
+    
+  max-width: 40%;
+  max-height: 75%;
+  overflow: hidden;
+    overflow-x: scroll;
+    
+    overflow-y: scroll;
+  }
+
 }
