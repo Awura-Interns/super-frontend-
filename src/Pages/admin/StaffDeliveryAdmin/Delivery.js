@@ -110,14 +110,14 @@ const Delivery = () => {
                                     return (
                                         <tr key={index + 1}>
                                             <td style={tableContent}>{index + 1}</td>
-                                            <td style={tableContent}> <img src={delivery.profile_picture} alt="Mark Zuckerberg"
-                                                className="image_profile_picture" /> </td>
+                                            <td style={tableContent}><a href={delivery.profile_picture} target="_blank"><img src={delivery.profile_picture} alt="Mark Zuckerberg"
+                                                className="image_profile_picture" /></a>  </td>
                                             <td style={tableContent}>{delivery.user.first_name} {delivery.user.last_name}</td>
                                             <td style={tableContent}>{delivery.user.email}</td>
                                             <td style={tableContent}>{delivery.user.phone}</td>
                                             <td style={tableContent}>{delivery.birthdate}</td>
-                                            <td style={tableContent}><img src={delivery.identification_card} alt="Mark Zuckerberg"
-                                                className="image_profile_picture" /></td>
+                                            <td style={tableContent}><a href={delivery.identification_card} target="_blank"><img src={delivery.identification_card} alt="Mark Zuckerberg"
+                                                className="image_profile_picture" /></a></td>
                                             <td style={tableContent}>
                                                 <div className="action_btn">
                                                     <div className='btn' style={actionBox}>

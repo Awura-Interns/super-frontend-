@@ -17,13 +17,74 @@
     height: auto;
     max-height: min-content;
 }
-.image_profile_picture:hover{
-    transform: scale(5);
-    overflow:visible;  }
-    
-    .addDelivery{
-        margin-left: 58rem;
-      }
-      .addDelivery:hover{
+
+.addDelivery:hover{
         color: green;
+      }
+
+      @media (max-width: 1240px) {
+        .delivery_listing_whole{
+            margin-top:10%;
+            margin-left: 1%;
+        }
+        .delivery_listing{
+            width: 130vh;
+            height: 70vh;
+            overflow: hidden;
+            overflow-x: scroll;
+            margin-left: 10rem;
+            margin-top: 1rem;
+            overflow-y: scroll;
+        
+        }
+      
+      }
+      @media (max-width: 1150px) {
+        .delivery_listing_whole{
+            margin-top:10%;
+            margin-left: 1%;
+        }
+        .delivery_listing{
+            width: 130vh;
+            height: 70vh;
+            overflow: hidden;
+            overflow-x: scroll;
+            margin-left: 10rem;
+            margin-top: 1rem;
+            overflow-y: scroll;
+        
+        }
+      }
+      @media (max-width: 700px) {
+        .delivery_listing_whole{
+            margin-top:5%;
+            margin-left: 1%;
+        }
+        .delivery_listing{
+            width: 130vh;
+            height: 70vh;
+            overflow: hidden;
+            overflow-x: scroll;
+            margin-left: 10rem;
+            margin-top: 1rem;
+            overflow-y: scroll;
+            max-width: 60%;
+        
+        }
+      }
+      @media (max-width: 550px) {
+        .delivery_listing_whole{
+            margin-top:10%;
+            margin-left: 1%;
+        }
+        .delivery_listing{
+            width: 130vh;
+            height: 70vh;
+            overflow: hidden;
+            overflow-x: scroll;
+            margin-left: 10rem;
+            margin-top: 1rem;
+            overflow-y: scroll;
+            max-width: 45%;
+        }
       }
