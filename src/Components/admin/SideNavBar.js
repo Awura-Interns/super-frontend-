@@ -25,9 +25,9 @@ export default function SideNavBar() {
                     <span class="logo_name" style={FontSizeTitle}>super link</span>
                 </div>
                 <ul class="nav-links">
-                    <li >
+                    {/* <li >
                         <NavLink to='/admin-page' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i style={FontSizeBtn} class='bx bxs-home-smile'></i><span class="links_name" style={FontSizeBtn}>home</span></NavLink>
-                    </li>
+                    </li> */}
                     <li>
                         <NavLink to='/admin-page/product' className={({ isActive }) => (isActive ? 'links_name' : 'links_name')}><i style={FontSizeBtn} class='bx bx-box'></i><span class="links_name" style={FontSizeBtn}>Product List</span></NavLink>
                     </li>

@@ -63,34 +63,8 @@ const Home = () => {
       }
     });
   }, []);
-
-  // const [data, setdata] = useState([]);
-
-  // console.log("hello");
-  // const [truth, settruth] = useState(false);
-
-  // const handleClick = (item) => {
-  //   if (cart.indexOf(item) !== -1) return;
-  //   setCart([...cart, item]);
-  // };
-
-  // const handleChange = (item, d) => {
-  //   const ind = cart.indexOf(item);
-  //   const arr = cart;
-  //   arr[ind].amount += d;
-
-  //   if (arr[ind].amount === 0) arr[ind].amount = 1;
-  //   setCart([...arr]);
-  // };
-
-  // // useEffect(() => {
-  // //   console.log("cart change");
-  // // }, [cart]);
-  // // testFunction();
-  // console.log("accessToken");
-  // console.log(accessToken);
   return (
-    <div className="">
+    <div className="" style={{marginBottom:"10.7rem"}}>
       <Navbar />
 
       <Container>
@@ -102,15 +76,21 @@ const Home = () => {
               {typeof errorMessage.message === "string" ? (
                 <p>{errorMessage.message}</p>
               ) : (
+                // <div>
+                //   {Object.entries(errorMessage.message).map(([key, value]) => (
+                //     <div key={key} className="flex">
+                //       <b>{key}</b>
+                //       <div className="mx-2"></div>
+                //       <p>{`${JSON.stringify(value)}`}</p>
+                //       <p>{JSON.stringify(value)? "please login or regester first" : "sorry"}</p>
+                //     </div>
+                //   ))}
+                // </div>
                 <div>
-                  {Object.entries(errorMessage.message).map(([key, value]) => (
-                    <div key={key} className="flex">
-                      <b>{key}</b>
-                      <div className="mx-2"></div>
-                      <p>{`${JSON.stringify(value)}`}</p>
-                    </div>
-                  ))}
-                </div>
+               <div className="mx-2"></div>
+                
+                  <p>please login or regester first</p>
+              </div>
               )}
             </Alert>
           </div>
@@ -131,4 +111,4 @@ const Home = () => {
 };
 
 export default Home;
-// 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
+

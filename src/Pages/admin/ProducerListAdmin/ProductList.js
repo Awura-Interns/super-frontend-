@@ -112,8 +112,8 @@ const Producer = () => {
                   return (
                     <tr key={index + 1}>
                       <td style={tableContent}>{index + 1}</td>
-                      <td style={tableContent}> <img className='image_profile_picture' src={producers.image} alt={producers.product_name} /> </td>
-                      <td style={tableContent}> <img className='image_profile_picture' src={producers.doc} alt={producers.product_name} /> </td>
+                      <td style={tableContent}> <a href={producers.image} target="_blank"><img className='image_profile_picture' src={producers.image} alt={producers.product_name} /></a> </td>
+                      <td style={tableContent}> <a href={producers.doc} target="_blank"><img className='image_profile_picture' src={producers.doc} alt={producers.product_name} /></a> </td>
                       <td style={tableContent}>{producers.product_name} </td>
                       <td style={tableContent}>{producers.product_type}</td>
                       <td style={tableContent}>{producers.amount}</td>

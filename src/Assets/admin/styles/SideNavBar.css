@@ -399,6 +399,9 @@ nav .profile-details i{
     width: calc(100% - 220px);
     left: 220px;
   }
+  li span{
+    visibility:hidden;
+  }
 }
 @media (max-width: 1150px) {
   .home-content .sales-boxes{
@@ -412,11 +415,17 @@ nav .profile-details i{
   .home-content .sales-boxes .top-sales{
     margin: 0;
   }
+  li span{
+    visibility:hidden;
+  }
 }
 @media (max-width: 1000px) {
   .overview-boxes .box{
     width: calc(100% / 2 - 15px);
     margin-bottom: 15px;
+  }
+  li span{
+    visibility:hidden;
   }
 }
 @media (max-width: 700px) {
@@ -432,6 +441,9 @@ nav .profile-details i{
   .home-content .sales-boxes .sales-details{
     width: 560px;
   }
+  li span{
+    visibility:hidden;
+  }
 }
 @media (max-width: 550px) {
   .overview-boxes .box{
@@ -440,5 +452,8 @@ nav .profile-details i{
   }
   .sidebar.active ~ .home-section nav .profile-details{
     display: none;
+  }
+  li span{
+    visibility:hidden;
   }
 }

@@ -37,8 +37,8 @@ export default function landingpage() {
                   <Nav.Link href="/home/cart">Cart</Nav.Link>
                   <Nav.Link href="/home/Signin">
                     {localStorage.getItem("accessToken") == ""
-                      ? "Login"
-                      : "Logout"}
+                      ? "Logout"
+                      : "Login"}
                   </Nav.Link>
                   {/* <NavDropdown
                     title="Cart"

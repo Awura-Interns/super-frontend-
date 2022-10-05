@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       setAuthTokens(data);
       setUser(jwt_decode(data.access));
       localStorage.setItem("authTokens", JSON.stringify(data));
-      navigate("/admin-page");
+      navigate("/admin-page/product");
     } else {
       alert("Something went wrong");
     }

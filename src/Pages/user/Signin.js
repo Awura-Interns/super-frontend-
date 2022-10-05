@@ -49,7 +49,7 @@ export default function Signin() {
 
   return (
     <div className="wrapper">
-      <div className="title">Registration Form</div>
+      <div className="title">Login Form</div>
       {JSON.stringify(errorMessage) != "{}" && (
         <Alert className="my-5" variant="danger">
           <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
