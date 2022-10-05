@@ -16,26 +16,74 @@
     max-width: 100%;
     height: auto
 }
-.image_profile_picture:hover{
-    transform: scale(5);
-    overflow:visible;
+.addSupplier:hover{
+    color: green;
   }
-  .action_btn button+button{
-    margin-left: 30px;
-    background-color: transparent;
+  @media (max-width: 1240px) {
+    .supplier_listing_whole{
+      margin-top:3rem;
+    }
+    .supplier_listing{
+        width: 135vh;
+        height: 70vh;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: scroll;
     
+    
+    }
+  
   }
-  .action_btn  .edite{
-    color: green;
-    background-color: transparent;
+  @media (max-width: 1150px) {
+    .supplier_listing_whole{
+      margin-top:3rem;
+    }
+    .supplier_listing{
+        width: 135vh;
+        height: 70vh;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    
+    
+    }
   }
-  .action_btn  .delete{
-    color: red;
-    background-color: transparent;
+  @media (max-width: 700px) {
+    .supplier_listing_whole{
+      margin-top:3rem;
+    }
+    .supplier_listing{
+        width: 135vh;
+        height: 70vh;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    
+    
+    }
+  
+  
+  
   }
-  .addSupplier{
-    margin-left: 60rem;
-  }
-  .addSupplier:hover{
-    color: green;
+  @media (max-width: 550px) {
+    .supplier_listing_whole{
+      margin-top:3rem;
+    }
+    .supplier_listing{
+        width: 135vh;
+        height: 70vh;
+        margin-left: 10rem;
+        margin-top: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    
+    
+    }  
   }

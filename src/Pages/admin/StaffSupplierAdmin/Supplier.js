@@ -105,13 +105,13 @@ const Supplier = () => {
                                     return (
                                         <tr key={index + 1}>
                                             <td style={tableContent}>{index + 1}</td>
-                                            <td style={tableContent}> <img className='image_profile_picture' src={supplier.profile_picture} alt="Mark Zuckerberg" /> </td>
+                                            <td style={tableContent}><a href={supplier.profile_picture} target="_blank"><img className='image_profile_picture' src={supplier.profile_picture} alt={supplier.user.first_name}  /></a>  </td>
                                             <td style={tableContent}>{supplier.user.first_name} {supplier.user.last_name}</td>
                                             <td style={tableContent}>{supplier.user.email}</td>
                                             <td style={tableContent}>{supplier.user.phone}</td>
                                             <td style={tableContent}>{supplier.birthdate}</td>
-                                            <td style={tableContent}><img className='image_profile_picture' src={supplier.identification_card} alt={supplier.user.first_name}
-                                            /></td>
+                                            <td style={tableContent}><a href={supplier.identification_card} target="_blank"><img className='image_profile_picture' src={supplier.identification_card} alt={supplier.user.first_name}
+                                            /></a></td>
                                             <td style={tableContent}>  <div className="action_btn">
                                                 <div className='btn' style={actionBox}>
                                                     <button className="edite"><Link to={`/admin-page/supplier/supplierEdit/${supplier.pk}`} style={actionBtn}><i className='bx bx-pencil'></i></Link></button>
